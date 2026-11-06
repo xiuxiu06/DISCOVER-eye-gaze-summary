@@ -65,7 +65,7 @@ function Shell({ dataset }: { dataset: Dataset }) {
     () =>
       dataset.runs.map((option) => ({
         value: option.id,
-        label: `${formatRunWindow(option.start, option.end)} · ${option.userIds.length} learners`,
+        label: `${formatRunWindow(option.start, option.end)} · ${option.userIds.length} learner${option.userIds.length === 1 ? '' : 's'}`,
       })),
     [dataset.runs],
   )
