@@ -161,7 +161,7 @@ function Shell({ dataset }: { dataset: Dataset }) {
             ))}
           </TabsList>
         </div>
-        <TabsContent value={tab} className="min-h-0 overflow-auto p-6">
+        <TabsContent value={tab} className="flex min-h-0 flex-col overflow-auto p-6">
           <Screen dataset={dataset} run={run} minVisitS={minVisitS} touchpoints={runTouchpoints} />
         </TabsContent>
       </Tabs>
