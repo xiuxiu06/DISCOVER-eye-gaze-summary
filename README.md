@@ -158,7 +158,47 @@ app/
     metrics.ts  time.ts # calculations and time formatting
     screens/            # one file per screen
     components/ui/      # shadcn/ui components (add more with: npx shadcn@latest add <name>)
+summarize_gaze.py       # separate per-second summary tool, with its tests in test_summarize_gaze.py
 ```
+
+## Gaze summary tool
+
+`summarize_gaze.py` compresses a DISCOVER gaze export (`.xlsx`, `.csv` or `.tsv`) into a per-second JSON summary of relevant objects for each user. It's a separate tool: the app doesn't read its output, because each second holds one object and the app needs merged visits with start times and dwell.
+
+It needs Python 3.10+ and `openpyxl`:
+
+```powershell
+python -m pip install -r requirements.txt
+python summarize_gaze.py "path\to\export.xlsx" -o gaze_summary.json
+python -m unittest discover -v
+```
+
+Run interactively, it asks whether to condense similar object names. The optional flags are:
+
+- `--condense` / `--no-condense`: turn condensing on or off without the prompt, for example `Stryker_bed_*` -> `Stryker_bed`.
+- `--sheet <SheetName>`: read one worksheet. By default it reads every sheet with `user_id`, `object_id`, `gaze_time` and `time_stamp` columns.
+- `--ignore <Object1> <Object2> ...`: exclude more objects on top of the built-in list.
+- `--include-timestamps`: add the wall-clock `"timestamp"` to each per-second entry.
+
+From Python:
+
+```python
+from summarize_gaze import summarize_excel_to_json
+
+summary = summarize_excel_to_json(
+    "eye_gaze_data.xlsx",
+    "gaze_summary.json",
+    condense_similar=True,
+)
+```
+
+The built-in filter (`DEFAULT_IRRELEVANT_OBJECTS` and `DEFAULT_IRRELEVANT_PATTERNS`) removes these objects:
+
+- **Player hands and finger bones:** `AutoHandPlayer`, `HeadFollower`, `RobotHandL`, `RobotHandR`, `Thumb*`, `Index*`, `Middle*`, `Ring*`, `Pinky*`
+- **Room walls, doors, lighting and fixtures:** `Floor`, `Bckground`, `LoadingScreen`, `RoomCollider*`, `Room_cube_wall`, `Room_frame`, `PassthroughDoor`, `Hinge`, `Knob`, `PushPull`, `glass_panel`, `curved_counter`, `Sink`, `Light`, `LightBulb*`, `boomLight`
+- **Unity primitives, UI and avatar rigging:** `Collider`, `ColliderCube*`, `Cube*`, `SpatialPanelManipulator`, `chestRubBlocker`, `FakeTube`, `*IK`, `*Grab*`, `TriggerChestL`, `TriggerChestR`
+
+The Communication lane in the app uses `HeadFollower`, which this filter removes. See the first open question below.
 
 ## Open questions for the DISCOVER dev team
 
