@@ -1,5 +1,7 @@
+import type { GazeSummary } from '../summary'
 import { useMemo, useState } from 'react'
 import { LaneDot, PageFooter, PageTitle, Panel, PanelTitle } from '../components/Page'
+import { ObjectSwimLanes } from './ObjectSwimLanes'
 import { LEARNER_LINES, SwimChart } from '../components/SwimChart'
 import {
   COMMUNICATION_LANE,
@@ -40,7 +42,7 @@ function stateDetail(
     : 'No touchpoint yet'
 }
 
-export function SwimLanes({ dataset, run, touchpoints, minVisitS, openLearner }: ScreenProps) {
+function StandardSwimLanes({ dataset, run, touchpoints, minVisitS, openLearner }: ScreenProps) {
   const { meta, sessions } = dataset
   const lanes = useMemo(() => includedLanes(meta), [meta])
   const window = useMemo(() => runWindow(run), [run])
@@ -354,6 +356,23 @@ export function SwimLanes({ dataset, run, touchpoints, minVisitS, openLearner }:
       </div>
 
       <PageFooter dataset={dataset} />
+    </div>
+  )
+}
+
+export function SwimLanes(props: ScreenProps) {
+  const [view, setView] = useState<'simplified' | 'standard' | 'advanced'>('standard')
+  const [summaryFile, setSummaryFile] = useState<{ summary: GazeSummary; source: string }>()
+  return (
+    <div className="flex flex-col gap-5">
+      <div role="group" aria-label="Swim lane view" className="flex flex-wrap gap-1 self-start rounded-lg border bg-white p-1">
+        {(['simplified', 'standard', 'advanced'] as const).map((option) => (
+          <button key={option} type="button" aria-pressed={view === option}
+            className={`min-h-11 cursor-pointer rounded-md px-5 text-sm font-medium capitalize ${view === option ? 'bg-primary text-white' : 'text-muted-foreground hover:bg-muted'}`}
+            onClick={() => setView(option)}>{option}</button>
+        ))}
+      </div>
+      {view === 'standard' ? <StandardSwimLanes {...props} /> : <ObjectSwimLanes key={view + props.dataset.meta.generatedAt} {...props} view={view} summaryFile={summaryFile} setSummaryFile={setSummaryFile} />}
     </div>
   )
 }

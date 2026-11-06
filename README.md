@@ -131,6 +131,14 @@ The **Upload & clean** tab takes a gaze log by drag and drop or file picker, and
 
 The steps live in both `pipeline/` and `app/src/processLog.ts`. If you change one, change the other, then run `npm run check:upload` in `app/` to compare their results.
 
+### Swim lane views
+
+Tab 2 offers three views. **Standard** keeps the five clinical lanes and team coverage. **Advanced** shows individual included object visits for the selected team run, with learner, clinical lane and object-name filters plus a visit table. It starts with the first learner and the vital sign monitor lane.
+
+**Simplified** reads the existing Python gaze summary JSON instead of applying another filter. The bundled summary has 33 condensed object groups for the built-in recording. For an uploaded gaze log, choose the matching summary JSON in this view; generate it with `python summarize_gaze.py "recording.csv" --condense --no-ideal -o summary.json`. Adjacent seconds with the same object form a chart segment; null seconds and gaps break segments. User 0 is excluded. The threshold filters segment duration, rather than raw measured dwell.
+
+Summary files without timestamps cover the full recording with session pauses omitted, so Simplified uses summary elapsed time and does not follow the Team run picker. Standard and Advanced use the selected run and its clock times. Summary uploads remain in memory while switching views within this tab; they must be selected again after a reload.
+
 ### Mock data
 
 Until the pipeline has run, the app loads synthetic data from `app/public/data-mock/` and shows a red "MOCK DATA" banner. Once `app/public/data/meta.json` exists, the app uses real data and the banner disappears. If any other real file is missing, the app shows an error instead of falling back to mock data.

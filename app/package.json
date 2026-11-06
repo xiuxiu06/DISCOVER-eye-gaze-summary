@@ -9,7 +9,8 @@
     "lint": "oxlint",
     "check:upload": "node scripts/check-upload.mjs",
     "mock": "node scripts/make-mock-data.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check:summary": "node scripts/check-summary.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",

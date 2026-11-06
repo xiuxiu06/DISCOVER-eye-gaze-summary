@@ -24,6 +24,7 @@ interface SwimChartProps {
   onScrub?: (time: number) => void
   selected?: Visit
   onSelect?: (visit: Visit) => void
+  relativeTime?: boolean
   toolbar?: ReactNode
 }
 
@@ -83,6 +84,7 @@ export function SwimChart({
   selected,
   onSelect,
   toolbar,
+  relativeTime = false,
 }: SwimChartProps) {
   const { ref, width } = useWidth()
   const svgRef = useRef<SVGSVGElement>(null)
@@ -178,7 +180,7 @@ export function SwimChart({
           const radius = Math.min(dotRadius(visit.dwell), laneHeight / 2 + 3)
           const emphasized = hovered?.visit === visit || selected === visit
           return (
-            <g key={`${visit.sessionId}-${visit.start}`}>
+            <g key={`${visit.sessionId}-${visit.lane}-${visit.start}-${visit.end}`}>
               <circle
                 cx={cx}
                 cy={cy}
@@ -425,7 +427,7 @@ export function SwimChart({
             </svg>
           )}
 
-          {hovered && <DotTooltip meta={meta} width={width} hovered={hovered} laneById={laneById} />}
+          {hovered && <DotTooltip meta={meta} width={width} hovered={hovered} laneById={laneById} relativeTime={relativeTime} />}
         </div>
       </div>
     </div>
@@ -437,10 +439,12 @@ function DotTooltip({
   width,
   hovered,
   laneById,
+  relativeTime,
 }: {
   meta: Meta
   width: number
   hovered: { visit: Visit; x: number; y: number }
+  relativeTime: boolean
   laneById: Map<string, Lane>
 }) {
   const { visit } = hovered
@@ -459,7 +463,7 @@ function DotTooltip({
         Learner {visit.userId} · {laneById.get(visit.lane)?.label ?? visit.lane}
       </div>
       <div className="mt-0.5 text-muted-foreground tabular-nums">
-        {formatClock(visit.start)} · {formatDuration(visit.dwell)}
+        {relativeTime ? formatElapsed(visit.start) : formatClock(visit.start)} · {formatDuration(visit.dwell)}
       </div>
       <ul className="mt-1.5 space-y-0.5">
         {objects.map(([objectId, seconds]) => (
