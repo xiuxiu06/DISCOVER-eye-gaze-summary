@@ -63,7 +63,7 @@ def test_session_counts(raw, outputs):
 
 
 def test_included_lanes(outputs):
-    step = next(step for step in outputs["funnel"] if step["step"] == "Lanes of interest")
+    step = next(step for step in outputs["funnel"] if step["step"] == "Group objects into 5 lanes")
     assert step["rows"] == pytest.approx(9_135, rel=0.02)
     assert step["seconds"] == pytest.approx(2_293, rel=0.02)
 

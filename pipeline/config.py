@@ -22,17 +22,17 @@ OUTPUT_DIR = ROOT / "app" / "public" / "data"
 
 BACKGROUND_COLOR = "#9AA0A6"
 
-# In display order: (id, include, label block color, band fill).
+# In display order: (id, label, include, dot color, band fill).
 LANES = [
-    ("Reference", True, "#3B8EDB", "#D6E8F8"),
-    ("Patient assessment", True, "#D6336C", "#F7D4E1"),
-    ("Vital sign monitor", True, "#7CB342", "#E3F0D3"),
-    ("Equipment & interventions", True, "#E0A800", "#FBF0C9"),
-    ("Communication", True, "#5AA9D6", "#E6F3FA"),
-    ("Self", False, BACKGROUND_COLOR, BACKGROUND_COLOR),
-    ("Bed", False, BACKGROUND_COLOR, BACKGROUND_COLOR),
-    ("System", False, BACKGROUND_COLOR, BACKGROUND_COLOR),
-    ("Environment", False, BACKGROUND_COLOR, BACKGROUND_COLOR),
+    ("Reference", "Reference", True, "#3B8EDB", "#E4EFFA"),
+    ("Patient assessment", "Patient assessment", True, "#D6336C", "#FBE4EC"),
+    ("Vital sign monitor", "Vital sign monitor", True, "#6FA832", "#EAF3DF"),
+    ("Equipment & interventions", "Equipment", True, "#D99A00", "#FBF1D2"),
+    ("Communication", "Communication", True, "#4FA3D1", "#E2F1F9"),
+    ("Self", "Self", False, BACKGROUND_COLOR, BACKGROUND_COLOR),
+    ("Bed", "Bed", False, BACKGROUND_COLOR, BACKGROUND_COLOR),
+    ("System", "System", False, BACKGROUND_COLOR, BACKGROUND_COLOR),
+    ("Environment", "Environment", False, BACKGROUND_COLOR, BACKGROUND_COLOR),
 ]
 UNMAPPED_LANE = "Unmapped"
 

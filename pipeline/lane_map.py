@@ -17,7 +17,7 @@ from .clean import add_timing, drop_test_user
 from .load import load_rows
 
 COLUMNS = ["object_id", "lane", "include", "confidence", "events", "dwell_s_excl_idle", "learners"]
-INCLUDED = {lane for lane, include, _, _ in config.LANES if include}
+INCLUDED = {lane for lane, _, include, _, _ in config.LANES if include}
 IRRELEVANT = {name.lower() for name in DEFAULT_IRRELEVANT_OBJECTS}
 
 MONITOR = re.compile(r"^(MonitorBar|T3_monitor_screen.*|Screen|SPO2|RR|ekg|HFNC_Screen)$")

@@ -27,8 +27,8 @@ def _step(step: str, rows: int, seconds: float, note: str) -> dict:
 
 def _meta(lane_map: pd.DataFrame, source: str, unmapped: list[str]) -> dict:
     lanes = [
-        {"id": lane, "label": lane, "order": order, "include": include, "color": color, "band": band}
-        for order, (lane, include, color, band) in enumerate(config.LANES)
+        {"id": lane, "label": label, "order": order, "include": include, "color": color, "band": band}
+        for order, (lane, label, include, color, band) in enumerate(config.LANES)
     ]
     objects = {
         row.object_id: {"lane": row.lane, "verify": row.confidence == "verify"}
@@ -162,29 +162,31 @@ def build_outputs(raw: pd.DataFrame, lane_map: pd.DataFrame, source: str) -> dic
 
     funnel = [
         _step(
-            "Raw log", len(raw), logged,
-            f"Every row in the file, across {raw.object_id.nunique()} objects.",
+            "Raw export", len(raw), logged,
+            f"Interleaved rows for user IDs {raw.user_id.min()}–{raw.user_id.max()}, across {raw.object_id.nunique()} objects.",
         ),
         _step(
-            "Test user removed", len(no_test), no_test.gaze_time.sum(),
-            f"Removed {len(raw) - len(no_test)} rows from user 0, a test account.",
+            "Drop the test user", len(no_test), no_test.gaze_time.sum(),
+            f"User 0 has only {len(raw) - len(no_test)} rows.",
         ),
         _step(
-            "Idle periods removed", len(timed) - len(idle_rows),
+            "Remove idle headset periods", len(timed) - len(idle_rows),
             no_test.gaze_time.sum() - idle_seconds,
-            f"Removed {len(idle_rows)} idle rows, which were {idle_seconds / logged:.0%} of all logged time.",
+            f"{len(idle_rows)} looks over {config.IDLE_MAX_S:g} s took {idle_seconds / 3600:.1f} h, "
+            f"which is {idle_seconds / logged:.0%} of logged time.",
         ),
         _step(
-            "Short sessions dropped", len(active), active.gaze_time.sum(),
-            f"Kept {len(kept)} of {session_count} sessions that ran at least {config.MIN_SESSION_MIN} minutes.",
+            "Rebuild sessions", len(active), active.gaze_time.sum(),
+            f"Kept {len(kept)} of {session_count} sessions. A gap over {config.SESSION_GAP_S / 60:g} min "
+            f"starts a new session, and sessions under {config.MIN_SESSION_MIN} min are dropped.",
         ),
         _step(
-            "Lanes of interest", len(included), included.gaze_time.sum(),
-            "Dropped walls, room colliders, the bed and the learner's own hands.",
+            "Group objects into 5 lanes", len(included), included.gaze_time.sum(),
+            "Walls, invisible colliders, own hands, bed and UI are set aside.",
         ),
         _step(
-            "Merged into lane visits", len(lane_visits), sum(v["dwell"] for v in lane_visits),
-            "Joined consecutive looks at the same lane into one visit.",
+            "Merge into touchpoints", len(lane_visits), sum(v["dwell"] for v in lane_visits),
+            "Back-to-back looks in the same lane become one touchpoint.",
         ),
     ]
 

@@ -17,7 +17,7 @@
    "label": "Reference",
    "include": true,
    "color": "#3B8EDB",
-   "band": "#D6E8F8",
+   "band": "#E4EFFA",
    "order": 0
   },
   {
@@ -25,31 +25,31 @@
    "label": "Patient assessment",
    "include": true,
    "color": "#D6336C",
-   "band": "#F7D4E1",
+   "band": "#FBE4EC",
    "order": 1
   },
   {
    "id": "Vital sign monitor",
    "label": "Vital sign monitor",
    "include": true,
-   "color": "#7CB342",
-   "band": "#E3F0D3",
+   "color": "#6FA832",
+   "band": "#EAF3DF",
    "order": 2
   },
   {
    "id": "Equipment & interventions",
-   "label": "Equipment & interventions",
+   "label": "Equipment",
    "include": true,
-   "color": "#E0A800",
-   "band": "#FBF0C9",
+   "color": "#D99A00",
+   "band": "#FBF1D2",
    "order": 3
   },
   {
    "id": "Communication",
    "label": "Communication",
    "include": true,
-   "color": "#5AA9D6",
-   "band": "#E6F3FA",
+   "color": "#4FA3D1",
+   "band": "#E2F1F9",
    "order": 4
   },
   {

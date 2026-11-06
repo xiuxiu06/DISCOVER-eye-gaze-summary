@@ -20,11 +20,11 @@ const between = (low, high) => low + random() * (high - low)
 const round3 = (value) => Math.round(value * 1000) / 1000
 
 const LANES = [
-  { id: 'Reference', label: 'Reference', include: true, color: '#3B8EDB', band: '#D6E8F8' },
-  { id: 'Patient assessment', label: 'Patient assessment', include: true, color: '#D6336C', band: '#F7D4E1' },
-  { id: 'Vital sign monitor', label: 'Vital sign monitor', include: true, color: '#7CB342', band: '#E3F0D3' },
-  { id: 'Equipment & interventions', label: 'Equipment & interventions', include: true, color: '#E0A800', band: '#FBF0C9' },
-  { id: 'Communication', label: 'Communication', include: true, color: '#5AA9D6', band: '#E6F3FA' },
+  { id: 'Reference', label: 'Reference', include: true, color: '#3B8EDB', band: '#E4EFFA' },
+  { id: 'Patient assessment', label: 'Patient assessment', include: true, color: '#D6336C', band: '#FBE4EC' },
+  { id: 'Vital sign monitor', label: 'Vital sign monitor', include: true, color: '#6FA832', band: '#EAF3DF' },
+  { id: 'Equipment & interventions', label: 'Equipment', include: true, color: '#D99A00', band: '#FBF1D2' },
+  { id: 'Communication', label: 'Communication', include: true, color: '#4FA3D1', band: '#E2F1F9' },
   { id: 'Self', label: 'Self', include: false, color: '#9AA0A6', band: '#F1F3F4' },
   { id: 'Bed', label: 'Bed', include: false, color: '#9AA0A6', band: '#F1F3F4' },
   { id: 'System', label: 'System', include: false, color: '#9AA0A6', band: '#F1F3F4' },

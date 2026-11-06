@@ -270,6 +270,12 @@ function assignTeamRuns(spans: SessionSpan[], overlapFrac: number) {
   }
 }
 
+/** Tells a gaze log from a lane map by its header row. Anything else counts as a gaze log. */
+export function fileKind(text: string): 'gaze' | 'laneMap' {
+  const { header } = parseTable(text.slice(0, 2000))
+  return header.includes('lane') && header.includes('object_id') ? 'laneMap' : 'gaze'
+}
+
 /** Runs every pipeline step. Throws a message for the user if the file can't be used. */
 export function processLog(
   text: string,
@@ -451,36 +457,36 @@ export function processLog(
   })
   const distinctObjects = new Set(raw.map((row) => row.objectId))
   const funnel: FunnelStep[] = [
-    step('Raw log', raw.length, logged, `Every row in the file, across ${distinctObjects.size} objects.`),
     step(
-      'Test user removed',
-      noTest.length,
-      sumGaze(noTest),
-      `Removed ${raw.length - noTest.length} rows from user 0, a test account.`,
+      'Raw export',
+      raw.length,
+      logged,
+      `Interleaved rows for user IDs ${raw.reduce((least, row) => Math.min(least, row.userId), Infinity)}–${raw.reduce((most, row) => Math.max(most, row.userId), -Infinity)}, across ${distinctObjects.size} objects.`,
     ),
+    step('Drop the test user', noTest.length, sumGaze(noTest), `User 0 has only ${raw.length - noTest.length} rows.`),
     step(
-      'Idle periods removed',
+      'Remove idle headset periods',
       timed.length - idleRows.length,
       sumGaze(noTest) - idleSeconds,
-      `Removed ${idleRows.length} idle rows, which were ${Math.round((idleSeconds / logged) * 100)}% of all logged time.`,
+      `${idleRows.length} looks over ${params.IDLE_MAX_S} s took ${(idleSeconds / 3600).toFixed(1)} h, which is ${Math.round((idleSeconds / logged) * 100)}% of logged time.`,
     ),
     step(
-      'Short sessions dropped',
+      'Rebuild sessions',
       active.length,
       sumGaze(active),
-      `Kept ${kept.length} of ${allSpans.length} sessions that ran at least ${params.MIN_SESSION_MIN} minutes.`,
+      `Kept ${kept.length} of ${allSpans.length} sessions. A gap over ${params.SESSION_GAP_S / 60} min starts a new session, and sessions under ${params.MIN_SESSION_MIN} min are dropped.`,
     ),
     step(
-      'Lanes of interest',
+      'Group objects into 5 lanes',
       included.length,
       sumGaze(included),
-      "Dropped walls, room colliders, the bed and the learner's own hands.",
+      'Walls, invisible colliders, own hands, bed and UI are set aside.',
     ),
     step(
-      'Merged into lane visits',
+      'Merge into touchpoints',
       visits.length,
       mergedLanes.reduce((sum, visit) => sum + visit.dwell, 0),
-      'Joined consecutive looks at the same lane into one visit.',
+      'Back-to-back looks in the same lane become one touchpoint.',
     ),
   ]
 
