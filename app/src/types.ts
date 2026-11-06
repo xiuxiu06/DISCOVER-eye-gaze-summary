@@ -99,8 +99,8 @@ export interface RawRow {
 }
 
 export interface Dataset {
-  /** Which folder the data came from. "mock" must show a visible banner. */
-  origin: 'real' | 'mock'
+  /** Where the data came from. "mock" must show a visible banner. */
+  origin: 'real' | 'mock' | 'uploaded'
   meta: Meta
   funnel: FunnelStep[]
   sessions: Session[]

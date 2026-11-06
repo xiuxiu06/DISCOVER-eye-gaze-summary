@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
+    "check:upload": "node scripts/check-upload.mjs",
     "mock": "node scripts/make-mock-data.mjs",
     "preview": "vite preview"
   },
