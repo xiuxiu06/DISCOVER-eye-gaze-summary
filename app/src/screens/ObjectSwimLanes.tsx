@@ -6,7 +6,14 @@ import { formatElapsed, formatDuration } from '../time'
 import type { Lane, Visit } from '../types'
 import type { ScreenProps } from './types'
 
-const COLORS = ['#3B8EDB', '#D6336C', '#6FA832', '#D99A00', '#4FA3D1', '#8B5FBF']
+const COLORS = [
+  { color: '#3B8EDB', band: '#E4EFFA' },
+  { color: '#D6336C', band: '#FBE4EC' },
+  { color: '#6FA832', band: '#EAF3DF' },
+  { color: '#D99A00', band: '#FBF1D2' },
+  { color: '#159B8E', band: '#DDF6F0' },
+  { color: '#8B5FBF', band: '#F0E6FA' },
+]
 
 export function ObjectSwimLanes({ dataset, minVisitS, view }: ScreenProps & { view: 'simplified' | 'advanced' }) {
   const simple = view === 'simplified'
@@ -25,8 +32,9 @@ export function ObjectSwimLanes({ dataset, minVisitS, view }: ScreenProps & { vi
   const items = allItems.filter((visit) => shownNames.has(visit.lane) && visit.dwell >= minVisitS)
   const lanes: Lane[] = objectNames.map((name, index) => {
     const clinicalLane = dataset.meta.lanes.find((lane) => lane.id === dataset.meta.objects[name]?.lane)
-    return { id: name, label: name, order: index, include: true,
-      color: clinicalLane?.color ?? COLORS[index % COLORS.length], band: clinicalLane?.band ?? '#EFF3F8' }
+    const paletteIndex = [...name].reduce((hash, char) => (hash * 31 + char.charCodeAt(0)) >>> 0, 0) % COLORS.length
+    const palette = clinicalLane?.include ? clinicalLane : clinicalLane?.id === 'Bed' ? COLORS[5] : COLORS[paletteIndex]
+    return { id: name, label: name, order: index, include: true, color: palette.color, band: palette.band }
   })
   const window = { start: 0, end: Math.max(1, (summary?.users.find((user) => user.userId === userId)?.entries.at(-1)?.second ?? 0) + 1) }
   const activeSelected = selected && items.find((item) => item.userId === selected.userId && item.start === selected.start && item.lane === selected.lane && item.end === selected.end)
