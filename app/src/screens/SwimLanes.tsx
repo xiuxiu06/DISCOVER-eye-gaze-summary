@@ -117,7 +117,7 @@ function StandardSwimLanes({ dataset, run, touchpoints, minVisitS, openLearner }
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-1.5">
-        <PageTitle>Team swim lanes</PageTitle>
+        <PageTitle>Team swim lanes - Simplified</PageTitle>
         <p className="m-0 text-[15px] text-muted-foreground">
           {formatDay(run.start)}, {run.date.slice(0, 4)} · {formatClockSpan(window.start, window.end)} ·{' '}
           {run.userIds.length} {run.userIds.length === 1 ? 'learner' : 'learners'} in the room ·{' '}
@@ -367,7 +367,7 @@ export function SwimLanes(props: ScreenProps) {
         {(['simplified', 'standard', 'advanced'] as const).map((option) => (
           <button key={option} type="button" aria-pressed={view === option}
             className={`min-h-11 cursor-pointer rounded-md px-5 text-sm font-medium capitalize ${view === option ? 'bg-primary text-white' : 'text-muted-foreground hover:bg-muted'}`}
-            onClick={() => setView(option)}>{option}</button>
+            onClick={() => setView(option)}>{option === 'standard' ? 'Simplified' : option === 'simplified' ? 'Standard' : 'Advanced'}</button>
         ))}
       </div>
       {view === 'standard' ? <StandardSwimLanes {...props} /> : <ObjectSwimLanes key={view + props.dataset.meta.generatedAt} {...props} view={view} />}

@@ -42,7 +42,7 @@ export function ObjectSwimLanes({ dataset, minVisitS, view }: ScreenProps & { vi
   return (
     <div className="flex flex-col gap-5">
       <div>
-        <PageTitle>Team swim lanes - {simple ? 'Simplified' : 'Advanced'}</PageTitle>
+        <PageTitle>Team swim lanes - {simple ? 'Standard' : 'Advanced'}</PageTitle>
         <p className="mt-2 text-sm text-muted-foreground">
           {simple ? 'Filtered, condensed objects from the existing gaze summary script. One dominant object per second.'
             : 'Filtered summary with individual object names preserved. One dominant object per second.'}
@@ -58,7 +58,7 @@ export function ObjectSwimLanes({ dataset, minVisitS, view }: ScreenProps & { vi
           link.href = url; link.download = sourceName(dataset.meta.source).replace(/\.[^.]+$/, '') + (simple ? '_summary_condensed.json' : '_summary_uncondensed.json')
           link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000)
         }}>Download summary JSON</button>}
-        {summary && <span className="w-full text-xs">Full recording in summary elapsed time; pauses are omitted. Team run selection applies to Standard only.</span>}
+        {summary && <span className="w-full text-xs">Full recording in summary elapsed time; pauses are omitted. Team run selection applies to Simplified only.</span>}
       </div>
       {summary && <>
         <Panel>

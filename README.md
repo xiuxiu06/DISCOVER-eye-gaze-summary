@@ -133,11 +133,11 @@ The steps live in both `pipeline/` and `app/src/processLog.ts`. If you change on
 
 ### Swim lane views
 
-Tab 2 offers three views. **Standard** keeps the five clinical lanes and team coverage. **Simplified** and **Advanced** share the same summary chart, learner picker, object search and summary download. Simplified condenses similar object variants; Advanced preserves each filtered original object name. Uploading a gaze log automatically generates both summaries.
+Tab 2 offers three views. **Simplified** keeps the five clinical lanes and team coverage. **Standard** and **Advanced** share the same summary chart, learner picker, object search and summary download. Standard condenses similar object variants; Advanced preserves each filtered original object name. Uploading a gaze log automatically generates both summaries.
 
-**Simplified** automatically generates a condensed gaze summary from the raw gaze log uploaded in tab 1. No separate JSON upload is required. The browser implementation mirrors the filtering, dynamic object condensing, per-second dominant-object selection, minute-resolution fallback and session gap handling in `summarize_gaze.py`. `npm run check:summary` compares the complete output with the Python-generated reference. The summary is regenerated when a saved upload is restored; Download summary JSON exports it in the script's format. The built-in recording uses its pre-generated summary.
+**Standard** automatically generates a condensed gaze summary from the raw gaze log uploaded in tab 1. No separate JSON upload is required. The browser implementation mirrors the filtering, dynamic object condensing, per-second dominant-object selection, minute-resolution fallback and session gap handling in `summarize_gaze.py`. `npm run check:summary` compares the complete output with the Python-generated reference. The summary is regenerated when a saved upload is restored; Download summary JSON exports it in the script's format. The built-in recording uses its pre-generated summary.
 
-Summary files cover the full recording with session pauses omitted, so Simplified and Advanced use summary elapsed time and do not follow the Team run picker. Standard uses the selected run and its clock times. Adjacent seconds with the same object form a chart segment; null seconds and gaps break segments. User 0 is excluded from the display and download. The threshold filters summary segment duration in both summary views, rather than raw measured dwell.
+Summary files cover the full recording with session pauses omitted, so Standard and Advanced use summary elapsed time and do not follow the Team run picker. Simplified uses the selected run and its clock times. Adjacent seconds with the same object form a chart segment; null seconds and gaps break segments. User 0 is excluded from the display and download. The threshold filters summary segment duration in both summary views, rather than raw measured dwell.
 
 ### Mock data
 
