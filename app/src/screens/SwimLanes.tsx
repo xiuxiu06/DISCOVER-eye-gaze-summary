@@ -17,14 +17,18 @@ export function SwimLanes({ dataset, run, touchpoints }: ScreenProps) {
         'Stretch: overlay mode',
       ]}
     >
-      <ul className="lane-key">
+      <ul className="flex flex-wrap gap-2">
         {lanes.map((lane) => (
-          <li key={lane.id} style={{ background: lane.band, borderLeftColor: lane.color }}>
+          <li
+            key={lane.id}
+            className="border-l-[6px] px-2.5 py-0.5"
+            style={{ background: lane.band, borderLeftColor: lane.color }}
+          >
             {lane.label}
           </li>
         ))}
       </ul>
-      <p>
+      <p data-testid="touchpoint-counts" className="mt-3 tabular-nums">
         Touchpoints:{' '}
         {run.userIds.map((id) => `Learner ${id}: ${counts.get(id) ?? 0}`).join(' · ')}
       </p>
