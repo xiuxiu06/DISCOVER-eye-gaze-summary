@@ -24,6 +24,14 @@ async function fetchJson<T>(folder: Folder, name: string): Promise<T> {
   }
 }
 
+async function loadBuiltInSummary(folder: Folder, meta: Meta, name: string) {
+  if (folder !== 'data' || !meta.source.startsWith('eye_gaze_tracking_050505092026.csv')) return undefined
+  try {
+    const response = await fetch(import.meta.env.BASE_URL + name + '.json')
+    return response.ok ? parseSummary(await response.json()) : undefined
+  } catch { return undefined }
+}
+
 async function loadFolder(folder: Folder, meta: Meta): Promise<Dataset> {
   const [funnel, sessions, runs, visits, objectVisits, idle, rawSample] = await Promise.all([
     fetchJson<FunnelStep[]>(folder, 'funnel'),
@@ -36,12 +44,8 @@ async function loadFolder(folder: Folder, meta: Meta): Promise<Dataset> {
   ])
   return {
     origin: folder === 'data' ? 'real' : 'mock',
-    summary: folder === 'data' && meta.source.startsWith('eye_gaze_tracking_050505092026.csv')
-      ? await fetch(import.meta.env.BASE_URL + 'gaze-summary.json').then(async (response) => {
-          if (!response.ok) return undefined
-          return parseSummary(await response.json())
-        }).catch(() => undefined)
-      : undefined,
+    summary: await loadBuiltInSummary(folder, meta, 'gaze-summary'),
+    advancedSummary: await loadBuiltInSummary(folder, meta, 'gaze-summary-advanced'),
     meta,
     funnel,
     sessions,

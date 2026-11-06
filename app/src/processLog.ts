@@ -511,6 +511,7 @@ export function processLog(
     dataset: {
       origin: 'uploaded',
       summary: createSummary(raw),
+      advancedSummary: createSummary(raw, false),
       meta: {
         generatedAt: new Date().toISOString(),
         source: `${fileName}. ${LANE_MAP_NOTE}`,

@@ -1,5 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
-import laneMapCsv from '../../data/lane_map.csv?raw'
+import { useEffect, useMemo, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import {
   Select,
@@ -18,16 +17,13 @@ import {
 import { loadDataset } from './data'
 import { exportChartPng } from './lib/exportPng'
 import { pickDefaultRun, teamRuns, touchpoints } from './metrics'
-import { fileKind, processLog, type UploadResult } from './processLog'
 import { ReportCard } from './screens/ReportCard'
 import { SwimLanes } from './screens/SwimLanes'
-import type { FileControls, HeldFile, ScreenProps } from './screens/types'
+import type { FileControls, ScreenProps } from './screens/types'
 import { UploadClean } from './screens/UploadClean'
 import { formatClockSpan, formatDay, formatLearners, isoToEpoch } from './time'
 import type { Dataset } from './types'
-import { readUpload, saveUpload } from './uploadStorage'
-
-const MAX_FILE_BYTES = 50 * 1024 * 1024
+import { useUploadSession } from './useUploadSession'
 
 /** Tabs in demo order. */
 const TABS = [
@@ -45,21 +41,9 @@ function controlUsesArrows(target: EventTarget | null): boolean {
   return (
     target instanceof HTMLInputElement ||
     target instanceof HTMLTextAreaElement ||
+    target instanceof HTMLSelectElement ||
     target.closest('[role="listbox"], [aria-expanded="true"]') !== null
   )
-}
-
-interface HeldText extends HeldFile {
-  text: string
-}
-
-function uploadNote(result: UploadResult): string | undefined {
-  const parts: string[] = []
-  if (result.skippedRows > 0) parts.push(`Skipped unreadable rows: ${result.skippedRows}.`)
-  if (result.unmappedObjects.length > 0) {
-    parts.push(`Objects not in the lane map, counted as background: ${result.unmappedObjects.length}.`)
-  }
-  return parts.length > 0 ? parts.join(' ') : undefined
 }
 
 export default function App() {
@@ -417,7 +401,7 @@ function Shell({ dataset, files }: { dataset: Dataset; files: FileControls }) {
                 </output>
               </div>
 
-              {tab !== 0 && (
+              {tab === LANES_TAB && (
                 <Button
                   variant="outline"
                   size="lg"

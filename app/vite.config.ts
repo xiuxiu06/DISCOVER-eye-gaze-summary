@@ -222,7 +222,8 @@ export default defineConfig({
   base: './',
   plugins: [react(), tailwindcss(), claudeApiPlugin()],
   // The upload feature bundles the lane map, which lives outside app/.
-  server: { fs: { allow: ['.', '../data/lane_map.csv'] } },
+  server: { fs: { allow: ['.', '../data/lane_map.csv'] }, proxy: { '/api': 'http://127.0.0.1:8000' } },
+  preview: { proxy: { '/api': 'http://127.0.0.1:8000' } },
   resolve: {
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
   },

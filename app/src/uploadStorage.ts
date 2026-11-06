@@ -1,3 +1,6 @@
+import type { Matching } from './api'
+import type { ClaudeReport } from './reportTypes'
+
 export interface SavedUpload {
   gaze?: { name: string; size: number; text: string }
   laneMap?: { name: string; size: number; text: string; source?: 'upload' | 'claude' }

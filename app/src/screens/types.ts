@@ -1,4 +1,6 @@
 import type { Dataset, Run, Visit } from '../types'
+import type { Analysis, Matching } from '../api'
+import type { ClaudeReport } from '../reportTypes'
 
 /** An uploaded or Claude-generated file the app is holding. */
 export interface HeldFile {
@@ -22,6 +24,17 @@ export interface FileControls {
   downloadLaneMap: () => void
   removeGaze: () => void
   removeLaneMap: () => void
+  ideal: HeldFile | undefined
+  addIdeal: (file: File) => void
+  removeIdeal: () => void
+  reprocess: () => void
+  analysis: Analysis | undefined
+  matching: Matching
+  setMatch: (learner: string, ideal: string | null) => void
+  report: ClaudeReport | undefined
+  generating: boolean
+  reportError: string | undefined
+  generateReport: () => void
 }
 
 /** What every screen receives from the app shell. */
