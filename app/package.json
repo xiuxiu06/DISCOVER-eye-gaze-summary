@@ -12,6 +12,7 @@
     "preview": "vite preview",
     "check:summary": "node scripts/check-summary.mjs",
     "test:e2e": "playwright test"
+    "check:claude-lanes": "node scripts/check-claude-lanes.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
