@@ -1,0 +1,177 @@
+[
+ {
+  "user_id": 1,
+  "session_id": 0,
+  "object_id": "MockMonitorBar",
+  "gaze_time": 0.205,
+  "time_stamp": "2026-05-06 13:04:00"
+ },
+ {
+  "user_id": 2,
+  "session_id": 0,
+  "object_id": "MockMonitorBar",
+  "gaze_time": 0.297,
+  "time_stamp": "2026-05-06 13:04:01"
+ },
+ {
+  "user_id": 3,
+  "session_id": 0,
+  "object_id": "MockO2Device",
+  "gaze_time": 0.045,
+  "time_stamp": "2026-05-06 13:04:02"
+ },
+ {
+  "user_id": 4,
+  "session_id": 0,
+  "object_id": "MockO2Device",
+  "gaze_time": 0.028,
+  "time_stamp": "2026-05-06 13:04:03"
+ },
+ {
+  "user_id": 1,
+  "session_id": 0,
+  "object_id": "MockPatientChest",
+  "gaze_time": 0.307,
+  "time_stamp": "2026-05-06 13:04:04"
+ },
+ {
+  "user_id": 2,
+  "session_id": 0,
+  "object_id": "MockPatientHead",
+  "gaze_time": 0.033,
+  "time_stamp": "2026-05-06 13:04:05"
+ },
+ {
+  "user_id": 3,
+  "session_id": 0,
+  "object_id": "MockPatientChest",
+  "gaze_time": 0.152,
+  "time_stamp": "2026-05-06 13:04:05"
+ },
+ {
+  "user_id": 4,
+  "session_id": 0,
+  "object_id": "MockBagMask",
+  "gaze_time": 0.042,
+  "time_stamp": "2026-05-06 13:04:06"
+ },
+ {
+  "user_id": 1,
+  "session_id": 0,
+  "object_id": "MockCodeSheetB",
+  "gaze_time": 0.338,
+  "time_stamp": "2026-05-06 13:04:07"
+ },
+ {
+  "user_id": 2,
+  "session_id": 0,
+  "object_id": "MockCodeSheetA",
+  "gaze_time": 0.278,
+  "time_stamp": "2026-05-06 13:04:07"
+ },
+ {
+  "user_id": 3,
+  "session_id": 0,
+  "object_id": "MockHeadFollower",
+  "gaze_time": 0.164,
+  "time_stamp": "2026-05-06 13:04:07"
+ },
+ {
+  "user_id": 4,
+  "session_id": 0,
+  "object_id": "MockO2Device",
+  "gaze_time": 0.073,
+  "time_stamp": "2026-05-06 13:04:08"
+ },
+ {
+  "user_id": 1,
+  "session_id": 0,
+  "object_id": "MockHeadFollower",
+  "gaze_time": 0.125,
+  "time_stamp": "2026-05-06 13:04:08"
+ },
+ {
+  "user_id": 2,
+  "session_id": 0,
+  "object_id": "MockMonitorBar",
+  "gaze_time": 0.207,
+  "time_stamp": "2026-05-06 13:04:09"
+ },
+ {
+  "user_id": 3,
+  "session_id": 0,
+  "object_id": "MockCodeSheetB",
+  "gaze_time": 0.398,
+  "time_stamp": "2026-05-06 13:04:10"
+ },
+ {
+  "user_id": 4,
+  "session_id": 0,
+  "object_id": "MockPatientHead",
+  "gaze_time": 0.169,
+  "time_stamp": "2026-05-06 13:04:11"
+ },
+ {
+  "user_id": 1,
+  "session_id": 0,
+  "object_id": "MockSpO2",
+  "gaze_time": 0.387,
+  "time_stamp": "2026-05-06 13:04:12"
+ },
+ {
+  "user_id": 2,
+  "session_id": 0,
+  "object_id": "MockO2Device",
+  "gaze_time": 0.101,
+  "time_stamp": "2026-05-06 13:04:12"
+ },
+ {
+  "user_id": 3,
+  "session_id": 0,
+  "object_id": "MockPatientHead",
+  "gaze_time": 0.268,
+  "time_stamp": "2026-05-06 13:04:12"
+ },
+ {
+  "user_id": 4,
+  "session_id": 0,
+  "object_id": "MockBagMask",
+  "gaze_time": 0.225,
+  "time_stamp": "2026-05-06 13:04:13"
+ },
+ {
+  "user_id": 1,
+  "session_id": 0,
+  "object_id": "MockStethoscope",
+  "gaze_time": 0.285,
+  "time_stamp": "2026-05-06 13:04:14"
+ },
+ {
+  "user_id": 2,
+  "session_id": 0,
+  "object_id": "MockBagMask",
+  "gaze_time": 0.228,
+  "time_stamp": "2026-05-06 13:04:15"
+ },
+ {
+  "user_id": 3,
+  "session_id": 0,
+  "object_id": "MockPatientChest",
+  "gaze_time": 0.225,
+  "time_stamp": "2026-05-06 13:04:15"
+ },
+ {
+  "user_id": 4,
+  "session_id": 0,
+  "object_id": "MockMonitorScreen",
+  "gaze_time": 0.312,
+  "time_stamp": "2026-05-06 13:04:15"
+ },
+ {
+  "user_id": 1,
+  "session_id": 0,
+  "object_id": "MockMonitorBar",
+  "gaze_time": 0.231,
+  "time_stamp": "2026-05-06 13:04:16"
+ }
+]

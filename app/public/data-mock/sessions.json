@@ -1,0 +1,114 @@
+[
+ {
+  "id": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "start": "2026-05-06T13:04:08",
+  "end": "2026-05-06T13:51:35",
+  "durationMin": 47.45,
+  "rawRows": 3984,
+  "idleSeconds": 161.939,
+  "activeSeconds": 2685.061,
+  "inferredHints": [
+   "MockCodeSheetA seen"
+  ]
+ },
+ {
+  "id": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "start": "2026-05-06T13:04:52",
+  "end": "2026-05-06T13:54:02",
+  "durationMin": 49.167,
+  "rawRows": 3727,
+  "idleSeconds": 62.952,
+  "activeSeconds": 2887.048,
+  "inferredHints": [
+   "MockCodeSheetA seen"
+  ]
+ },
+ {
+  "id": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "start": "2026-05-06T13:04:06",
+  "end": "2026-05-06T13:51:20",
+  "durationMin": 47.233,
+  "rawRows": 7309,
+  "idleSeconds": 111.224,
+  "activeSeconds": 2722.776,
+  "inferredHints": [
+   "MockCodeSheetA seen"
+  ]
+ },
+ {
+  "id": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "start": "2026-05-06T13:04:28",
+  "end": "2026-05-06T13:52:49",
+  "durationMin": 48.35,
+  "rawRows": 3201,
+  "idleSeconds": 149.054,
+  "activeSeconds": 2751.946,
+  "inferredHints": [
+   "MockCodeSheetA seen"
+  ]
+ },
+ {
+  "id": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "start": "2026-05-08T13:21:42",
+  "end": "2026-05-08T14:08:56",
+  "durationMin": 47.233,
+  "rawRows": 5500,
+  "idleSeconds": 56.192,
+  "activeSeconds": 2777.808,
+  "inferredHints": [
+   "MockCodeSheetA seen"
+  ]
+ },
+ {
+  "id": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "start": "2026-05-08T13:21:46",
+  "end": "2026-05-08T14:09:06",
+  "durationMin": 47.333,
+  "rawRows": 4484,
+  "idleSeconds": 56.824,
+  "activeSeconds": 2783.176,
+  "inferredHints": [
+   "MockCodeSheetA seen"
+  ]
+ },
+ {
+  "id": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "start": "2026-05-08T13:21:04",
+  "end": "2026-05-08T14:10:56",
+  "durationMin": 49.867,
+  "rawRows": 5015,
+  "idleSeconds": 108.504,
+  "activeSeconds": 2883.496,
+  "inferredHints": [
+   "MockCodeSheetA seen"
+  ]
+ },
+ {
+  "id": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "start": "2026-05-08T13:21:36",
+  "end": "2026-05-08T14:09:25",
+  "durationMin": 47.817,
+  "rawRows": 5335,
+  "idleSeconds": 164.663,
+  "activeSeconds": 2704.337,
+  "inferredHints": [
+   "MockCodeSheetA seen"
+  ]
+ }
+]

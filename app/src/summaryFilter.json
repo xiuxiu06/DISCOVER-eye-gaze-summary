@@ -1,0 +1,102 @@
+{
+  "objects": [
+    "AutoHandPlayer",
+    "HeadFollower",
+    "RobotHandR",
+    "RobotHandL",
+    "Thumb",
+    "Thumb1",
+    "Thumb2",
+    "Index",
+    "Index1",
+    "Index2",
+    "Middle",
+    "Middle1",
+    "Middle2",
+    "Ring",
+    "Ring1",
+    "Ring2",
+    "Pinky",
+    "Pinky1",
+    "Pinky2",
+    "Floor",
+    "Bckground",
+    "LoadingScreen",
+    "RoomCollider",
+    "RoomCollider1",
+    "RoomCollider2",
+    "RoomCollider3",
+    "RoomCollider4",
+    "RoomCollider5",
+    "RoomCollider6",
+    "Room_cube_wall",
+    "Room_frame",
+    "PassthroughDoor",
+    "Hinge",
+    "Knob",
+    "PushPull",
+    "glass_panel",
+    "curved_counter",
+    "Sink",
+    "Light",
+    "LightBulb1",
+    "LightBulb2",
+    "LightBulb3",
+    "LightBulb6",
+    "LightBulb7",
+    "boomLight",
+    "Collider",
+    "ColliderCube1",
+    "ColliderCube2",
+    "Cube100",
+    "Cube_2",
+    "SpatialPanelManipulator",
+    "chestRubBlocker",
+    "FakeTube",
+    "LeftArmIK",
+    "RightArmIK",
+    "LeftLegIK",
+    "RightLegIK",
+    "TeenLeftFootIK",
+    "TeenLeftHandIK",
+    "TeenRightFootIK",
+    "TeenRIghtHandIK",
+    "LeftArmGrabWrist",
+    "LeftLegGrabAnkle",
+    "RightArmGrab",
+    "RightArmGrabWrist",
+    "RightLegGrabAnkle",
+    "TriggerChestL",
+    "TriggerChestR"
+  ],
+  "patterns": [
+    {
+      "source": "^RoomCollider\\d*$",
+      "flags": "i"
+    },
+    {
+      "source": "^ColliderCube\\d*$",
+      "flags": "i"
+    },
+    {
+      "source": "^Cube_?\\d+$",
+      "flags": "i"
+    },
+    {
+      "source": "^LightBulb\\d*$",
+      "flags": "i"
+    },
+    {
+      "source": "^RobotHand[LR]?$",
+      "flags": "i"
+    },
+    {
+      "source": "^(Thumb|Index|Middle|Ring|Pinky)\\d*$",
+      "flags": "i"
+    },
+    {
+      "source": ".+IK$",
+      "flags": ""
+    }
+  ]
+}

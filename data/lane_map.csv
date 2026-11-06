@@ -1,0 +1,160 @@
+object_id,lane,include,confidence,events,dwell_s_excl_idle,learners
+AirwayBundle1,Equipment & interventions,True,draft,86,18.75,4
+AirwayBundle2,Equipment & interventions,True,draft,22,3.689,4
+AutoHandPlayer,Self,False,draft,44124,7350.744,4
+BagPos_A,Equipment & interventions,True,draft,39,9.982,4
+BagPos_B,Equipment & interventions,True,draft,33,3.549,4
+BagPos_C,Equipment & interventions,True,draft,27,2.592,4
+Bckground,System,False,draft,374,42.145,4
+BipapNeoNate,Equipment & interventions,True,draft,43,1.874,3
+BipapTeenageAvatar,Equipment & interventions,True,draft,7,0.206,2
+Bipap_Snap,Equipment & interventions,True,draft,55,2.9,3
+BloodDraw,Patient assessment,True,draft,58,13.847,4
+BloodDrawSnap,Equipment & interventions,True,draft,20,0.58,4
+BlueTop,Equipment & interventions,True,draft,2,0.04,1
+CaprefillChest,Patient assessment,True,draft,12,0.24,2
+CaprefillLeftFoot,Patient assessment,True,draft,22,1.44,4
+CaprefillLeftHand,Patient assessment,True,draft,15,0.36,3
+CaprefillRightFoot,Patient assessment,True,draft,2,0.06,2
+CaprefillRightHand,Patient assessment,True,draft,13,0.4,3
+CapsulePulseHaptics,Patient assessment,True,draft,159,7.212,4
+ChestSoundsHeart,Patient assessment,True,draft,51,9.8,4
+ChestSoundsLung,Patient assessment,True,draft,103,9.46,4
+ChestSoundsLung1,Patient assessment,True,draft,97,8.359,4
+ChestSoundsLung2,Patient assessment,True,draft,13,0.34,3
+CodeSheet37kg,Reference,True,draft,12,1.312,4
+CodeSheet46kg,Reference,True,draft,52,13.719,4
+CodeSheet5kg,Reference,True,draft,24,2.251,3
+CodeSheet8kg,Reference,True,draft,8,0.272,3
+Collider,Environment,False,draft,101,36.568,4
+ColliderCube1,Environment,False,draft,1,0.04,1
+ColliderCube2,Environment,False,draft,1,0.08,1
+Cube100,Environment,False,draft,765,260.928,4
+Cube_2,Environment,False,draft,2,0.27,2
+Epinephrine_100_,Equipment & interventions,True,draft,2,0.11,1
+FakeTube,Environment,False,draft,4,0.193,1
+Floor,Environment,False,draft,5387,508.929,4
+GroinHaptics1,Patient assessment,True,draft,3,0.08,2
+GroinHaptics11,Patient assessment,True,draft,15,0.4,3
+GroinHaptics2,Patient assessment,True,draft,2,0.16,1
+GroinHaptics21,Patient assessment,True,draft,1,0.02,1
+HFNC_Screen,Vital sign monitor,True,draft,39,17.959,3
+HeadFollower,Communication,True,verify,4314,1568.407,4
+Hinge,Environment,False,draft,243,72.202,4
+IVLine,Equipment & interventions,True,draft,11,0.62,1
+IV_Bag,Equipment & interventions,True,draft,433,146.876,4
+IV_Bag_Small,Equipment & interventions,True,draft,54,7.666,4
+Index,Self,False,draft,18,1.0,4
+Index1,Self,False,draft,25,1.146,4
+Index2,Self,False,draft,11,1.18,3
+Kidney,Patient assessment,True,draft,6,0.16,2
+Knob,Environment,False,draft,4,0.118,3
+LeftArmGrabWrist,Patient assessment,True,verify,6,0.18,2
+LeftArmIK,Patient assessment,True,verify,2,0.08,1
+LeftEye,Patient assessment,True,draft,1,0.02,1
+LeftLegGrabAnkle,Patient assessment,True,verify,3,0.06,2
+LeftLegIK,Patient assessment,True,verify,3,0.08,2
+Light,Environment,False,draft,17,0.551,4
+LightBulb1,Environment,False,draft,3,0.056,2
+LightBulb2,Environment,False,draft,5,0.56,1
+LightBulb3,Environment,False,draft,5,0.22,2
+LightBulb6,Environment,False,draft,3,0.111,2
+LightBulb7,Environment,False,draft,2,0.08,2
+Liver,Patient assessment,True,draft,101,6.94,4
+LoadingScreen,System,False,draft,29,3.22,3
+MedLineSnap,Equipment & interventions,True,draft,58,2.38,3
+Middle,Self,False,draft,51,16.095,4
+Middle1,Self,False,draft,4,0.18,2
+Middle2,Self,False,draft,2,0.06,2
+MonitorBar,Vital sign monitor,True,draft,291,14.974,4
+NasalCanula_Snap,Equipment & interventions,True,draft,139,8.5,4
+Nasal_Canula_Adolescent,Equipment & interventions,True,draft,222,10.638,4
+Nasal_Canula_AdolescentHiFlow,Equipment & interventions,True,draft,19,1.623,3
+Nasal_Canula_Neonate,Equipment & interventions,True,draft,42,2.199,3
+Nasal_Canula_NeonateHiFlow,Equipment & interventions,True,draft,77,6.957,4
+NewBag_000_Large,Equipment & interventions,True,draft,1,0.016,1
+PassthroughDoor,Environment,False,draft,383,63.177,4
+PenLight,Patient assessment,True,draft,14,0.37,4
+Pinky,Self,False,draft,5,0.1,2
+Pinky1,Self,False,draft,6,0.311,2
+Pinky2,Self,False,draft,6,0.238,4
+PulseHaptic,Patient assessment,True,draft,10,0.34,3
+PulseHaptic1,Patient assessment,True,draft,10,0.468,2
+PulseHaptics,Patient assessment,True,draft,68,4.039,4
+PulseHaptics1,Patient assessment,True,draft,64,2.441,4
+PushPull,Environment,False,draft,32,1.521,3
+RR,Vital sign monitor,True,draft,454,93.15,4
+RebreatherMask_Adolescent,Equipment & interventions,True,draft,8,0.287,2
+Rebreather_Snap,Equipment & interventions,True,draft,32,0.96,3
+RightArmGrab,Patient assessment,True,verify,1,0.02,1
+RightArmGrabWrist,Patient assessment,True,verify,13,0.62,2
+RightArmIK,Patient assessment,True,verify,4,0.1,2
+RightEye,Patient assessment,True,draft,10,0.36,3
+RightLegGrabAnkle,Patient assessment,True,verify,1,0.02,1
+RightLegIK,Patient assessment,True,verify,3,0.24,2
+Ring,Self,False,draft,8,0.62,4
+Ring1,Self,False,draft,5,0.22,2
+Ring2,Self,False,draft,7,0.206,2
+RobotHandL,Self,False,verify,1398,249.83,4
+RobotHandR,Self,False,verify,3053,589.117,4
+RoomCollider,Environment,False,draft,6438,1106.477,4
+RoomCollider1,Environment,False,draft,305,30.455,4
+RoomCollider2,Environment,False,draft,22206,6297.032,4
+RoomCollider3,Environment,False,draft,1790,508.813,4
+RoomCollider4,Environment,False,draft,5885,2261.732,4
+RoomCollider5,Environment,False,draft,1615,559.318,4
+RoomCollider6,Environment,False,draft,1037,661.091,4
+Room_cube_wall,Environment,False,draft,611,137.533,4
+Room_frame,Environment,False,draft,131,72.089,4
+SPO2,Vital sign monitor,True,draft,280,61.683,4
+Screen,Vital sign monitor,True,verify,17,0.88,2
+Sink,Environment,False,draft,201,100.033,4
+SpatialPanelManipulator,System,False,draft,53,4.757,4
+Stethoscope,Patient assessment,True,draft,25,0.98,4
+Stryker_bed_back_hook_parent,Bed,False,draft,30,1.62,4
+Stryker_bed_brake_lever,Bed,False,draft,3,0.2,2
+Stryker_bed_emergency_lever,Bed,False,draft,93,5.9,4
+Stryker_bed_front_hook_parent,Bed,False,draft,53,2.86,3
+Stryker_bed_handle_hook_parent,Bed,False,draft,39,1.6,4
+Stryker_bed_hook_parent,Bed,False,draft,85,3.24,4
+Stryker_bed_lever_pedel,Bed,False,draft,3,0.14,2
+Stryker_bed_lever_pedelRight,Bed,False,draft,2,0.06,2
+Stryker_bed_lever_pedel_parent,Bed,False,draft,1,0.02,1
+Stryker_bed_rails_back_left_parent,Bed,False,draft,3,0.06,2
+Stryker_bed_rails_back_right_parent,Bed,False,draft,11,1.1,3
+Stryker_bed_rails_front_right_parent,Bed,False,draft,133,4.28,3
+Stryker_bed_raise_foot_lever,Bed,False,draft,6,0.26,2
+Stryker_bed_raise_head_lever,Bed,False,draft,54,2.38,3
+Styker_bed_lever_pedelLeft,Bed,False,draft,1,0.18,1
+T3_monitor_screen_S1PennyScreen,Vital sign monitor,True,draft,6,2.14,1
+T3_monitor_screen_S2HarrietScreen,Vital sign monitor,True,draft,23,3.86,4
+T3_monitor_screen_S4CarterScreen,Vital sign monitor,True,draft,5,2.52,3
+TeenLeftFootIK,Patient assessment,True,verify,19,0.86,4
+TeenLeftHandIK,Patient assessment,True,verify,89,3.36,4
+TeenRIghtHandIK,Patient assessment,True,verify,18,2.52,3
+TeenRightFootIK,Patient assessment,True,verify,25,1.663,4
+ThermometerSnap,Equipment & interventions,True,verify,30,1.44,3
+ThermometerSnap1,Equipment & interventions,True,verify,13,0.96,4
+ThermometerSnap2,Equipment & interventions,True,verify,71,74.12,4
+Thumb,Self,False,draft,6,0.236,3
+Thumb1,Self,False,draft,14,1.14,3
+Thumb2,Self,False,draft,11,0.361,4
+TriggerChestL,Patient assessment,True,verify,24,1.852,4
+TriggerChestR,Patient assessment,True,verify,15,0.528,4
+boomLight,Environment,False,draft,60,6.735,3
+chestRub,Patient assessment,True,draft,87,4.8,4
+chestRubBlocker,Patient assessment,True,verify,3,0.08,3
+curved_counter,Environment,False,draft,196,25.929,4
+eCPR1,Equipment & interventions,True,draft,28,1.948,3
+eCPR2,Equipment & interventions,True,draft,92,49.801,4
+ekg,Vital sign monitor,True,draft,195,39.07,4
+glass_panel,Environment,False,draft,183,51.354,4
+iStat,Patient assessment,True,draft,140,16.242,4
+linetBed_grayPlastic4_leftLowerHeadrailArm,Bed,False,draft,18,1.019,3
+linetBed_grayPlastic4_leftLowerSiderailArm,Bed,False,draft,13,0.398,3
+linetBed_grayPlastic4_rightLowerHeadArm,Bed,False,draft,27,0.919,3
+linetBed_grayPlastic4_rightLowerSideArm,Bed,False,draft,14,0.559,3
+pulse,Patient assessment,True,draft,2,0.08,1
+rebreather_mask_Neonate,Equipment & interventions,True,draft,7,0.208,3
+thermometer_body,Patient assessment,True,draft,436,34.994,4
+thermometer_needle,Patient assessment,True,draft,44,5.115,4
