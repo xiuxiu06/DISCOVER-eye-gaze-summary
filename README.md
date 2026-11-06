@@ -89,10 +89,10 @@ The log covers 2026-05-05 (user 1 only, about 9 minutes), then 2026-05-06 and 20
 | Item | State |
 |---|---|
 | Build spec | Done, kept outside this repo |
-| Gaze log | In `data/raw/`, not committed yet |
+| Gaze log | Not in the repo yet. Goes in `data/raw/` |
 | Lane map (`data/lane_map.csv`) | **Missing: this blocks the pipeline** |
 | Pipeline and tests | Not started |
-| App | Not started |
+| App | Base built on mock data: header, tabs, data loading and placeholder screens |
 
 ### Milestones
 
@@ -109,22 +109,37 @@ Commit after each one. If time runs short, cut from the bottom of this list, but
 
 ## Getting started
 
-These commands will work once the pipeline and app exist. You'll need Python 3.11+ and Node.
+You'll need Node to run the app, and Python 3.11+ for the pipeline once it exists.
 
 ```bash
-# Pipeline: writes app/public/data/*.json and prints the funnel numbers
-python -m pipeline.run
-
-# Tests
-pytest -q
-
-# App
+# App: works today
 cd app
 npm install
 npm run dev
+
+# Pipeline and tests: not built yet
+python -m pipeline.run   # writes app/public/data/*.json and prints the funnel numbers
+pytest -q
 ```
 
-### Planned layout
+### Mock data
+
+Until the pipeline has run, the app loads synthetic data from `app/public/data-mock/` and shows a red "MOCK DATA" banner. Once `app/public/data/meta.json` exists, the app uses real data and the banner disappears. If any other real file is missing, the app shows an error instead of falling back to mock data.
+
+Mock data is for development only, so never use it in the demo. To regenerate it, run `npm run mock` in `app/`.
+
+### For whoever builds the pipeline
+
+The app expects the formats in [`app/src/types.ts`](app/src/types.ts), including these details:
+
+- **`meta.json`** has an `objects` lookup of `object_id` to `{ lane, verify }`, which drives the "?" in tooltips.
+- **`raw_sample.json`** uses the same columns as the CSV.
+- **Times** treat the log's clock as UTC: epoch seconds use that, and ISO strings have no offset or end in `Z`. This shows times as logged in any browser timezone.
+- **`meta.params`** uses the names from `pipeline/config.py`, such as `DEFAULT_MIN_VISIT_S`.
+
+### Layout
+
+`pipeline/`, `tests/` and `data/lane_map.csv` are planned and don't exist yet.
 
 ```
 data/
@@ -135,7 +150,13 @@ pipeline/               # Python: config, load, clean, sessions, visits, export,
 tests/                  # unit tests and expected-number checks
 app/
   public/data/*.json    # written by the pipeline
-  src/                  # React + TypeScript + D3
+  public/data-mock/     # synthetic data for development
+  scripts/              # mock data generator
+  src/
+    App.tsx             # header, tabs, arrow keys
+    data.ts  types.ts   # loading and JSON formats
+    metrics.ts  time.ts # calculations and time formatting
+    screens/            # one file per screen
 ```
 
 ## Open questions for the DISCOVER dev team
