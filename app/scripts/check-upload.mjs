@@ -52,7 +52,6 @@ try {
     ['visits', dataset.visits],
     ['object_visits', dataset.objectVisits],
     ['idle', dataset.idle],
-    ['raw_sample', dataset.rawSample],
   ]
   for (const [name, browser] of pairs) {
     const found = []
@@ -61,6 +60,17 @@ try {
     found.slice(0, 5).forEach((line) => console.log(`  ${line}`))
     if (found.length > 0) failed = true
   }
+  // Upload preview shows the start of the uploaded file; Python exports the hero run sample.
+  const changed = processLog(
+    'user_id,session_id,object_id,gaze_time,time_stamp\n7,0,RR,1,2026-06-01 10:00:00\n7,0,RR,2,2026-06-01 10:04:00\n7,0,RR,3,2026-06-01 10:08:00',
+    text('../data/lane_map.csv'), meta, 'different-upload.csv',
+  ).dataset
+  if (changed.origin !== 'uploaded' || changed.funnel[0].rows !== 3 ||
+      changed.runs[0].userIds.join() !== '7' || changed.rawSample[0].user_id !== 7 ||
+      changed.visits.some((visit) => visit.userId !== 7)) {
+    throw new Error('Uploaded file did not replace the dataset')
+  }
+  console.log('different upload: source, preview, runs and visits use the uploaded rows')
   const found = []
   differences(meta.objects, dataset.meta.objects, 'meta.objects', found)
   console.log(`meta.objects: ${Object.keys(dataset.meta.objects).length} items, ${found.length} differences`)

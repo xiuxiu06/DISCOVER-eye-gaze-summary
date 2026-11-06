@@ -11,8 +11,8 @@ import {
   sourceName,
   verifyCount,
 } from '../components/Page'
-import { COMMUNICATION_LANE, includedLanes } from '../metrics'
-import { formatFileSize, formatHours } from '../time'
+import { includedLanes } from '../metrics'
+import { formatFileSize } from '../time'
 import type { FileControls, ScreenProps } from './types'
 
 const number = new Intl.NumberFormat('en-US')
@@ -33,15 +33,7 @@ const BACKGROUND_LABELS: Record<string, string> = {
   Unmapped: 'Not in the lane map',
 }
 
-const OPEN_QUESTIONS = [
-  "Is HeadFollower another participant's head? Is RobotHand* the learner's own hand or another player's?",
-  'What is ThermometerSnap2? It is the most-looked-at equipment object, and two long idle looks also landed on it.',
-  'Can session_id and a scenario ID be logged per run?',
-  'Does the headset support true eye tracking, or only the head-forward ray?',
-  'Can gaze timestamps be logged with milliseconds and a look start time?',
-]
-
-export function UploadClean({ dataset, run, touchpoints, minVisitS, files, openLanes }: ScreenProps) {
+export function UploadClean({ dataset, minVisitS, files }: ScreenProps) {
   const { funnel, rawSample, meta, visits, sessions } = dataset
   const raw = funnel[0]
   const afterTestUser = funnel[1]
@@ -55,10 +47,6 @@ export function UploadClean({ dataset, run, touchpoints, minVisitS, files, openL
     () => visits.filter((visit) => visit.dwell >= minVisitS).length,
     [visits, minVisitS],
   )
-  const runRawRows = sessions
-    .filter((session) => session.runId === run.id)
-    .reduce((sum, session) => sum + session.rawRows, 0)
-  const clinical = touchpoints.filter((visit) => visit.lane !== COMMUNICATION_LANE).length
   const lanes = includedLanes(meta)
 
   const objectsPerLane = new Map<string, number>()
@@ -111,107 +99,48 @@ export function UploadClean({ dataset, run, touchpoints, minVisitS, files, openL
         />
       </div>
 
-      <div className="flex flex-wrap items-start gap-6">
-        <Panel className="flex-[1_1_520px]">
-          <div className="flex flex-col gap-1">
-            <PanelTitle>Raw export</PanelTitle>
-            <span className="text-[13px] text-muted-foreground">
-              The first rows of the {firstRow ? firstRow.time_stamp.slice(0, 16) : ''} team run.
-              Highlighted rows are idle headset periods; most looks last a fraction of a second.
-            </span>
-          </div>
-          <div className="overflow-x-auto rounded-lg border border-[#EEF0F3]">
-            <table className="w-full border-collapse font-mono text-xs tabular-nums">
-              <thead>
-                <tr className="[&>th]:border-b [&>th]:px-2.5 [&>th]:py-2 [&>th]:text-left [&>th]:font-semibold [&>th]:text-muted-foreground">
-                  <th>user_id</th>
-                  <th>session_id</th>
-                  <th>object_id</th>
-                  <th className="text-right!">gaze_time</th>
-                  <th>time_stamp</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rawSample.map((row, index) => (
-                  <tr
-                    key={index}
-                    data-testid="raw-row"
-                    className={`[&>td]:border-b [&>td]:border-[#EEF0F3] [&>td]:px-2.5 [&>td]:py-1.5 ${
-                      row.gaze_time > meta.params.IDLE_MAX_S ? 'bg-[#FDECEC]' : ''
-                    }`}
-                  >
-                    <td>{row.user_id}</td>
-                    <td>{row.session_id}</td>
-                    <td>{row.object_id}</td>
-                    <td className="text-right">{Number(row.gaze_time.toFixed(2))}</td>
-                    <td>{row.time_stamp}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <span className="text-xs text-muted-foreground">
-            session_id is always 0 in the export, so sessions are rebuilt from time gaps.
+      <Panel>
+        <div className="flex flex-col gap-1">
+          <PanelTitle>Raw export</PanelTitle>
+          <span className="text-[13px] text-muted-foreground">
+            {dataset.origin === 'uploaded'
+              ? `The first rows of ${files.gaze?.name ?? sourceName(meta.source)}.`
+              : `The first rows of the ${firstRow ? firstRow.time_stamp.slice(0, 16) : ''} team run.`}
+            Most looks last a fraction of a second.
           </span>
-        </Panel>
-
-        <Panel className="flex-[1_1_460px] gap-4">
-          <div className="flex flex-col gap-1">
-            <PanelTitle>Cleaning pipeline</PanelTitle>
-            <span className="text-[13px] text-muted-foreground">
-              All learners and dates in the file. Bars show rows left compared with the raw export.
-            </span>
-          </div>
-          <ol className="m-0 flex list-none flex-col gap-4 p-0">
-            {funnel.map((step, index) => {
-              const isLast = index === funnel.length - 1
-              const rows = isLast ? allTouchpoints : step.rows
-              const share = raw ? (rows / raw.rows) * 100 : 0
-              const narrowed = index >= funnel.length - 2
-              return (
-                <li key={step.step} data-testid="funnel-step" className="flex items-start gap-3.5">
-                  <span
-                    className={`inline-flex size-[26px] shrink-0 items-center justify-center rounded-full text-xs font-semibold ${
-                      isLast ? 'bg-primary text-white' : 'bg-[#E7E9EE]'
-                    }`}
-                  >
-                    {index + 1}
-                  </span>
-                  <div className="flex min-w-0 grow flex-col gap-1.5">
-                    <div className="flex flex-wrap justify-between gap-x-3 gap-y-1">
-                      <span className="text-sm font-semibold">{step.step}</span>
-                      <span className="text-[13px] tabular-nums">
-                        {isLast
-                          ? `${number.format(rows)} touchpoints ≥ ${minVisitS.toFixed(1)} s`
-                          : `${number.format(rows)} rows · ${formatHours(step.seconds)}`}
-                      </span>
-                    </div>
-                    <div className="h-1.5 rounded-sm bg-[#EEF0F3]">
-                      <div
-                        className={`h-1.5 rounded-sm ${narrowed ? 'bg-primary' : 'bg-[#9AA1AD]'}`}
-                        style={{ width: `${Math.max(0.5, share)}%` }}
-                      />
-                    </div>
-                    <span className="text-xs text-muted-foreground">{step.note}</span>
-                  </div>
-                </li>
-              )
-            })}
-          </ol>
-          <div className="flex flex-wrap items-center justify-between gap-3 rounded-[10px] bg-muted px-4 py-3.5">
-            <span data-testid="run-summary" className="text-sm">
-              Selected run:{' '}
-              <strong className="font-semibold">
-                {number.format(runRawRows)} raw rows → {number.format(touchpoints.length)} touchpoints
-              </strong>
-              , {number.format(clinical)} on clinical lanes.
-            </span>
-            <Button size="lg" onClick={openLanes}>
-              Open team swim lanes →
-            </Button>
-          </div>
-        </Panel>
-      </div>
+        </div>
+        <div className="overflow-x-auto rounded-lg border border-[#EEF0F3]">
+          <table className="w-full border-collapse font-mono text-xs tabular-nums">
+            <thead>
+              <tr className="[&>th]:border-b [&>th]:px-2.5 [&>th]:py-2 [&>th]:text-left [&>th]:font-semibold [&>th]:text-muted-foreground">
+                <th>user_id</th>
+                <th>session_id</th>
+                <th>object_id</th>
+                <th className="text-right!">gaze_time</th>
+                <th>time_stamp</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rawSample.map((row, index) => (
+                <tr
+                  key={index}
+                  data-testid="raw-row"
+                  className="[&>td]:border-b [&>td]:border-[#EEF0F3] [&>td]:px-2.5 [&>td]:py-1.5"
+                >
+                  <td>{row.user_id}</td>
+                  <td>{row.session_id}</td>
+                  <td>{row.object_id}</td>
+                  <td className="text-right">{Number(row.gaze_time.toFixed(2))}</td>
+                  <td>{row.time_stamp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <span className="text-xs text-muted-foreground">
+          session_id is always 0 in the export, so sessions are rebuilt from time gaps.
+        </span>
+      </Panel>
 
       <Panel className="gap-4">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -251,16 +180,6 @@ export function UploadClean({ dataset, run, touchpoints, minVisitS, files, openL
           ))}
         </div>
       </Panel>
-
-      <details className="rounded-xl border bg-white px-6 py-4 text-sm">
-        <summary className="cursor-pointer font-medium">About the data</summary>
-        <h3 className="mt-3 font-medium">Open questions for the DISCOVER dev team</h3>
-        <ul className="mt-1 list-disc space-y-1 pl-5">
-          {OPEN_QUESTIONS.map((question) => (
-            <li key={question}>{question}</li>
-          ))}
-        </ul>
-      </details>
 
       <PageFooter dataset={dataset} />
     </div>

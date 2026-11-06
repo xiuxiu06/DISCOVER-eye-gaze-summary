@@ -19,6 +19,7 @@ import type { FileControls, HeldFile, ScreenProps } from './screens/types'
 import { UploadClean } from './screens/UploadClean'
 import { formatClockSpan, formatDay, formatLearners, isoToEpoch } from './time'
 import type { Dataset } from './types'
+import { readUpload, saveUpload } from './uploadStorage'
 
 const MAX_FILE_BYTES = 50 * 1024 * 1024
 
@@ -67,7 +68,20 @@ export default function App() {
 
   useEffect(() => {
     loadDataset()
-      .then(setDataset)
+      .then(async (loaded) => {
+        try {
+          const saved = await readUpload()
+          if (saved) {
+            const restored = processLog(saved.gaze.text, saved.laneMap?.text ?? laneMapCsv, loaded.meta, saved.gaze.name)
+            setGaze(saved.gaze)
+            setLaneMap(saved.laneMap)
+            setResult(restored)
+          }
+        } catch (reason) {
+          setError('Could not restore the uploaded file. Please upload it again. ' + String(reason))
+        }
+        setDataset(loaded)
+      })
       .catch((reason: unknown) => setLoadError(String(reason)))
   }, [])
 
@@ -89,7 +103,11 @@ export default function App() {
         if (nextGaze) {
           const name = nextGaze.name
           try {
-            setResult(processLog(nextGaze.text, nextLaneMap?.text ?? laneMapCsv, dataset.meta, name))
+            const processed = processLog(nextGaze.text, nextLaneMap?.text ?? laneMapCsv, dataset.meta, name)
+            setResult(processed)
+            await saveUpload({ gaze: nextGaze, laneMap: nextLaneMap }).catch(() => {
+              setError('File processed, but browser storage is unavailable. Upload it again after reloading.')
+            })
           } catch (reason) {
             throw new Error(`Couldn't use ${name}. ${reason instanceof Error ? reason.message : String(reason)}`)
           }
@@ -119,6 +137,7 @@ export default function App() {
       note,
       addFiles: (chosen) => void addFiles(chosen),
       removeGaze: () => {
+        void saveUpload().catch(() => setError('Could not clear the saved upload.'))
         setGaze(undefined)
         setResult(undefined)
         setError(undefined)
@@ -130,6 +149,7 @@ export default function App() {
         setWaiting(false)
         if (gaze && dataset) {
           setResult(processLog(gaze.text, laneMapCsv, dataset.meta, gaze.name))
+          void saveUpload({ gaze }).catch(() => setError('Could not save the lane map change.'))
         }
       },
     }
@@ -189,6 +209,11 @@ function Shell({ dataset, files }: { dataset: Dataset; files: FileControls }) {
         </div>
       )}
 
+      <div role="status" className="border-b bg-white px-8 py-2 text-sm">
+        {dataset.origin === 'uploaded'
+          ? `Using uploaded file: ${files.gaze?.name}. Saved in this browser.`
+          : 'Using built-in data. Upload a gaze log to analyze your own file.'}
+      </div>
       <header className="border-b bg-white print:hidden">
         <div className="mx-auto flex max-w-[1360px] flex-col gap-3 px-8 pt-4">
           <div className="flex flex-wrap items-center gap-x-7 gap-y-4">

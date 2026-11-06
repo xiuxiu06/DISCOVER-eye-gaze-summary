@@ -2,7 +2,6 @@
 // nothing leaves the machine. scripts/check-upload.mjs checks that both give the
 // same result. Thresholds and lanes come from meta.json, not from this file.
 
-import { pickDefaultRun } from './metrics'
 import type {
   Dataset,
   FunnelStep,
@@ -436,9 +435,7 @@ export function processLog(
     }
   }
 
-  const mainRun = pickDefaultRun(runs)!
-  const rawSample: RawRow[] = keptRows
-    .filter((row) => mainRun.sessionIds.includes(row.sessionId))
+  const rawSample: RawRow[] = raw
     .sort((a, b) => a.order - b.order)
     .slice(0, 25)
     .map((row) => ({
