@@ -5,3 +5,6 @@ venv/
 ~$*.xlsx
 ~$*.xlsm
 .env
+
+app/playwright-report/
+app/test-results/

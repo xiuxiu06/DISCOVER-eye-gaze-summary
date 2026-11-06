@@ -28,10 +28,11 @@ We turn this log into a clear picture of attention over time.
 
 ## What we're building
 
-Two parts, with no backend, login or VR headset needed:
+A local Python backend and React frontend, with no login or VR headset needed:
 
 ```
-raw gaze CSV + lane map  ->  Python pipeline  ->  static JSON  ->  React + D3 app
+CSV upload + lane map  ->  local Python API / pipeline  ->  JSON  ->  React + D3
+learner + ideal CSVs + explicit matching  ->  report_card.py  ->  Claude  ->  Report card
 ```
 
 The pipeline cleans the log and groups it into sessions, team runs and lane visits. The app reads the resulting JSON and computes its metrics in the browser, so the "Min touchpoint" slider updates every screen live.
@@ -113,31 +114,60 @@ Commit after each one. If time runs short, cut from the bottom of this list, but
 
 ## Getting started
 
-You'll need Node to run the app, and Python 3.11+ for the pipeline.
+You'll need Node and Python 3.11+. On Windows, use `npm.cmd` if PowerShell blocks `npm.ps1`.
 
-```bash
-# App: works today
-cd app
-npm install
-npm run dev
+From the repository root, create the Python environment and start the backend in one terminal:
 
-# Pipeline and tests: run these first to see real data
-python -m pip install -r requirements.txt
-python -m pipeline.run   # writes app/public/data/*.json and prints the funnel numbers
-pytest -q
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m uvicorn api:app --host 127.0.0.1 --port 8000
 ```
 
-### Uploading a log
+Start the frontend in a second terminal:
 
-The **Upload & clean** tab takes a gaze log by drag and drop or file picker, and runs the same pipeline steps in the browser. It uses `data/lane_map.csv` as it was when the app was built, unless you also upload a lane map. Files aren't sent anywhere. Uploaded logs and lane maps are saved in this browser using IndexedDB and restored on reload. Removing the uploaded log returns to the built-in data. Objects missing from the lane map count as background, and the app says how many there were. Debrief notes stay in that browser's local storage.
+```powershell
+cd app
+npm.cmd install
+npm.cmd run dev
+```
 
-The steps live in both `pipeline/` and `app/src/processLog.ts`. If you change one, change the other, then run `npm run check:upload` in `app/` to compare their results.
+Open the localhost URL Vite prints (normally http://127.0.0.1:5173). Vite proxies `/api` to Python on port 8000; preview mode uses the same proxy. Bind the Python server to localhost. This is a single-process local demo, not a public production deployment.
+
+### Uploads and Claude reports
+
+1. Upload the learner CSV/TSV in tab 1. The browser sends it to `POST /api/analyze`; Python calls the existing pipeline and both condensed/uncondensed summary functions directly. No Python CLI prompts run. A custom lane map is optional.
+2. Add an ideal-user CSV/TSV and explicitly choose learner/ideal pairs in tab 1. Each ideal user can be assigned once; unmatched learners are allowed. User 0 remains the excluded test user and is never shifted to Learner 1.
+3. Copy `.env.example` to `.env` and configure `ANTHROPIC_API_KEY` on the server, or set it in the backend terminal environment. The key is never included in the frontend, HTTP responses or report cache. Optionally set `ANTHROPIC_MODEL` in the backend environment.
+4. In tab 3, click **Generate report**. This is the only operation that requests Claude. It sends an uncondensed whole-recording learner/ideal comparison via `report_card.py`. The UI polls `GET /api/report-jobs/{id}` until the report is complete. Local analysis itself makes no Claude calls.
+
+The Report card displays the cohort summary, exact learner-key report, AI suggested grade, rubric rationales, observations, strengths, missed checks, debrief questions and next focus. Current charts remain under **Recorded metrics**, collapsed by default. AI reports describe the whole recording; the team run selector and threshold only affect recorded metrics. Scores are generated educational interpretation for instructor review, not validated competency measures.
+
+Raw files, confirmed matching and successful reports are saved locally in IndexedDB. Reload re-analyzes saved files through Python and restores a matching cached report without another Claude call. Changed files or matching invalidate the report. Pending jobs resume polling after reload; backend restarts expire unfinished jobs, so use **Reprocess files** and explicitly generate again. Failed regeneration preserves the previous successful report. Notes remain in browser local storage; PDF export uses the browser print dialog.
+
+The API holds analyzed recordings and jobs in memory for up to six hours, subject to local capacity limits. It uses temporary files only to adapt the existing CSV reader and removes them after reading. It never modifies `data/raw/` or the static demo data. Each uploaded file is limited to 50 MB. Python must be running for uploads; there is no silent fallback to browser processing or sample data after an upload error.
+
+Built-in JSON can still be regenerated with `python -m pipeline.run`. The old TypeScript processors remain only as reference/parity tools; they are no longer used by the web upload path.
+
+### Verification
+
+```powershell
+.\.venv\Scripts\python.exe -m pytest -q -p no:cacheprovider
+cd app
+npm.cmd run build
+npm.cmd run lint
+npm.cmd run check:upload
+npm.cmd run check:summary
+npm.cmd run test:e2e
+```
+
+Browser tests require the Python API on port 8000 and Vite on port 5173; set `TEST_BASE_URL` if Vite uses another port. Playwright uses the installed Microsoft Edge browser. Claude requests are mocked in API and browser tests: no key or paid live call is required. The API implementation follows the official [FastAPI file upload](https://fastapi.tiangolo.com/tutorial/request-files/) conventions.
 
 ### Swim lane views
 
 Tab 2 offers three views. **Simplified** keeps the five clinical lanes and team coverage. **Standard** and **Advanced** share the same summary chart, learner picker, object search and summary download. Standard condenses similar object variants; Advanced preserves each filtered original object name. Uploading a gaze log automatically generates both summaries.
 
-**Standard** automatically generates a condensed gaze summary from the raw gaze log uploaded in tab 1. No separate JSON upload is required. The browser implementation mirrors the filtering, dynamic object condensing, per-second dominant-object selection, minute-resolution fallback and session gap handling in `summarize_gaze.py`. `npm run check:summary` compares the complete output with the Python-generated reference. The summary is regenerated when a saved upload is restored; Download summary JSON exports it in the script's format. The built-in recording uses its pre-generated summary.
+**Standard** automatically generates a condensed gaze summary from the raw gaze log uploaded in tab 1. No separate JSON upload is required. The Python API calls `summarize_gaze_rows` with condensing enabled for Standard and disabled for Advanced. `npm run check:summary` compares the complete output with the Python-generated reference. The summary is regenerated when a saved upload is restored; Download summary JSON exports it in the script's format. The built-in recording uses its pre-generated summary.
 
 Summary files cover the full recording with session pauses omitted, so Standard and Advanced use summary elapsed time and do not follow the Team run picker. Simplified uses the selected run and its clock times. Adjacent seconds with the same object form a chart segment; null seconds and gaps break segments. User 0 is excluded from the display and download. The threshold filters summary segment duration in both summary views, rather than raw measured dwell.
 
@@ -175,7 +205,7 @@ app/
     App.tsx             # header, tabs, arrow keys
     data.ts  types.ts   # loading and JSON formats
     metrics.ts  time.ts # calculations and time formatting
-    processLog.ts       # the pipeline's steps, for uploads in the browser
+    processLog.ts       # legacy browser pipeline, retained for parity checks
     screens/            # one file per tab
     components/ui/      # shadcn/ui components (add more with: npx shadcn@latest add <name>)
 summarize_gaze.py       # separate per-second summary tool, with its tests in test_summarize_gaze.py

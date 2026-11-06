@@ -13,6 +13,11 @@ COLUMNS = ["user_id", "log_session", "object_id", "gaze_time", "time_stamp", "ro
 def load_rows(path: Path) -> pd.DataFrame:
     """One row per log line, in file order. The log's clock is treated as UTC."""
     rows = read_gaze_file(path)
+    return rows_to_frame(rows)
+
+
+def rows_to_frame(rows) -> pd.DataFrame:
+    """Adapt parsed gaze rows for the pipeline and upload API."""
     frame = pd.DataFrame(
         [
             (int(r.user_id), int(r.session_id), r.object_id, r.gaze_time, r.timestamp, r.row_order)

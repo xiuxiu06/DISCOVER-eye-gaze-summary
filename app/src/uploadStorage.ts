@@ -1,6 +1,13 @@
+import type { Matching } from './api'
+import type { ClaudeReport } from './reportTypes'
+
 export interface SavedUpload {
   gaze: { name: string; size: number; text: string }
   laneMap?: { name: string; size: number; text: string }
+  ideal?: { name: string; size: number; text: string }
+  matching?: Matching
+  reportCache?: { key: string; report: ClaudeReport }
+  pendingJob?: { key: string; jobId: string }
 }
 
 function openStore(): Promise<IDBDatabase> {

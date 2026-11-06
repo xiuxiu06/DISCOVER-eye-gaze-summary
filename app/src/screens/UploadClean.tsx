@@ -1,3 +1,4 @@
+import { IdealMatching } from '../components/IdealMatching'
 import { useMemo, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import {
@@ -75,6 +76,8 @@ export function UploadClean({ dataset, minVisitS, files }: ScreenProps) {
         gazeContents={`${number.format(raw?.rows ?? 0)} rows · ${new Set(sessions.map((item) => item.userId)).size} learners · ${dateRange(dataset)}`}
         laneMapContents={`${objectCount} objects → ${lanes.length} lanes · ${verifyCount(dataset)} to verify`}
       />
+
+      <IdealMatching files={files} />
 
       <div className="grid grid-cols-2 gap-4 xl:grid-cols-4">
         <StatCard
@@ -215,7 +218,7 @@ function UploadPanel({
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <PanelTitle>Upload data</PanelTitle>
         <span className="text-[13px] text-muted-foreground">
-          Processed in your browser. Nothing leaves this computer.
+          Processed by Python on this computer. Generating an AI report sends comparison data to Claude.
         </span>
       </div>
 
@@ -316,7 +319,7 @@ function UploadPanel({
               <td className={cell}>Gaze log</td>
               <td className={`${cell} text-muted-foreground`}>{gazeContents}</td>
               <td className={cell}>
-                <StatusPill>{files.gaze ? 'Processed' : 'Built in'}</StatusPill>
+                <StatusPill>{files.analysis ? 'Processed by Python' : files.gaze ? 'Needs processing' : 'Built in'}</StatusPill>
               </td>
               <td className={`${cell} text-right`}>
                 {files.gaze && (

@@ -31,11 +31,18 @@ FALLBACK_CLAUDE_MODEL = "claude-sonnet-5-5"
 DEFAULT_MAX_TOKENS = 64000
 
 REPORT_CARD_SYSTEM_PROMPT = """\
+MEASUREMENT AND INTERPRETATION RULES:
+This is head gaze (a headset-forward ray), not eye tracking. Use "looks" or "head gaze", never "fixations" or "eye tracking".
+Scenario identity is unknown. Do not invent clinical events, interventions, patient outcomes or scenario identities.
+A look at equipment does not prove an intervention occurred. Gaps and nulls can reflect capture quality or idle headsets.
+Clearly distinguish measured observations from tentative educational interpretation. Grades are AI-generated debrief suggestions, not validated clinical competency assessments.
+The input is a whole-recording comparison; do not claim it describes only the selected team run.
+
 You are an Attending Pediatric Critical Care Simulation Educator and Human-Factors Specialist \
 for the DISCOVER Virtual Reality clinical training platform at Cincinnati Children's Hospital.
 
 You are evaluating trainee clinicians ("original users") based on their second-by-second VR \
-eye-gaze timelines compared directly against a matched expert benchmark clinician ("idealUser").
+head-gaze timelines compared directly against a matched expert benchmark clinician ("idealUser").
 
 ### Grading Criteria & Rubric (Weighting)
 Evaluate each learner across these 5 clinical simulation criteria:
@@ -571,8 +578,8 @@ def call_claude_for_report_card(
 
     user_message = (
         "Generate a comprehensive DISCOVER VR Simulation Report Card for each learner below by "
-        "comparing their eye-gaze data and chronological sequence against their matched ideal user.\n\n"
-        "Eye-Gaze Comparison Dataset:\n"
+        "comparing their head-gaze data and chronological sequence against their matched ideal user.\n\n"
+        "Head-Gaze Comparison Dataset:\n"
         f"{json.dumps(claude_payload, indent=2)}"
     )
 

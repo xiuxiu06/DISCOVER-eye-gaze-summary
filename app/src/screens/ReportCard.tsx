@@ -17,6 +17,7 @@ import {
 import { formatClock, formatDay, formatDuration, formatElapsed, formatMinutes } from '../time'
 import type { Lane } from '../types'
 import type { ScreenProps } from './types'
+import { ClaudeReportContent } from '../components/ClaudeReport'
 
 const number = new Intl.NumberFormat('en-US')
 
@@ -39,7 +40,7 @@ const MONITOR_NAMES: Record<string, string> = {
 
 const noteKey = (runId: string, userId: number) => `discover-note:${runId}:${userId}`
 
-export function ReportCard({ dataset, run, touchpoints, minVisitS, learnerId, setLearnerId }: ScreenProps) {
+export function RecordedReportCard({ dataset, run, touchpoints, minVisitS, learnerId, setLearnerId }: ScreenProps) {
   const { meta, sessions } = dataset
   const lanes = useMemo(() => includedLanes(meta), [meta])
   const window = useMemo(() => runWindow(run), [run])
@@ -264,9 +265,6 @@ export function ReportCard({ dataset, run, touchpoints, minVisitS, learnerId, se
         </Panel>
       </div>
 
-      <DebriefNotes key={`${run.id}-${userId}`} runId={run.id} userId={userId} />
-
-      <PageFooter dataset={dataset} />
     </div>
   )
 }
@@ -367,4 +365,42 @@ function DebriefNotes({ runId, userId }: { runId: string; userId: number }) {
       </div>
     </Panel>
   )
+}
+
+export function ReportCard(props: ScreenProps) {
+  const { files, dataset, run, learnerId, setLearnerId } = props
+  const learners = files.analysis?.learners.map((learner) => learner.userId) ?? dataset.summary?.users.map((user) => user.userId) ?? run.userIds
+  const userId = learners.includes(learnerId) ? learnerId : learners[0]
+  const hasPair = Object.values(files.matching).some(Boolean)
+  const reason = !files.analysis ? 'Upload a learner gaze log in tab 1 to analyze it with Python.'
+    : !files.analysis.ideals.length ? 'Upload an ideal-user CSV in tab 1 to enable AI reports.'
+    : !hasPair ? 'Choose at least one learner/ideal pair in tab 1.' : undefined
+  return <div className="flex flex-col gap-6">
+    <div className="flex flex-wrap items-end justify-between gap-4">
+      <div><PageTitle>Report card - Learner {userId}</PageTitle><p className="mb-0 text-sm text-muted-foreground">Claude comparison with the selected expert benchmark - whole recording</p></div>
+      <div className="flex flex-wrap items-center gap-3 print:hidden">
+        <label className="text-sm">Learner <select className="ml-2 min-h-11 rounded-lg border bg-white px-3" value={userId} onChange={(event) => setLearnerId(Number(event.target.value))}>
+          {learners.map((id) => <option key={id} value={id}>Learner {id}</option>)}
+        </select></label>
+        <Button disabled={!!reason || files.generating || files.reading} onClick={files.generateReport}>
+          {files.generating ? 'Generating report...' : files.report ? 'Regenerate report' : 'Generate report'}
+        </Button>
+        <Button variant="outline" onClick={() => globalThis.print()}>Export report card (PDF)</Button>
+      </div>
+    </div>
+    <Panel>
+      <p className="m-0 text-sm">{reason ?? 'Generate sends this recording?s learner/ideal comparison to Claude. It does not run automatically.'}</p>
+      <p className="m-0 text-xs text-muted-foreground">The AI report covers the whole recording. The team run picker and touchpoint slider only affect the recorded metrics below.</p>
+      {files.generating && <p role="status" className="m-0 text-sm">Claude is generating the report. This can take several minutes; you can switch learners or tabs while it runs.</p>}
+      {files.reportError && <p role="alert" className="m-0 text-sm text-red-700">{files.reportError} Your last successful report is kept. For an expired recording, use Reprocess files in tab 1.</p>}
+    </Panel>
+    {files.report && <ClaudeReportContent report={files.report} userKey={'user' + userId} />}
+    <details className="rounded-xl border bg-white p-5">
+      <summary className="cursor-pointer font-semibold">Recorded metrics - selected team run</summary>
+      <div className="mt-5">{run.userIds.includes(userId) ? <RecordedReportCard {...props} learnerId={userId} />
+        : <p className="text-sm text-muted-foreground">This learner has no session in the selected team run. Choose another run to see their recorded metrics.</p>}</div>
+    </details>
+    <DebriefNotes key={run.id + '-' + userId} runId={run.id} userId={userId} />
+    <PageFooter dataset={dataset} />
+  </div>
 }

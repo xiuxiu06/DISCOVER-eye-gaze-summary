@@ -1,0 +1,246 @@
+{
+  "cohort_summary": "Gaze capture for all four learners falls far short of their matched experts. Active clinical focus was 0.0% (user0), 11.8% (user1), 7.1% (user2) and 4.4% (user3), against 91\u201394% for the ideal users. Recorded sessions for user1\u2013user3 ran 13,558\u201315,815 s versus roughly 1,800 s for the experts, and user0's recording ended at 99 s. The learners' gaze is a sparse series of 1-second glances separated by long null gaps, plus a few very long fixations on non-clinical objects (bed hardware, ThermometerSnap2). Instructors should confirm whether these sessions were left running or had tracking problems before drawing firm conclusions about individual clinical reasoning. Each ideal user also modeled a different workflow: chest exam and cap refill for idealUser0, monitor surveillance for idealUser1, IV/med line/blood draw for idealUser2, and CodeSheet8kg/PenLight/iStat for idealUser3.",
+  "reports": {
+    "user0": {
+      "matched_ideal_user": "idealUser0",
+      "letter_grade": "F",
+      "numeric_score": 0,
+      "executive_summary": "The learner's entire recording (t = 0\u201398 s, 99 s total) is null, with 0 active clinical seconds versus the ideal user's 1,693 s of active clinical focus across 1,801 s. All 32 objects viewed by the ideal user were missed. The grade reflects the data as recorded. A tracking or session-capture failure should be ruled out before this is treated as a clinical performance finding.",
+      "criteria_breakdown": [
+        {
+          "criterion": "Situational Awareness & Early Assessment",
+          "grade": "F",
+          "rationale": "There was no gaze on any monitor (ekg, SPO2, RR, T3_monitor_screen_S1PennyScreen, MonitorBar). The ideal user did not check monitors until late (SPO2 at t = 974 s, ekg at t = 1342 s) and instead started with a hands-on baseline exam at t = 0\u20135 s (CaprefillChest, pulse). The learner has no recorded baseline assessment of any kind in 99 s."
+        },
+        {
+          "criterion": "Completeness of Clinical Exam & Critical Checks",
+          "grade": "F",
+          "rationale": "All 32 ideal objects were missed. These include the core exam targets ChestSoundsHeart (ideal 396 s, 44 looks), CaprefillChest (348 s, 32 looks), pulse (273 s, 27 looks), Stethoscope (232 s, 24 looks) and ChestSoundsLung (207 s, 19 looks). They also include iStat, CodeSheet8kg/46kg, Liver and the Cap Refill hands."
+        },
+        {
+          "criterion": "Workflow Sequencing & Clinical Prioritization",
+          "grade": "F",
+          "rationale": "No sequence can be evaluated. The ideal sequence ran CaprefillChest (t = 0\u20134), pulse (t = 5\u201312), ChestSoundsLung (t = 13\u201332), Stethoscope (t = 33\u201341) and ChestSoundsHeart (t = 42\u201345) before rebreather_mask_Neonate (t = 46\u201352) and IV_Bag (t = 81). The learner has no recorded behavior at all, so the exam-before-therapy order cannot be shown."
+        },
+        {
+          "criterion": "Visual Focus Allocation & Task Efficiency",
+          "grade": "F",
+          "rationale": "Active focus was 0.0% (0 of 99 s) versus 94.0% for the ideal user. The only entry is '0-98s: null (99s)'. The recording also ends at about 5.5% of the ideal scenario length (99 s versus 1,801 s)."
+        },
+        {
+          "criterion": "Closed-Loop Re-Evaluation After Interventions",
+          "grade": "F",
+          "rationale": "The learner looked at no therapeutic equipment (rebreather_mask_Neonate, IV_Bag, MedLineSnap, Nasal_Canula_Adolescent, eCPR1) and no patient or monitor. Re-evaluation is therefore not demonstrable. The ideal user returned to ChestSoundsHeart (t = 76\u201380) after the rebreather_mask_Neonate at t = 46\u201352, and again after IV_Bag (t = 81\u201386 followed by ChestSoundsLung t = 87\u201398)."
+        }
+      ],
+      "specific_observations": [
+        "The learner's timeline is a single null block (t = 0\u201398 s, 99 s). The ideal user was on a clinical target from t = 0 s (CaprefillChest) and was never null for more than a few seconds in the opening minute.",
+        "The ideal user's first 100 s covered CaprefillChest, pulse, ChestSoundsLung, Stethoscope, ChestSoundsHeart, rebreather_mask_Neonate, CaprefillLeftHand and IV_Bag (t = 81 s). The learner recorded none of these.",
+        "The recording ended at 99 s while the ideal user continued to 1,801 s. No mid- or late-scenario checks (iStat at t = 562 s, SPO2 at t = 974 s, CodeSheet46kg at t = 1462 s, ekg at t = 1342 s) can be assessed.",
+        "There is no learner-only object, so there is no evidence of attention to anything outside the expert's targets either."
+      ],
+      "strengths": [
+        "None can be demonstrated from the recorded data."
+      ],
+      "missed_or_delayed_checks": [
+        "Baseline exam (CaprefillChest at ideal t = 0 s, pulse at t = 5 s, ChestSoundsLung at t = 13 s, Stethoscope at t = 33 s, ChestSoundsHeart at t = 42 s) was never recorded.",
+        "Therapeutic equipment (rebreather_mask_Neonate at ideal t = 46 s, IV_Bag at t = 81 s, MedLineSnap at t = 316 s, Nasal_Canula_Adolescent at t = 1309 s) was never recorded.",
+        "Monitors (SPO2 at ideal t = 974 s, RR at t = 681 s, ekg at t = 1342 s, T3_monitor_screen_S1PennyScreen at t = 1524 s) were never recorded.",
+        "Safety and documentation targets (CodeSheet8kg at ideal t = 812 s, CodeSheet46kg at t = 1462 s, iStat at t = 562 s) were never recorded."
+      ],
+      "follow_up_questions": [
+        "Walk me through the first 99 seconds of this scenario. What were you looking at and what were you thinking? (First, please confirm whether the headset or eye tracking was working properly.)",
+        "If the data are valid and you ended the scenario at about 1.5 minutes, what led you to stop, and what did you believe had been accomplished by then?",
+        "What would your first 30 seconds with this patient look like, and which physical findings (perfusion, pulse, breath sounds) would you gather before choosing any oxygen or IV intervention?",
+        "How would you decide when to look at the monitors versus the patient, and how often would you plan to re-check each after any intervention?"
+      ],
+      "recommended_next_focus": "Rule out a headset or eye-tracking capture problem, then repeat the scenario while narrating a first-60-second baseline: perfusion (CaprefillChest), pulse, lung and heart sounds, then monitors. Stay in the simulation long enough to complete a full assessment, intervention and re-evaluation cycle."
+    },
+    "user1": {
+      "matched_ideal_user": "idealUser1",
+      "letter_grade": "D",
+      "numeric_score": 63,
+      "executive_summary": "The learner showed only 1,688 s of active gaze across a 14,344 s session (11.8% versus the ideal user's 91.4%). About 57% of that active time went to three long fixations on ThermometerSnap2, a bed rail arm and ChestSoundsHeart. The ideal user is a continuous monitor surveyor (roughly 1,362 s on monitor objects); the learner logged only about 127 s there, and mostly as brief 1 s glances. The learner reached a fair breadth of exam and equipment objects but with very little dwell, and the first real monitor scans came late.",
+      "criteria_breakdown": [
+        {
+          "criterion": "Situational Awareness & Early Assessment",
+          "grade": "D",
+          "rationale": "The learner glanced at T3_monitor_screen_S1PennyScreen at t = 1 s, and the ideal user first looked at it at t = 29 s (17 s dwell). That glance was 1 s and was followed by a handful of other 1 s looks (t = 50, 226, 265). First looks at the vitals were SPO2 at t = 267 s (ideal 144 s), RR at t = 4207 s (ideal 207 s), ekg at t = 4560 s (ideal 8 s) and MonitorBar at t = 4561 s (ideal 0 s). Total monitor dwell was about 127 s (T3 4 s, ekg 19 s, SPO2 28 s, MonitorBar 27 s, RR 49 s) versus about 1,362 s for the ideal user, so surveillance was sparse."
+        },
+        {
+          "criterion": "Completeness of Clinical Exam & Critical Checks",
+          "grade": "C-",
+          "rationale": "The learner touched many exam and equipment targets: iStat (23 s), ChestSoundsLung (10 s), CaprefillLeftHand/RightHand, CaprefillLeftFoot, PenLight (3 s), Liver (10 s), CodeSheet46kg (6 s) and CodeSheet37kg (1 s at t = 7635). However, dwell was almost always 1\u20132 s per glance. Missed ideal objects were CaprefillChest (ideal t = 1160 s), CodeSheet8kg (ideal t = 1696 s, 9 s), GroinHaptics1 (ideal t = 1331 s, 15 s), LeftEye (ideal t = 1720 s), Stryker_bed_rails_back_right_parent and NewBag_000_Large. Stethoscope (1 s) and pulse (1 s) first appear only at t = 6334 s and t = 6473 s."
+        },
+        {
+          "criterion": "Workflow Sequencing & Clinical Prioritization",
+          "grade": "D",
+          "rationale": "The ideal sequence began with MonitorBar, ekg and T3_monitor_screen_S1PennyScreen (t = 0\u201345 s), then rebreather_mask_Neonate (t = 46\u201353 s), then IV_Bag (t = 82\u201389 s). The learner's first 70 s was a string of 1 s glances at therapy objects (Nasal_Canula_AdolescentHiFlow at t = 14, Bipap_Snap at t = 22, NasalCanula_Snap at t = 36, Nasal_Canula_NeonateHiFlow at t = 69) with no sustained vitals check beforehand. The learner reached IV_Bag at t = 169 s (ideal 82 s) and eCPR2 at t = 228 s (ideal 742 s), so intervention equipment drew attention well before the monitors did."
+        },
+        {
+          "criterion": "Visual Focus Allocation & Task Efficiency",
+          "grade": "F",
+          "rationale": "Active focus was 11.8% versus 91.4%. There is a null gap of about 2,950 s between t = 536 s and t = 3487 s. Three fixations account for 957 of 1,688 active seconds (about 57%): ThermometerSnap2 (705 s, including t = 11755\u201312413 at 659 s and t = 12417\u201312461 at 45 s; the ideal user never looked at it), linetBed_grayPlastic4_leftLowerHeadrailArm (170 s at t = 8520\u20138689) and ChestSoundsHeart (79 s at t = 12600\u201312678). Bed hardware drew repeated glances, including a cluster at t = 4576\u20134718 (Stryker_bed_handle_hook_parent, front_hook_parent, emergency_lever, hook_parent)."
+        },
+        {
+          "criterion": "Closed-Loop Re-Evaluation After Interventions",
+          "grade": "C-",
+          "rationale": "There are some good return loops: IV_Bag and Nasal_Canula_NeonateHiFlow glances at t = 169\u2013223 were followed by T3_monitor_screen_S1PennyScreen at t = 226 s and SPO2 at t = 267 s. After the 79 s ChestSoundsHeart fixation (ending t = 12678), the learner went to RR at t = 12684 s. A terminal monitor scan at t = 13860\u201313878 (RR, SPO2, ekg) followed IV_Bag at t = 13823\u201313830. In other places the loop was open: after eCPR2 (t = 3487\u20133528, 41 s) the next monitor glance was RR at t = 4207, and after the 659 s ThermometerSnap2 fixation the next monitor view came more than 200 s later."
+        }
+      ],
+      "specific_observations": [
+        "Monitor dwell was 127 s (7.5% of active time) versus about 1,362 s (84% of active time) for idealUser1. The ideal user held T3_monitor_screen_S1PennyScreen for 406 s with 32 looks; the learner had 4 s with 4 looks.",
+        "The ideal user's earliest checks were MonitorBar at t = 0 s and ekg at t = 8 s. The learner's first ekg look was at t = 4560 s (19 s total, 15 looks) and first MonitorBar at t = 4561 s.",
+        "IV_Bag was watched 117 s over 78 short looks (first at t = 169 s) versus 13 s over 2 looks for the ideal user (first at t = 82 s), which is a pattern of repeated checking of the bag. eCPR2 (62 s, 20 looks, first at t = 228 s) was viewed far more than by the ideal user (14 s, 1 look at t = 742 s).",
+        "The learner's data show about 2,950 s of null between t = 536 s and t = 3487 s, and additional long gaps (for example t = 282\u2013528 s). Beyond the few fixations, most of the session is isolated 1 s glances.",
+        "Learner-only objects such as ThermometerSnap2, thermometer_body (34 s, 26 looks), Nasal_Canula_Adolescent (26 s, 20 looks) and NasalCanula_Snap (20 s) suggest broad equipment exploration the expert did not need."
+      ],
+      "strengths": [
+        "The learner's first glance at T3_monitor_screen_S1PennyScreen was at t = 1 s, earlier than the ideal user's t = 29 s, and the learner looked at rebreather_mask_Neonate at t = 49 s, close to the ideal t = 46 s.",
+        "RR was the most re-checked monitor object (49 s over 31 looks versus 180 s over 19 looks for the ideal user), showing a real re-scan habit for respiratory rate once monitoring started.",
+        "The learner covered a wide range of exam targets (Cap Refill hands and foot, PenLight, Liver, iStat), and the late monitor sweeps (t = 13860\u201313878 and t = 14023\u201314037) show a willingness to re-scan."
+      ],
+      "missed_or_delayed_checks": [
+        "CaprefillChest was never viewed (ideal t = 1160 s).",
+        "CodeSheet8kg was never viewed (ideal t = 1696 s, 9 s); CodeSheet46kg and CodeSheet37kg were viewed for only 6 s and 1 s.",
+        "GroinHaptics1 (ideal t = 1331 s, 15 s), LeftEye (ideal t = 1720 s), NewBag_000_Large (ideal t = 1132 s, 19 s) and Stryker_bed_rails_back_right_parent (ideal t = 259 s) were never viewed.",
+        "Sustained monitor surveillance did not begin until t = 4207\u20134561 s for RR, ekg and MonitorBar (ideal t = 207 s, 8 s and 0 s).",
+        "Stethoscope (t = 6334 s) and pulse (t = 6473 s) were first looked at only about 1.5\u20131.8 hours into the session, versus ideal t = 1252 s and t = 442 s."
+      ],
+      "follow_up_questions": [
+        "At t = 14\u201370 s you looked at Nasal_Canula_AdolescentHiFlow, Bipap_Snap, NasalCanula_Snap and Nasal_Canula_NeonateHiFlow in quick succession. What were you deciding, and what would you want to know about the patient before choosing oxygen support?",
+        "Your longest fixation was ThermometerSnap2 for roughly 11 minutes (t = 11755\u201312461). What were you doing during that time, and what was happening on the monitors?",
+        "You held ChestSoundsHeart for 79 s at t = 12600\u201312678, then moved to RR at t = 12684. What finding were you listening for, and how did the monitors fit into your interpretation?",
+        "You looked at IV_Bag 78 times (117 s). What were you hoping to see each time, and how would you know the infusion was working?",
+        "How would you decide how often to re-check SPO2, ekg and RR in this case, given your first ekg look was at about t = 4,560 s?"
+      ],
+      "recommended_next_focus": "Open the next scenario with a deliberate monitor scan (MonitorBar, ekg, SPO2, RR) and return to the monitors within 10\u201315 seconds after every equipment or IV action. Avoid long dwells on bed hardware or thermometer snaps."
+    },
+    "user2": {
+      "matched_ideal_user": "idealUser2",
+      "letter_grade": "D",
+      "numeric_score": 62,
+      "executive_summary": "The learner had only 958 s of active clinical gaze across 13,558 s (7.1% versus the ideal user's 91.4%). The ideal workflow was IV_Bag/MedLineSnap/BloodDraw/ThermometerSnap2 with periodic Bipap_Snap; the learner reached those tasks 300 s to more than 4,600 s late with a fraction of the dwell. Monitor re-scanning (RR, SPO2, ekg) was far more frequent than the expert's, but the key intervention targets and several key exam targets (pulse, Epinephrine_100_, CaprefillChest) were missed.",
+      "criteria_breakdown": [
+        {
+          "criterion": "Situational Awareness & Early Assessment",
+          "grade": "D",
+          "rationale": "After glances at CodeSheet46kg (t = 0 s) and Bipap_Snap (t = 2 s), there is no recorded gaze until iStat at t = 303 s (about 300 s of null). First vitals looks were RR at t = 1354 s (ideal 682 s), MonitorBar at t = 1503 s (ideal 804 s), ekg at t = 2910 s (ideal 1342 s) and SPO2 at t = 3315 s (ideal 617 s). Baseline vitals were established roughly 700 s to 2,700 s after the ideal user's."
+        },
+        {
+          "criterion": "Completeness of Clinical Exam & Critical Checks",
+          "grade": "C-",
+          "rationale": "Only five ideal objects were never viewed: pulse (ideal t = 436 s, 23 s), Epinephrine_100_ (ideal t = 417 s, 15 s), CaprefillChest (ideal t = 1161 s), Stryker_bed_rails_back_left_parent and T3_monitor_screen_S1PennyScreen. Many others were touched only as 1\u20135 s glances, such as PenLight (2 s versus 8 s), ChestSoundsLung2 (2 s versus 10 s) and iStat (24 s over 20 looks versus 12 s). Learner-added exam objects (Stethoscope, ChestSoundsHeart, ChestSoundsLung, Liver, PulseHaptics) were glimpsed only 3\u20138 s each."
+        },
+        {
+          "criterion": "Workflow Sequencing & Clinical Prioritization",
+          "grade": "D",
+          "rationale": "The ideal user began with MedLineSnap (t = 0\u201313), BloodDraw (t = 14\u201326) and ThermometerSnap2 (t = 28), then IV_Bag (t = 41). The learner reached IV_Bag at t = 334 s, MedLineSnap at t = 340 s, BloodDraw at t = 4656 s and ThermometerSnap2 at t = 8330 s. CodeSheet8kg first appears at t = 4475 s (ideal t = 1697 s). Epinephrine_100_ never appears. Sequencing of the drug and line-related checks is therefore far from the ideal order, though the ideal user's own sequence was equipment-heavy."
+        },
+        {
+          "criterion": "Visual Focus Allocation & Task Efficiency",
+          "grade": "F",
+          "rationale": "Active focus was 7.1% (958 of 13,558 s). Bed hardware drew about 112 s of the learner's 958 active seconds (about 12%): Stryker_bed_rails_front_right_parent (27 s, 21 looks), front_hook_parent (18 s), emergency_lever (18 s), hook_parent (18 s), raise_head_lever (13 s) and others. The ideal user spent about 9 s on the bed rails. There is also a long HFNC_Screen block (30 s, 11 looks, including 10 s at t = 4545\u20134554 and 7 s at t = 4557\u20134563) that the ideal user never viewed."
+        },
+        {
+          "criterion": "Closed-Loop Re-Evaluation After Interventions",
+          "grade": "C-",
+          "rationale": "When the learner looked at monitors, it was frequently and in clusters, which is a good closed-loop habit. Examples are t = 10789\u201310794 (ekg, SPO2, RR) immediately before IV_Bag and BagPos glances, then ekg at t = 10883, and dense sweeps at t = 11961\u201312040, t = 12618\u201312784 and t = 13039\u201313236. RR was checked 99 s over 70 looks and SPO2 71 s over 46 looks versus 9 s and 13 s for the ideal user. The weakness is timing: the ideal user closed the loop within seconds (SPO2 at t = 617\u2013623 right after Bipap_Snap at t = 591\u2013616), while the learner's first intervention-to-monitor loop occurred more than 1,000 s into the session."
+        }
+      ],
+      "specific_observations": [
+        "IV_Bag was first seen at t = 334 s versus the ideal user's t = 41 s. MedLineSnap had only 10 s over 10 looks (ideal 366 s over 28 looks), BloodDraw 29 s (ideal 261 s) and ThermometerSnap2 1 s (ideal 189 s over 19 looks). The key line, draw and temperature tasks are barely represented.",
+        "Epinephrine_100_ (ideal t = 417\u2013431 s, 15 s) was never viewed, and pulse (ideal t = 436 s and t = 857 s, 23 s total) was never viewed. A medication check and a pulse check were therefore missing from the learner's visual workflow.",
+        "From t = 2 s to t = 303 s the learner has no gaze events, and there are other long null gaps (for example t = 361 s to t = 1115 s). The first real exam or monitor look (RR) came at t = 1354 s.",
+        "Many learner-only fixations were on non-clinical or peripheral objects: HFNC_Screen 30 s (11 looks), thermometer_body 59 s (29 looks), Stryker bed hardware (about 112 s), AirwayBundle1 22 s and eCPR2 19 s.",
+        "Late-session monitor scanning is vigorous (for example t = 12618\u201312784: ekg, RR and SPO2 within seconds of each other), suggesting the learner knows how to scan but did so far later than the ideal user."
+      ],
+      "strengths": [
+        "The learner re-scanned monitors repeatedly rather than fixating on one: RR 70 looks, SPO2 46 looks, ekg 29 looks and MonitorBar 30 looks, in tight clusters.",
+        "The learner viewed nearly all the ideal user's objects (only 5 of the ideal set were missed), including iStat, the CodeSheet (8kg and 37kg), PenLight, Bipap_Snap and IV_Bag.",
+        "IV_Bag received substantial attention (144 s over 89 looks), and the learner also checked IVLine (3 s)."
+      ],
+      "missed_or_delayed_checks": [
+        "Epinephrine_100_ was never viewed (ideal t = 417 s, 15 s).",
+        "pulse was never viewed (ideal t = 436 s, 23 s).",
+        "CaprefillChest (ideal t = 1161 s) and T3_monitor_screen_S1PennyScreen (ideal t = 1518 s) were never viewed.",
+        "BloodDraw was first viewed at t = 4656 s versus ideal t = 14 s, and ThermometerSnap2 at t = 8330 s versus ideal t = 28 s.",
+        "SPO2 was first checked at t = 3315 s (ideal t = 617 s) and ekg at t = 2910 s (ideal t = 1342 s).",
+        "CodeSheet8kg appears at t = 4475 s (ideal t = 1697 s), and CodeSheet37kg appears at t = 5129 s (ideal t = 1709 s)."
+      ],
+      "follow_up_questions": [
+        "Between t = 2 s and t = 303 s there is no recorded gaze. What were you doing, and when did you first form an impression of how sick this patient was?",
+        "You first looked at BloodDraw at t = 4656 s. What would be the clinical consequence of drawing labs that late in this case?",
+        "Epinephrine_100_ never appears in your gaze, and the ideal user inspected it at t = 417 s. What medications would you want ready, and how would you verify dose and weight (CodeSheet8kg appeared at t = 4475 s)?",
+        "You checked RR 70 times and SPO2 46 times. What changes were you looking for, and how did what you saw change your actions?",
+        "Roughly 112 s of your attention went to bed rails, hooks and levers, and 30 s to HFNC_Screen. What was your goal there, and how could you have met it faster?"
+      ],
+      "recommended_next_focus": "Take the first 60\u201390 seconds to establish perfusion and pulse (CaprefillChest, pulse), a monitor read, and the dose reference (CodeSheet), then start IV/med line tasks without long pauses. Practice quick, purposeful checks of Epinephrine_100_ and the CodeSheet before drawing or giving anything."
+    },
+    "user3": {
+      "matched_ideal_user": "idealUser3",
+      "letter_grade": "D",
+      "numeric_score": 60,
+      "executive_summary": "The learner had only 701 s of active gaze across 15,815 s (4.4% versus the ideal user's 92.1%), the lowest focus in the cohort. The ideal workflow was anchored on CodeSheet8kg (528 s, 40 looks), PenLight (416 s), iStat (283 s) and HFNC_Screen (228 s); the learner spent 1 s, 4 s, 25 s and 1 s on these respectively, and CodeSheet8kg was first viewed at t = 14992 s versus t = 0 s for the expert. A single 160 s fixation on Stryker_bed_handle_hook_parent consumed about 23% of all active time. The learner did show fair monitor re-scanning later in the session.",
+      "criteria_breakdown": [
+        {
+          "criterion": "Situational Awareness & Early Assessment",
+          "grade": "D",
+          "rationale": "The only early event was Liver at t = 5 s (1 s), and there was no gaze again until t = 1249 s. The first monitor glance was SPO2 at t = 1252 s (ideal t = 977 s), and ekg, MonitorBar and RR were first seen at t = 3898 s, 3898 s and 3929 s (ideal t = 1336 s, 804 s and 683 s). The ideal user began at t = 0 with CodeSheet8kg and iStat at t = 32 s, while the learner did not look at iStat until t = 2267 s."
+        },
+        {
+          "criterion": "Completeness of Clinical Exam & Critical Checks",
+          "grade": "D",
+          "rationale": "Eight ideal objects were never viewed: rebreather_mask_Neonate (ideal t = 49 s, 19 s), RebreatherMask_Adolescent (t = 1639 s), CaprefillLeftHand (t = 733 s), pulse (t = 437 s), CaprefillChest (t = 1162 s), LeftEye (t = 1532 s), T3_monitor_screen_S1PennyScreen and Stryker_bed_brake_lever. Core ideal targets were touched only as token glances: CodeSheet8kg 1 s (ideal 528 s), PenLight 4 s (ideal 416 s), HFNC_Screen 1 s (ideal 228 s), iStat 25 s (ideal 283 s) and Stethoscope 1 s (ideal 8 s)."
+        },
+        {
+          "criterion": "Workflow Sequencing & Clinical Prioritization",
+          "grade": "D",
+          "rationale": "The ideal user referenced CodeSheet8kg first (t = 0\u20138 s), then iStat (t = 32 s), rebreather_mask_Neonate (t = 49 s) and PenLight (t = 59 s), cycling among CodeSheet8kg, PenLight, iStat and HFNC_Screen. The learner started with Liver (t = 5 s), then equipment glances (NasalCanula_Snap at t = 1249 s, CapsulePulseHaptics, BagPos_C) before any weight-based check. CodeSheet37kg appears at t = 6738 s (ideal t = 28 s) and CodeSheet8kg at t = 14992 s, so the dose reference came long after the interventions."
+        },
+        {
+          "criterion": "Visual Focus Allocation & Task Efficiency",
+          "grade": "F",
+          "rationale": "Active focus was 4.4% (701 of 15,815 s). A 160 s fixation on Stryker_bed_handle_hook_parent (t = 14613\u201314772) accounts for about 23% of active time. Bed hardware overall took about 180 s (about 26% of active time), versus almost none for the ideal user. There are multiple null gaps, for example t = 8503 to t = 11110 s (about 2,600 s) and t = 4157 to t = 5167 s (about 1,000 s)."
+        },
+        {
+          "criterion": "Closed-Loop Re-Evaluation After Interventions",
+          "grade": "C-",
+          "rationale": "There are clusters that combine equipment and re-assessment. Around t = 12611\u201312790 the learner alternated IV_Bag, RR, SPO2, ChestSoundsLung, CapsulePulseHaptics, Liver and Nasal_Canula_Adolescent, and around t = 14330\u201314350 IV_Bag was followed by ekg and SPO2. RR (78 s over 56 looks), SPO2 (35 s), ekg (35 s) and MonitorBar (36 s) were re-checked frequently. The weakness is that these loops occurred late and without a documented dose check first. Nasal_Canula_Adolescent (37 s over 27 looks) drew more attention than any ideal-user equipment target."
+        }
+      ],
+      "specific_observations": [
+        "CodeSheet8kg was the ideal user's anchor (528 s over 40 looks, first at t = 0 s). The learner's single 1 s look occurs at t = 14992 s, nearly the end of the session, and the learner never held a code sheet long enough to be a dosing reference (CodeSheet5kg 6 s, CodeSheet46kg 4 s, CodeSheet37kg 1 s).",
+        "PenLight was the ideal user's second most viewed object (416 s, first at t = 59 s). The learner's first PenLight look was at t = 2723 s and total was 4 s over 4 looks; LeftEye and the RebreatherMask objects were also never viewed.",
+        "The learner's first iStat look was at t = 2267 s (ideal t = 32 s). iStat total was 25 s over 15 looks versus 283 s over 27 looks.",
+        "The 160 s fixation on Stryker_bed_handle_hook_parent (t = 14613\u201314772) took place late in the session; the ideal user never looked at that object.",
+        "The learner's monitor re-checks (RR 56 looks, MonitorBar 34, ekg 29, SPO2 29) were frequent but brief, and the first RR look was at t = 3929 s (ideal t = 683 s)."
+      ],
+      "strengths": [
+        "The learner re-scanned monitors repeatedly (RR 78 s, SPO2 35 s, ekg 35 s, MonitorBar 36 s), including dense sweeps at t = 5590\u20135680, t = 12611\u201312790 and t = 14330\u201314350.",
+        "The learner combined exam and equipment looks (ChestSoundsLung, ChestSoundsHeart, Liver, CapsulePulseHaptics, Nasal_Canula_Adolescent) in a cluster around t = 12611\u201312790, showing a reasonable integrated assessment pattern late in the run.",
+        "The learner looked at iStat (25 s) and IV_Bag (69 s over 43 looks), which are among the ideal user's targets."
+      ],
+      "missed_or_delayed_checks": [
+        "CodeSheet8kg was first viewed at t = 14992 s versus ideal t = 0 s, and the ideal user's 528 s of weight-based reference was almost absent.",
+        "PenLight was first viewed at t = 2723 s versus ideal t = 59 s (4 s versus 416 s total).",
+        "iStat was first viewed at t = 2267 s versus ideal t = 32 s.",
+        "HFNC_Screen was viewed once, at t = 5730 s, versus ideal t = 161 s and 228 s total.",
+        "Missed entirely: rebreather_mask_Neonate (ideal t = 49 s), RebreatherMask_Adolescent, CaprefillLeftHand, pulse, CaprefillChest, LeftEye and T3_monitor_screen_S1PennyScreen.",
+        "Monitors were first checked at t = 1252 s (SPO2, ideal t = 977 s), t = 3898 s (ekg, ideal t = 1336 s) and t = 3929 s (RR, ideal t = 683 s)."
+      ],
+      "follow_up_questions": [
+        "The ideal user began by looking at CodeSheet8kg at t = 0 s and returned to it 40 times, but your first look was at t = 14992 s. How did you determine the patient's weight and doses during the scenario?",
+        "You have no recorded gaze between t = 5 s and t = 1249 s. What was happening in that interval, and when did you first form a clinical impression?",
+        "You viewed PenLight for only 4 s starting at t = 2723 s. What neurologic findings were you looking for, and what changed in your plan based on them?",
+        "You spent 160 s looking at Stryker_bed_handle_hook_parent at t = 14613\u201314772. What were you trying to do with the bed, and how could you have done it while keeping a monitor in view?",
+        "You clustered IV_Bag, monitor and chest checks near t = 12611\u201312790. What did you see on SPO2, RR and ekg afterward that confirmed or changed your plan?"
+      ],
+      "recommended_next_focus": "Make the CodeSheet (weight and dose reference) and an iStat/PenLight exam part of the first minute, then cycle between those checks and the monitors rather than long idle gaps. Avoid long fixations on bed hardware."
+    }
+  },
+  "model_used": "claude-sonnet-5-5",
+  "unmatched_learners": [
+    "user4"
+  ]
+}
