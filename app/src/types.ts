@@ -1,3 +1,4 @@
+import type { GazeSummary } from './summary'
 // The JSON files written by the pipeline to app/public/data/.
 //
 // Times: `start` and `end` on visits are epoch seconds and ISO strings are
@@ -101,6 +102,7 @@ export interface RawRow {
 export interface Dataset {
   /** Where the data came from. "mock" must show a visible banner. */
   origin: 'real' | 'mock' | 'uploaded'
+  summary?: GazeSummary
   meta: Meta
   funnel: FunnelStep[]
   sessions: Session[]

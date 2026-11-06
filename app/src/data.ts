@@ -1,3 +1,4 @@
+import { parseSummary } from './summary'
 import type {
   Dataset,
   FunnelStep,
@@ -35,6 +36,12 @@ async function loadFolder(folder: Folder, meta: Meta): Promise<Dataset> {
   ])
   return {
     origin: folder === 'data' ? 'real' : 'mock',
+    summary: folder === 'data' && meta.source.startsWith('eye_gaze_tracking_050505092026.csv')
+      ? await fetch(import.meta.env.BASE_URL + 'gaze-summary.json').then(async (response) => {
+          if (!response.ok) return undefined
+          return parseSummary(await response.json())
+        }).catch(() => undefined)
+      : undefined,
     meta,
     funnel,
     sessions,

@@ -1,37 +1,21 @@
-import { useEffect, useMemo, useState } from 'react'
-import { PageTitle, Panel, PanelTitle } from '../components/Page'
+import { useMemo, useState } from 'react'
+import { PageTitle, Panel, PanelTitle, sourceName } from '../components/Page'
 import { SwimChart } from '../components/SwimChart'
 import { runWindow } from '../metrics'
-import { parseSummary, summaryVisits, type GazeSummary } from '../summary'
+import { summaryVisits } from '../summary'
 import { formatClock, formatElapsed, formatDuration } from '../time'
 import type { Lane, Visit } from '../types'
 import type { ScreenProps } from './types'
 
 const COLORS = ['#3B8EDB', '#D6336C', '#6FA832', '#D99A00', '#4FA3D1', '#8B5FBF']
 
-interface SummaryFile { summary: GazeSummary; source: string }
-
-export function ObjectSwimLanes({ dataset, run, minVisitS, view, summaryFile, setSummaryFile }: ScreenProps & { view: 'simplified' | 'advanced'; summaryFile?: SummaryFile; setSummaryFile: (file: SummaryFile) => void }) {
+export function ObjectSwimLanes({ dataset, run, minVisitS, view }: ScreenProps & { view: 'simplified' | 'advanced' }) {
   const simple = view === 'simplified'
-  const summary = summaryFile?.summary
-  const source = summaryFile?.source
-  const [error, setError] = useState('')
-  const [loading, setLoading] = useState(() => simple && !summaryFile && dataset.origin === 'real' && dataset.meta.source.startsWith('eye_gaze_tracking_050505092026.csv'))
+  const summary = dataset.summary
   const [learner, setLearner] = useState<number>()
   const [search, setSearch] = useState('')
   const [laneFilter, setLaneFilter] = useState('Vital sign monitor')
   const [selected, setSelected] = useState<Visit>()
-
-  useEffect(() => {
-    if (summaryFile || !simple || dataset.origin !== 'real' || !dataset.meta.source.startsWith('eye_gaze_tracking_050505092026.csv')) return
-    let cancelled = false
-    fetch(import.meta.env.BASE_URL + 'gaze-summary.json')
-      .then((response) => { if (!response.ok) throw new Error('Summary is unavailable.'); return response.json() })
-      .then((data: unknown) => { if (!cancelled) { setSummaryFile({ summary: parseSummary(data), source: 'gaze_summary2.json (built-in recording)' }); setLoading(false) } })
-      .catch((reason: unknown) => { if (!cancelled) setError(String(reason)) })
-      .finally(() => { if (!cancelled) setLoading(false) })
-    return () => { cancelled = true }
-  }, [simple, dataset.origin, dataset.meta.source, summaryFile, setSummaryFile])
 
   const learners = simple ? summary?.users.map((user) => user.userId) ?? [] : run.userIds
   const userId = learner !== undefined && learners.includes(learner) ? learner : learners[0]
@@ -59,39 +43,24 @@ export function ObjectSwimLanes({ dataset, run, minVisitS, view, summaryFile, se
   return (
     <div className="flex flex-col gap-5">
       <div>
-        <PageTitle>Team swim lanes ? {simple ? 'Simplified' : 'Advanced'}</PageTitle>
+        <PageTitle>Team swim lanes - {simple ? 'Simplified' : 'Advanced'}</PageTitle>
         <p className="mt-2 text-sm text-muted-foreground">
           {simple ? 'Filtered, condensed objects from the existing gaze summary script. One dominant object per second.'
             : 'Individual included objects in the selected team run, colored by clinical lane. Background objects are excluded.'}
         </p>
       </div>
-      {simple && <Panel>
-        <PanelTitle>Gaze summary</PanelTitle>
-        <p className="m-0 text-sm text-muted-foreground">
-          Upload the condensed summary JSON for your recording, generated with summarize_gaze.py --condense --no-ideal.
-          This view spans the summary?s full recording; the Team run picker applies to Standard and Advanced.
-          Pauses between sessions are omitted by the script. This is summary elapsed time, not clock time.
-        </p>
-        <label className="text-sm font-medium">Choose summary JSON
-          <input className="ml-3 max-w-full" type="file" accept=".json,application/json" disabled={loading}
-            onChange={async (event) => {
-              const file = event.target.files?.[0]
-              event.target.value = ''
-              if (!file) return
-              setError(''); setLoading(true)
-              try {
-                if (file.size > 50 * 1024 * 1024) throw new Error('Summary exceeds 50 MB.')
-                const parsed = parseSummary(JSON.parse(await file.text()))
-                setSummaryFile({ summary: parsed, source: file.name }); setLearner(undefined); setSelected(undefined)
-              } catch (reason) { setError(reason instanceof Error ? reason.message : String(reason)) }
-              finally { setLoading(false) }
-            }} />
-        </label>
-        {source && <p role="status" className="m-0 text-sm">Summary source: <strong>{source}</strong></p>}
-        {loading && <p role="status">Reading summary?</p>}
-        {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
-        {!summary && !loading && <p className="m-0 text-sm">Choose a summary to display this recording. No sample data is substituted for an uploaded gaze log.</p>}
-      </Panel>}
+      {simple && <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-muted-foreground">
+        <span>{summary ? `Summary generated automatically from ${sourceName(dataset.meta.source)}.` : 'Upload a gaze log in tab 1 to generate its summary automatically.'}</span>
+        {summary && <button type="button" className="min-h-11 cursor-pointer rounded-lg border bg-white px-4 font-medium text-foreground" onClick={() => {
+          const json = { relevant_objects: summary.relevant_objects,
+            ...Object.fromEntries(summary.users.map((user) => ['user' + user.userId, user.entries])) }
+          const url = URL.createObjectURL(new Blob([JSON.stringify(json)], { type: 'application/json' }))
+          const link = document.createElement('a')
+          link.href = url; link.download = sourceName(dataset.meta.source).replace(/\.[^.]+$/, '') + '_summary.json'
+          link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000)
+        }}>Download summary JSON</button>}
+        {summary && <span className="w-full text-xs">Full recording in summary elapsed time; pauses are omitted. Team run selection applies to Standard and Advanced.</span>}
+      </div>}
       {(!simple || summary) && <>
         <Panel>
           <div className="flex flex-wrap items-center gap-4 text-sm">
@@ -106,7 +75,7 @@ export function ObjectSwimLanes({ dataset, run, minVisitS, view, summaryFile, se
             </select></label>}
             <label>Find object <input className="ml-2 min-h-11 rounded border px-3" type="search" value={search}
               placeholder="Object name" onChange={(event) => setSearch(event.target.value)} /></label>
-            <span className="text-muted-foreground">{lanes.length} objects ? {items.length} {simple ? 'summary segments' : 'object visits'} ? {minVisitS.toFixed(1)} s</span>
+            <span className="text-muted-foreground">{lanes.length} objects / {items.length} {simple ? 'summary segments' : 'object visits'} &ge; {minVisitS.toFixed(1)} s</span>
           </div>
           {lanes.length && items.length ? <SwimChart key={view + run.id + userId + laneFilter + search}
             meta={dataset.meta} lanes={lanes} learners={[userId]} window={window} touchpoints={items}

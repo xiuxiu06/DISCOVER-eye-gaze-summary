@@ -1,3 +1,4 @@
+import { createSummary } from './createSummary'
 // The Python pipeline's steps, run in the browser on an uploaded gaze log, so
 // nothing leaves the machine. scripts/check-upload.mjs checks that both give the
 // same result. Thresholds and lanes come from meta.json, not from this file.
@@ -509,6 +510,7 @@ export function processLog(
   return {
     dataset: {
       origin: 'uploaded',
+      summary: createSummary(raw),
       meta: {
         generatedAt: new Date().toISOString(),
         source: `${fileName}. ${LANE_MAP_NOTE}`,

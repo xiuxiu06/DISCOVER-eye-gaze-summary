@@ -1,4 +1,3 @@
-import type { GazeSummary } from '../summary'
 import { useMemo, useState } from 'react'
 import { LaneDot, PageFooter, PageTitle, Panel, PanelTitle } from '../components/Page'
 import { ObjectSwimLanes } from './ObjectSwimLanes'
@@ -362,7 +361,6 @@ function StandardSwimLanes({ dataset, run, touchpoints, minVisitS, openLearner }
 
 export function SwimLanes(props: ScreenProps) {
   const [view, setView] = useState<'simplified' | 'standard' | 'advanced'>('standard')
-  const [summaryFile, setSummaryFile] = useState<{ summary: GazeSummary; source: string }>()
   return (
     <div className="flex flex-col gap-5">
       <div role="group" aria-label="Swim lane view" className="flex flex-wrap gap-1 self-start rounded-lg border bg-white p-1">
@@ -372,7 +370,7 @@ export function SwimLanes(props: ScreenProps) {
             onClick={() => setView(option)}>{option}</button>
         ))}
       </div>
-      {view === 'standard' ? <StandardSwimLanes {...props} /> : <ObjectSwimLanes key={view + props.dataset.meta.generatedAt} {...props} view={view} summaryFile={summaryFile} setSummaryFile={setSummaryFile} />}
+      {view === 'standard' ? <StandardSwimLanes {...props} /> : <ObjectSwimLanes key={view + props.dataset.meta.generatedAt} {...props} view={view} />}
     </div>
   )
 }
