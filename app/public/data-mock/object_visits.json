@@ -1,0 +1,8132 @@
+[
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778072662.893,
+  "end": 1778072664.226,
+  "dwell": 1.333
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778072725.448,
+  "end": 1778072726.071,
+  "dwell": 0.623
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778072726.071,
+  "end": 1778072726.365,
+  "dwell": 0.294
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778072734.106,
+  "end": 1778072734.485,
+  "dwell": 0.379
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778072734.485,
+  "end": 1778072734.994,
+  "dwell": 0.509
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778072791.634,
+  "end": 1778072793.465,
+  "dwell": 1.831
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778072823.334,
+  "end": 1778072824.332,
+  "dwell": 0.998
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778072824.332,
+  "end": 1778072824.744,
+  "dwell": 0.412
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778072859.182,
+  "end": 1778072859.297,
+  "dwell": 0.115
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778072859.297,
+  "end": 1778072859.39,
+  "dwell": 0.093
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778072874.488,
+  "end": 1778072875.146,
+  "dwell": 0.658
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778072886.481,
+  "end": 1778072886.642,
+  "dwell": 0.161
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778072886.642,
+  "end": 1778072886.698,
+  "dwell": 0.056
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778072914.95,
+  "end": 1778072915.613,
+  "dwell": 0.663
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778072915.613,
+  "end": 1778072915.986,
+  "dwell": 0.373
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778072973.958,
+  "end": 1778072974.745,
+  "dwell": 0.787
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778072974.745,
+  "end": 1778072975.643,
+  "dwell": 0.898
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778073033.191,
+  "end": 1778073034.144,
+  "dwell": 0.953
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778073062.036,
+  "end": 1778073062.272,
+  "dwell": 0.236
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778073062.272,
+  "end": 1778073062.442,
+  "dwell": 0.17
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073094.707,
+  "end": 1778073095.25,
+  "dwell": 0.543
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778073095.25,
+  "end": 1778073095.421,
+  "dwell": 0.171
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778073155.504,
+  "end": 1778073159.28,
+  "dwell": 3.776
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778073180.854,
+  "end": 1778073181.925,
+  "dwell": 1.071
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778073212.878,
+  "end": 1778073219.684,
+  "dwell": 6.806
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778073279.121,
+  "end": 1778073279.223,
+  "dwell": 0.102
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778073279.223,
+  "end": 1778073279.347,
+  "dwell": 0.124
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073334.236,
+  "end": 1778073334.927,
+  "dwell": 0.691
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778073334.927,
+  "end": 1778073335.414,
+  "dwell": 0.487
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778073346.101,
+  "end": 1778073346.756,
+  "dwell": 0.655
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778073346.756,
+  "end": 1778073347.633,
+  "dwell": 0.877
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778073409.896,
+  "end": 1778073410.514,
+  "dwell": 0.618
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073410.514,
+  "end": 1778073410.714,
+  "dwell": 0.2
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778073450.339,
+  "end": 1778073450.758,
+  "dwell": 0.419
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778073450.758,
+  "end": 1778073451.08,
+  "dwell": 0.322
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073488.198,
+  "end": 1778073497.058,
+  "dwell": 8.86
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778073548.676,
+  "end": 1778073548.766,
+  "dwell": 0.09
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778073548.766,
+  "end": 1778073548.812,
+  "dwell": 0.046
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778073559.872,
+  "end": 1778073560.337,
+  "dwell": 0.465
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778073560.337,
+  "end": 1778073560.538,
+  "dwell": 0.201
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778073582.015,
+  "end": 1778073582.314,
+  "dwell": 0.299
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetA",
+  "lane": "Reference",
+  "start": 1778073582.314,
+  "end": 1778073582.638,
+  "dwell": 0.324
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778073613.091,
+  "end": 1778073617.395,
+  "dwell": 4.304
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778073655.868,
+  "end": 1778073656.103,
+  "dwell": 0.235
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073726.196,
+  "end": 1778073726.473,
+  "dwell": 0.277
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073755.635,
+  "end": 1778073756.932,
+  "dwell": 1.297
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778073756.932,
+  "end": 1778073757.335,
+  "dwell": 0.403
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073804.304,
+  "end": 1778073805.593,
+  "dwell": 1.289
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778073861.115,
+  "end": 1778073861.186,
+  "dwell": 0.071
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778073861.186,
+  "end": 1778073861.268,
+  "dwell": 0.082
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073884.51,
+  "end": 1778073886.821,
+  "dwell": 2.311
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778073914.884,
+  "end": 1778073916.07,
+  "dwell": 1.186
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073916.07,
+  "end": 1778073917.77,
+  "dwell": 1.7
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778073982.558,
+  "end": 1778073983.432,
+  "dwell": 0.874
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778074027.893,
+  "end": 1778074028.04,
+  "dwell": 0.147
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778074060.333,
+  "end": 1778074060.396,
+  "dwell": 0.063
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778074060.396,
+  "end": 1778074060.445,
+  "dwell": 0.049
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778074065.616,
+  "end": 1778074066.815,
+  "dwell": 1.199
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778074066.815,
+  "end": 1778074067.298,
+  "dwell": 0.483
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074118.004,
+  "end": 1778074118.247,
+  "dwell": 0.243
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778074172.316,
+  "end": 1778074172.952,
+  "dwell": 0.636
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778074172.952,
+  "end": 1778074173.193,
+  "dwell": 0.241
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074216.478,
+  "end": 1778074216.793,
+  "dwell": 0.315
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778074232.321,
+  "end": 1778074232.698,
+  "dwell": 0.377
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778074232.698,
+  "end": 1778074232.83,
+  "dwell": 0.132
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778074283.343,
+  "end": 1778074283.991,
+  "dwell": 0.648
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778074283.991,
+  "end": 1778074284.528,
+  "dwell": 0.537
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074473.715,
+  "end": 1778074474.364,
+  "dwell": 0.649
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778074496.949,
+  "end": 1778074498.464,
+  "dwell": 1.515
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778074498.464,
+  "end": 1778074499.655,
+  "dwell": 1.191
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778074530.521,
+  "end": 1778074531.24,
+  "dwell": 0.719
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778074605.39,
+  "end": 1778074606.89,
+  "dwell": 1.5
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778074606.89,
+  "end": 1778074607.994,
+  "dwell": 1.104
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074611.97,
+  "end": 1778074614.82,
+  "dwell": 2.85
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778074634.002,
+  "end": 1778074635.223,
+  "dwell": 1.221
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778074635.223,
+  "end": 1778074636.114,
+  "dwell": 0.891
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778074663.658,
+  "end": 1778074665.035,
+  "dwell": 1.377
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778074665.035,
+  "end": 1778074665.77,
+  "dwell": 0.735
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778074687.347,
+  "end": 1778074693.394,
+  "dwell": 6.047
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074760.654,
+  "end": 1778074762.088,
+  "dwell": 1.434
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778074814.863,
+  "end": 1778074815.305,
+  "dwell": 0.442
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074882.628,
+  "end": 1778074883.958,
+  "dwell": 1.33
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778074921.346,
+  "end": 1778074921.676,
+  "dwell": 0.33
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778074921.676,
+  "end": 1778074921.941,
+  "dwell": 0.265
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074932.339,
+  "end": 1778074934.578,
+  "dwell": 2.239
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778074986.573,
+  "end": 1778074987.13,
+  "dwell": 0.557
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778074987.13,
+  "end": 1778074987.627,
+  "dwell": 0.497
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778075060.857,
+  "end": 1778075063.737,
+  "dwell": 2.88
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778075137.925,
+  "end": 1778075139.347,
+  "dwell": 1.422
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778075148.39,
+  "end": 1778075148.779,
+  "dwell": 0.389
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778075148.779,
+  "end": 1778075149.131,
+  "dwell": 0.352
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778075217.573,
+  "end": 1778075218.63,
+  "dwell": 1.057
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778075218.63,
+  "end": 1778075219.233,
+  "dwell": 0.603
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778075240.776,
+  "end": 1778075242.617,
+  "dwell": 1.841
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778075273.268,
+  "end": 1778075275.117,
+  "dwell": 1.849
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778075282.801,
+  "end": 1778075284.982,
+  "dwell": 2.181
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778075331.53,
+  "end": 1778075331.966,
+  "dwell": 0.436
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778075331.966,
+  "end": 1778075332.106,
+  "dwell": 0.14
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778075386.433,
+  "end": 1778075386.585,
+  "dwell": 0.152
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778075417.032,
+  "end": 1778075418.758,
+  "dwell": 1.726
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778075418.758,
+  "end": 1778075420.197,
+  "dwell": 1.439
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778075481,
+  "end": 1778075486.445,
+  "dwell": 5.445
+ },
+ {
+  "sessionId": "u1-s1",
+  "userId": 1,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778075486.445,
+  "end": 1778075489.302,
+  "dwell": 2.857
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778072700.948,
+  "end": 1778072701.466,
+  "dwell": 0.518
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778072740.991,
+  "end": 1778072741.781,
+  "dwell": 0.79
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778072741.781,
+  "end": 1778072742.824,
+  "dwell": 1.043
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778072803.955,
+  "end": 1778072805.671,
+  "dwell": 1.716
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778072858.308,
+  "end": 1778072858.657,
+  "dwell": 0.349
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778072858.657,
+  "end": 1778072858.807,
+  "dwell": 0.15
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778072885.506,
+  "end": 1778072885.763,
+  "dwell": 0.257
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778072885.763,
+  "end": 1778072885.953,
+  "dwell": 0.19
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778072926.541,
+  "end": 1778072927.834,
+  "dwell": 1.293
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778072943.173,
+  "end": 1778072943.738,
+  "dwell": 0.565
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778072943.738,
+  "end": 1778072944.155,
+  "dwell": 0.417
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778072956.809,
+  "end": 1778072956.942,
+  "dwell": 0.133
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778072956.942,
+  "end": 1778072957.092,
+  "dwell": 0.15
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073022.76,
+  "end": 1778073024.819,
+  "dwell": 2.059
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778073039.903,
+  "end": 1778073042.033,
+  "dwell": 2.13
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778073042.033,
+  "end": 1778073043.418,
+  "dwell": 1.385
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073057.347,
+  "end": 1778073058.968,
+  "dwell": 1.621
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778073116.925,
+  "end": 1778073118.281,
+  "dwell": 1.356
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778073118.281,
+  "end": 1778073118.846,
+  "dwell": 0.565
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073150.024,
+  "end": 1778073150.526,
+  "dwell": 0.502
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778073163.789,
+  "end": 1778073165.293,
+  "dwell": 1.504
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778073165.293,
+  "end": 1778073165.942,
+  "dwell": 0.649
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778073188.099,
+  "end": 1778073188.303,
+  "dwell": 0.204
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073188.303,
+  "end": 1778073188.384,
+  "dwell": 0.081
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073195.485,
+  "end": 1778073197.132,
+  "dwell": 1.647
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778073253.685,
+  "end": 1778073254.718,
+  "dwell": 1.033
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778073254.718,
+  "end": 1778073256.032,
+  "dwell": 1.314
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778073278.677,
+  "end": 1778073279.253,
+  "dwell": 0.576
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073335.598,
+  "end": 1778073336.254,
+  "dwell": 0.656
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073348.815,
+  "end": 1778073348.937,
+  "dwell": 0.122
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073390.052,
+  "end": 1778073392.156,
+  "dwell": 2.104
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778073392.156,
+  "end": 1778073393.323,
+  "dwell": 1.167
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073402.816,
+  "end": 1778073404.74,
+  "dwell": 1.924
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073437.435,
+  "end": 1778073438.295,
+  "dwell": 0.86
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778073506.53,
+  "end": 1778073506.716,
+  "dwell": 0.186
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778073506.716,
+  "end": 1778073506.878,
+  "dwell": 0.162
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073551.237,
+  "end": 1778073553.939,
+  "dwell": 2.702
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778073553.939,
+  "end": 1778073555.878,
+  "dwell": 1.939
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778073584.681,
+  "end": 1778073585.183,
+  "dwell": 0.502
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073606.286,
+  "end": 1778073607.708,
+  "dwell": 1.422
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778073655.979,
+  "end": 1778073656.041,
+  "dwell": 0.062
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778073656.041,
+  "end": 1778073656.121,
+  "dwell": 0.08
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073695.186,
+  "end": 1778073695.816,
+  "dwell": 0.63
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778073760.492,
+  "end": 1778073761.387,
+  "dwell": 0.895
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778073797.425,
+  "end": 1778073799.432,
+  "dwell": 2.007
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778073799.432,
+  "end": 1778073801.508,
+  "dwell": 2.076
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778073860.762,
+  "end": 1778073861.086,
+  "dwell": 0.324
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778073861.086,
+  "end": 1778073861.338,
+  "dwell": 0.252
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073890.386,
+  "end": 1778073890.941,
+  "dwell": 0.555
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778073913.192,
+  "end": 1778073913.924,
+  "dwell": 0.732
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778073913.924,
+  "end": 1778073914.472,
+  "dwell": 0.548
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778073939.374,
+  "end": 1778073941.31,
+  "dwell": 1.936
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778073941.31,
+  "end": 1778073942.255,
+  "dwell": 0.945
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073986.537,
+  "end": 1778073986.911,
+  "dwell": 0.374
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778074094.919,
+  "end": 1778074095.207,
+  "dwell": 0.288
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778074102.707,
+  "end": 1778074103.389,
+  "dwell": 0.682
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778074103.389,
+  "end": 1778074104.41,
+  "dwell": 1.021
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074116.008,
+  "end": 1778074116.553,
+  "dwell": 0.545
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778074142.192,
+  "end": 1778074142.79,
+  "dwell": 0.598
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetA",
+  "lane": "Reference",
+  "start": 1778074142.79,
+  "end": 1778074143.217,
+  "dwell": 0.427
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074160.393,
+  "end": 1778074162.685,
+  "dwell": 2.292
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778074219.996,
+  "end": 1778074220.914,
+  "dwell": 0.918
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778074220.914,
+  "end": 1778074221.604,
+  "dwell": 0.69
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074248.694,
+  "end": 1778074250.484,
+  "dwell": 1.79
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778074286.309,
+  "end": 1778074287.507,
+  "dwell": 1.198
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074308.94,
+  "end": 1778074310.015,
+  "dwell": 1.075
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778074340.939,
+  "end": 1778074341.059,
+  "dwell": 0.12
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778074341.059,
+  "end": 1778074341.131,
+  "dwell": 0.072
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074360.822,
+  "end": 1778074360.937,
+  "dwell": 0.115
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778074412.889,
+  "end": 1778074414.13,
+  "dwell": 1.241
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778074414.13,
+  "end": 1778074414.678,
+  "dwell": 0.548
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074437.666,
+  "end": 1778074438.989,
+  "dwell": 1.323
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778074490.08,
+  "end": 1778074490.978,
+  "dwell": 0.898
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetA",
+  "lane": "Reference",
+  "start": 1778074544.548,
+  "end": 1778074546.533,
+  "dwell": 1.985
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778074546.533,
+  "end": 1778074547.481,
+  "dwell": 0.948
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074556.385,
+  "end": 1778074557.201,
+  "dwell": 0.816
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778074564.61,
+  "end": 1778074565.302,
+  "dwell": 0.692
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778074565.302,
+  "end": 1778074566.047,
+  "dwell": 0.745
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074573.858,
+  "end": 1778074578.52,
+  "dwell": 4.662
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778074600.425,
+  "end": 1778074601.65,
+  "dwell": 1.225
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778074601.65,
+  "end": 1778074603.48,
+  "dwell": 1.83
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074643.222,
+  "end": 1778074643.421,
+  "dwell": 0.199
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778074705.023,
+  "end": 1778074705.562,
+  "dwell": 0.539
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778074705.562,
+  "end": 1778074705.8,
+  "dwell": 0.238
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074745.709,
+  "end": 1778074746.476,
+  "dwell": 0.767
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetA",
+  "lane": "Reference",
+  "start": 1778074814.802,
+  "end": 1778074816.918,
+  "dwell": 2.116
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074872.952,
+  "end": 1778074873.329,
+  "dwell": 0.377
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778074892.215,
+  "end": 1778074895.148,
+  "dwell": 2.933
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778074906.513,
+  "end": 1778074909.174,
+  "dwell": 2.661
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074917.741,
+  "end": 1778074918.735,
+  "dwell": 0.994
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778074979.759,
+  "end": 1778074980.002,
+  "dwell": 0.243
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetA",
+  "lane": "Reference",
+  "start": 1778074980.002,
+  "end": 1778074980.291,
+  "dwell": 0.289
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074997.531,
+  "end": 1778075000.657,
+  "dwell": 3.126
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778075060.052,
+  "end": 1778075062.786,
+  "dwell": 2.734
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778075137.278,
+  "end": 1778075137.915,
+  "dwell": 0.637
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778075137.915,
+  "end": 1778075138.166,
+  "dwell": 0.251
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778075196.485,
+  "end": 1778075196.726,
+  "dwell": 0.241
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778075237.39,
+  "end": 1778075238.793,
+  "dwell": 1.403
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778075294.195,
+  "end": 1778075299.317,
+  "dwell": 5.122
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778075342.213,
+  "end": 1778075342.866,
+  "dwell": 0.653
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778075342.866,
+  "end": 1778075343.535,
+  "dwell": 0.669
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778075401.701,
+  "end": 1778075401.934,
+  "dwell": 0.233
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778075451.974,
+  "end": 1778075453.152,
+  "dwell": 1.178
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778075507.489,
+  "end": 1778075508.799,
+  "dwell": 1.31
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778075528.516,
+  "end": 1778075530.834,
+  "dwell": 2.318
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778075530.834,
+  "end": 1778075531.489,
+  "dwell": 0.655
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778075549.861,
+  "end": 1778075550.279,
+  "dwell": 0.418
+ },
+ {
+  "sessionId": "u2-s1",
+  "userId": 2,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778075624.555,
+  "end": 1778075624.754,
+  "dwell": 0.199
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778072658.089,
+  "end": 1778072658.916,
+  "dwell": 0.827
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778072658.916,
+  "end": 1778072659.159,
+  "dwell": 0.243
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778072673.531,
+  "end": 1778072674.938,
+  "dwell": 1.407
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778072704.176,
+  "end": 1778072704.58,
+  "dwell": 0.404
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778072720.96,
+  "end": 1778072721.743,
+  "dwell": 0.783
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778072721.743,
+  "end": 1778072722.221,
+  "dwell": 0.478
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778072734.556,
+  "end": 1778072735.535,
+  "dwell": 0.979
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778072793.793,
+  "end": 1778072793.97,
+  "dwell": 0.177
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778072793.97,
+  "end": 1778072794.049,
+  "dwell": 0.079
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778072812.079,
+  "end": 1778072813.727,
+  "dwell": 1.648
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778072813.727,
+  "end": 1778072814.802,
+  "dwell": 1.075
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778072870.024,
+  "end": 1778072871.666,
+  "dwell": 1.642
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778072911.324,
+  "end": 1778072912.728,
+  "dwell": 1.404
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778072912.728,
+  "end": 1778072914.21,
+  "dwell": 1.482
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778072921.287,
+  "end": 1778072923.062,
+  "dwell": 1.775
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778072923.062,
+  "end": 1778072924.631,
+  "dwell": 1.569
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778072973.373,
+  "end": 1778072974.194,
+  "dwell": 0.821
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778073042.782,
+  "end": 1778073043.171,
+  "dwell": 0.389
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778073043.171,
+  "end": 1778073043.415,
+  "dwell": 0.244
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778073087.261,
+  "end": 1778073087.72,
+  "dwell": 0.459
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778073087.72,
+  "end": 1778073087.954,
+  "dwell": 0.234
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073104.756,
+  "end": 1778073105.299,
+  "dwell": 0.543
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778073105.299,
+  "end": 1778073105.572,
+  "dwell": 0.273
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073108.798,
+  "end": 1778073109.427,
+  "dwell": 0.629
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778073126.799,
+  "end": 1778073127.942,
+  "dwell": 1.143
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778073127.942,
+  "end": 1778073128.334,
+  "dwell": 0.392
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778073146.238,
+  "end": 1778073148.951,
+  "dwell": 2.713
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073148.951,
+  "end": 1778073149.85,
+  "dwell": 0.899
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778073210.523,
+  "end": 1778073210.733,
+  "dwell": 0.21
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778073210.733,
+  "end": 1778073210.957,
+  "dwell": 0.224
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778073230.627,
+  "end": 1778073231.462,
+  "dwell": 0.835
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073231.462,
+  "end": 1778073232.119,
+  "dwell": 0.657
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778073254.27,
+  "end": 1778073260.819,
+  "dwell": 6.549
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778073329.591,
+  "end": 1778073331.107,
+  "dwell": 1.516
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778073331.107,
+  "end": 1778073333.032,
+  "dwell": 1.925
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778073397.722,
+  "end": 1778073398.157,
+  "dwell": 0.435
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778073398.157,
+  "end": 1778073398.753,
+  "dwell": 0.596
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetA",
+  "lane": "Reference",
+  "start": 1778073454.327,
+  "end": 1778073454.388,
+  "dwell": 0.061
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778073454.388,
+  "end": 1778073454.43,
+  "dwell": 0.042
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778073504.508,
+  "end": 1778073504.656,
+  "dwell": 0.148
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778073504.656,
+  "end": 1778073504.711,
+  "dwell": 0.055
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778073554.382,
+  "end": 1778073555.722,
+  "dwell": 1.34
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073555.722,
+  "end": 1778073556.083,
+  "dwell": 0.361
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778073564.7,
+  "end": 1778073567.513,
+  "dwell": 2.813
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073582.334,
+  "end": 1778073585.089,
+  "dwell": 2.755
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778073649.633,
+  "end": 1778073649.692,
+  "dwell": 0.059
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778073649.692,
+  "end": 1778073649.742,
+  "dwell": 0.05
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073690.397,
+  "end": 1778073695.034,
+  "dwell": 4.637
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetA",
+  "lane": "Reference",
+  "start": 1778073753.496,
+  "end": 1778073758.468,
+  "dwell": 4.972
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778073822.502,
+  "end": 1778073826.121,
+  "dwell": 3.619
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778073881.603,
+  "end": 1778073881.696,
+  "dwell": 0.093
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778073881.696,
+  "end": 1778073881.766,
+  "dwell": 0.07
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073903.183,
+  "end": 1778073904.725,
+  "dwell": 1.542
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778073975.713,
+  "end": 1778073979.738,
+  "dwell": 4.025
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778073979.738,
+  "end": 1778073983.168,
+  "dwell": 3.43
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073989.271,
+  "end": 1778073989.819,
+  "dwell": 0.548
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778073989.819,
+  "end": 1778073990.392,
+  "dwell": 0.573
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778073996.779,
+  "end": 1778074000.773,
+  "dwell": 3.994
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778074000.773,
+  "end": 1778074003.246,
+  "dwell": 2.473
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074029.854,
+  "end": 1778074032.154,
+  "dwell": 2.3
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778074089.933,
+  "end": 1778074092.558,
+  "dwell": 2.625
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778074092.558,
+  "end": 1778074094.29,
+  "dwell": 1.732
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074098.318,
+  "end": 1778074102.695,
+  "dwell": 4.377
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778074117.125,
+  "end": 1778074118.532,
+  "dwell": 1.407
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778074118.532,
+  "end": 1778074119.379,
+  "dwell": 0.847
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778074130.629,
+  "end": 1778074131.129,
+  "dwell": 0.5
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778074156.502,
+  "end": 1778074158.176,
+  "dwell": 1.674
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778074158.176,
+  "end": 1778074159.498,
+  "dwell": 1.322
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778074321.167,
+  "end": 1778074321.274,
+  "dwell": 0.107
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778074361.672,
+  "end": 1778074362.079,
+  "dwell": 0.407
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074413.253,
+  "end": 1778074413.696,
+  "dwell": 0.443
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778074482.709,
+  "end": 1778074484.782,
+  "dwell": 2.073
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778074484.782,
+  "end": 1778074486.226,
+  "dwell": 1.444
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetA",
+  "lane": "Reference",
+  "start": 1778074558.816,
+  "end": 1778074559.808,
+  "dwell": 0.992
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778074559.808,
+  "end": 1778074560.289,
+  "dwell": 0.481
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778074609.528,
+  "end": 1778074609.723,
+  "dwell": 0.195
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778074609.723,
+  "end": 1778074609.88,
+  "dwell": 0.157
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778074639.516,
+  "end": 1778074640.223,
+  "dwell": 0.707
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778074640.223,
+  "end": 1778074640.776,
+  "dwell": 0.553
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778074659.443,
+  "end": 1778074662.973,
+  "dwell": 3.53
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778074662.973,
+  "end": 1778074664.931,
+  "dwell": 1.958
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778074696.843,
+  "end": 1778074696.937,
+  "dwell": 0.094
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778074696.937,
+  "end": 1778074697.07,
+  "dwell": 0.133
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074713.601,
+  "end": 1778074714.27,
+  "dwell": 0.669
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778074776.025,
+  "end": 1778074777.677,
+  "dwell": 1.652
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778074777.677,
+  "end": 1778074778.143,
+  "dwell": 0.466
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778074806.688,
+  "end": 1778074806.864,
+  "dwell": 0.176
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778074806.864,
+  "end": 1778074806.977,
+  "dwell": 0.113
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778074843.019,
+  "end": 1778074844.157,
+  "dwell": 1.138
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778074844.157,
+  "end": 1778074844.898,
+  "dwell": 0.741
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074885.025,
+  "end": 1778074887.112,
+  "dwell": 2.087
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778074900.232,
+  "end": 1778074903.035,
+  "dwell": 2.803
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778074903.035,
+  "end": 1778074905.042,
+  "dwell": 2.007
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778074914.271,
+  "end": 1778074914.434,
+  "dwell": 0.163
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778074914.434,
+  "end": 1778074914.594,
+  "dwell": 0.16
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778074920.819,
+  "end": 1778074920.993,
+  "dwell": 0.174
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778074920.993,
+  "end": 1778074921.161,
+  "dwell": 0.168
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778074979.978,
+  "end": 1778074981.435,
+  "dwell": 1.457
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778075050.923,
+  "end": 1778075054.399,
+  "dwell": 3.476
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778075054.399,
+  "end": 1778075056.604,
+  "dwell": 2.205
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778075069.018,
+  "end": 1778075071.226,
+  "dwell": 2.208
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778075071.226,
+  "end": 1778075073.292,
+  "dwell": 2.066
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778075114.62,
+  "end": 1778075115.39,
+  "dwell": 0.77
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778075166.484,
+  "end": 1778075167.196,
+  "dwell": 0.712
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778075167.196,
+  "end": 1778075167.483,
+  "dwell": 0.287
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778075224.43,
+  "end": 1778075225.071,
+  "dwell": 0.641
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778075225.071,
+  "end": 1778075225.841,
+  "dwell": 0.77
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778075262.615,
+  "end": 1778075263.507,
+  "dwell": 0.892
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778075327.806,
+  "end": 1778075328.761,
+  "dwell": 0.955
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778075328.761,
+  "end": 1778075329.287,
+  "dwell": 0.526
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778075369.164,
+  "end": 1778075373.761,
+  "dwell": 4.597
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778075402.364,
+  "end": 1778075404.373,
+  "dwell": 2.009
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778075463.859,
+  "end": 1778075465.804,
+  "dwell": 1.945
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778075465.804,
+  "end": 1778075467.839,
+  "dwell": 2.035
+ },
+ {
+  "sessionId": "u3-s1",
+  "userId": 3,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778075475.945,
+  "end": 1778075481.744,
+  "dwell": 5.799
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778072681.246,
+  "end": 1778072682.157,
+  "dwell": 0.911
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778072722.469,
+  "end": 1778072722.566,
+  "dwell": 0.097
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778072722.566,
+  "end": 1778072722.671,
+  "dwell": 0.105
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778072764.031,
+  "end": 1778072765.512,
+  "dwell": 1.481
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778072800.439,
+  "end": 1778072800.765,
+  "dwell": 0.326
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778072874.227,
+  "end": 1778072877.179,
+  "dwell": 2.952
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778072930.004,
+  "end": 1778072932.586,
+  "dwell": 2.582
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778072932.586,
+  "end": 1778072933.874,
+  "dwell": 1.288
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778073004.816,
+  "end": 1778073004.92,
+  "dwell": 0.104
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073056.941,
+  "end": 1778073058.513,
+  "dwell": 1.572
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778073100.074,
+  "end": 1778073100.883,
+  "dwell": 0.809
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778073100.883,
+  "end": 1778073101.481,
+  "dwell": 0.598
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073143.682,
+  "end": 1778073143.962,
+  "dwell": 0.28
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778073218.512,
+  "end": 1778073218.569,
+  "dwell": 0.057
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778073218.569,
+  "end": 1778073218.624,
+  "dwell": 0.055
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073288.747,
+  "end": 1778073289.092,
+  "dwell": 0.345
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetA",
+  "lane": "Reference",
+  "start": 1778073295.842,
+  "end": 1778073296.724,
+  "dwell": 0.882
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778073296.724,
+  "end": 1778073297.906,
+  "dwell": 1.182
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073323.877,
+  "end": 1778073324.759,
+  "dwell": 0.882
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778073352.342,
+  "end": 1778073352.905,
+  "dwell": 0.563
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778073352.905,
+  "end": 1778073353.189,
+  "dwell": 0.284
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073368.613,
+  "end": 1778073370.327,
+  "dwell": 1.714
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778073430.073,
+  "end": 1778073430.716,
+  "dwell": 0.643
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778073430.716,
+  "end": 1778073431.43,
+  "dwell": 0.714
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073443.072,
+  "end": 1778073446.434,
+  "dwell": 3.362
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778073499.319,
+  "end": 1778073499.9,
+  "dwell": 0.581
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073519.021,
+  "end": 1778073520.345,
+  "dwell": 1.324
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778073563.591,
+  "end": 1778073565.345,
+  "dwell": 1.754
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778073620.369,
+  "end": 1778073620.734,
+  "dwell": 0.365
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778073682.189,
+  "end": 1778073682.902,
+  "dwell": 0.713
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778073682.902,
+  "end": 1778073683.408,
+  "dwell": 0.506
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073736.966,
+  "end": 1778073740.558,
+  "dwell": 3.592
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778073767.877,
+  "end": 1778073768.816,
+  "dwell": 0.939
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073814.887,
+  "end": 1778073815.809,
+  "dwell": 0.922
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778073857.503,
+  "end": 1778073858.113,
+  "dwell": 0.61
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778073858.113,
+  "end": 1778073858.382,
+  "dwell": 0.269
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073905.75,
+  "end": 1778073906.49,
+  "dwell": 0.74
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778073935.203,
+  "end": 1778073939.002,
+  "dwell": 3.799
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778073939.002,
+  "end": 1778073940.908,
+  "dwell": 1.906
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778073955.547,
+  "end": 1778073956.03,
+  "dwell": 0.483
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778073970.965,
+  "end": 1778073971.13,
+  "dwell": 0.165
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778073998.379,
+  "end": 1778074002.981,
+  "dwell": 4.602
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074050.615,
+  "end": 1778074052.558,
+  "dwell": 1.943
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778074096.598,
+  "end": 1778074097.058,
+  "dwell": 0.46
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778074097.058,
+  "end": 1778074097.346,
+  "dwell": 0.288
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074103.916,
+  "end": 1778074104.227,
+  "dwell": 0.311
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778074170.772,
+  "end": 1778074172.011,
+  "dwell": 1.239
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778074172.011,
+  "end": 1778074173.746,
+  "dwell": 1.735
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778074206.277,
+  "end": 1778074207.671,
+  "dwell": 1.394
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778074366.357,
+  "end": 1778074367.706,
+  "dwell": 1.349
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778074431.344,
+  "end": 1778074433.09,
+  "dwell": 1.746
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778074433.09,
+  "end": 1778074434.813,
+  "dwell": 1.723
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074459.953,
+  "end": 1778074460.391,
+  "dwell": 0.438
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778074525.837,
+  "end": 1778074526.006,
+  "dwell": 0.169
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778074526.006,
+  "end": 1778074526.155,
+  "dwell": 0.149
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778074580.715,
+  "end": 1778074581.245,
+  "dwell": 0.53
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778074581.245,
+  "end": 1778074581.467,
+  "dwell": 0.222
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778074649.231,
+  "end": 1778074650.52,
+  "dwell": 1.289
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778074650.52,
+  "end": 1778074651.036,
+  "dwell": 0.516
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074697.002,
+  "end": 1778074697.935,
+  "dwell": 0.933
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778074701.423,
+  "end": 1778074704.349,
+  "dwell": 2.926
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778074704.349,
+  "end": 1778074705.987,
+  "dwell": 1.638
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778074773.328,
+  "end": 1778074775.607,
+  "dwell": 2.279
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778074834.356,
+  "end": 1778074837.493,
+  "dwell": 3.137
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778074837.493,
+  "end": 1778074838.366,
+  "dwell": 0.873
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778074897.764,
+  "end": 1778074898.289,
+  "dwell": 0.525
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778074934.324,
+  "end": 1778074934.768,
+  "dwell": 0.444
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778074934.768,
+  "end": 1778074935.132,
+  "dwell": 0.364
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778075003.669,
+  "end": 1778075004.541,
+  "dwell": 0.872
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778075028.477,
+  "end": 1778075029.246,
+  "dwell": 0.769
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778075029.246,
+  "end": 1778075029.633,
+  "dwell": 0.387
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778075100.113,
+  "end": 1778075103.395,
+  "dwell": 3.282
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778075147.866,
+  "end": 1778075148.241,
+  "dwell": 0.375
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778075148.241,
+  "end": 1778075148.532,
+  "dwell": 0.291
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778075196.314,
+  "end": 1778075196.706,
+  "dwell": 0.392
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778075241.506,
+  "end": 1778075247.496,
+  "dwell": 5.99
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778075278.299,
+  "end": 1778075279.547,
+  "dwell": 1.248
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778075339.575,
+  "end": 1778075339.742,
+  "dwell": 0.167
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778075339.742,
+  "end": 1778075339.813,
+  "dwell": 0.071
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778075397.294,
+  "end": 1778075398.315,
+  "dwell": 1.021
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778075443.123,
+  "end": 1778075445.386,
+  "dwell": 2.263
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778075504.072,
+  "end": 1778075505.089,
+  "dwell": 1.017
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778075563.857,
+  "end": 1778075563.959,
+  "dwell": 0.102
+ },
+ {
+  "sessionId": "u4-s1",
+  "userId": 4,
+  "runId": "run-2026-05-06-1304",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778075563.959,
+  "end": 1778075564.012,
+  "dwell": 0.053
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778246513.057,
+  "end": 1778246513.286,
+  "dwell": 0.229
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778246513.286,
+  "end": 1778246513.515,
+  "dwell": 0.229
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778246569.264,
+  "end": 1778246569.447,
+  "dwell": 0.183
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778246584.094,
+  "end": 1778246585.204,
+  "dwell": 1.11
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778246598.183,
+  "end": 1778246599.049,
+  "dwell": 0.866
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778246599.049,
+  "end": 1778246599.484,
+  "dwell": 0.435
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778246619.637,
+  "end": 1778246622.041,
+  "dwell": 2.404
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778246638.637,
+  "end": 1778246639.325,
+  "dwell": 0.688
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778246639.325,
+  "end": 1778246640.279,
+  "dwell": 0.954
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778246666.235,
+  "end": 1778246671.117,
+  "dwell": 4.882
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778246718.711,
+  "end": 1778246718.801,
+  "dwell": 0.09
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778246718.801,
+  "end": 1778246718.908,
+  "dwell": 0.107
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778246759.294,
+  "end": 1778246761.812,
+  "dwell": 2.518
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778246789.609,
+  "end": 1778246790.96,
+  "dwell": 1.351
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778246860.35,
+  "end": 1778246860.747,
+  "dwell": 0.397
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778246896.021,
+  "end": 1778246896.219,
+  "dwell": 0.198
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778246970.129,
+  "end": 1778246971.136,
+  "dwell": 1.007
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778246977.464,
+  "end": 1778246978.911,
+  "dwell": 1.447
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778247030.76,
+  "end": 1778247035.632,
+  "dwell": 4.872
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778247048.9,
+  "end": 1778247049.587,
+  "dwell": 0.687
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778247049.587,
+  "end": 1778247049.784,
+  "dwell": 0.197
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247086.068,
+  "end": 1778247087.123,
+  "dwell": 1.055
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778247144.267,
+  "end": 1778247144.802,
+  "dwell": 0.535
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247209.025,
+  "end": 1778247212.069,
+  "dwell": 3.044
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778247274.26,
+  "end": 1778247276.488,
+  "dwell": 2.228
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778247276.488,
+  "end": 1778247277.931,
+  "dwell": 1.443
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778247333.418,
+  "end": 1778247333.515,
+  "dwell": 0.097
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778247333.515,
+  "end": 1778247333.569,
+  "dwell": 0.054
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247393.138,
+  "end": 1778247396.269,
+  "dwell": 3.131
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778247452.24,
+  "end": 1778247453.394,
+  "dwell": 1.154
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778247453.394,
+  "end": 1778247454.139,
+  "dwell": 0.745
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778247499.187,
+  "end": 1778247499.485,
+  "dwell": 0.298
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778247499.485,
+  "end": 1778247499.884,
+  "dwell": 0.399
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778247514.652,
+  "end": 1778247515.078,
+  "dwell": 0.426
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778247515.078,
+  "end": 1778247515.372,
+  "dwell": 0.294
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778247583.366,
+  "end": 1778247584.108,
+  "dwell": 0.742
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778247584.108,
+  "end": 1778247584.855,
+  "dwell": 0.747
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247642.169,
+  "end": 1778247642.657,
+  "dwell": 0.488
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778247724.072,
+  "end": 1778247726.623,
+  "dwell": 2.551
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778247726.623,
+  "end": 1778247729.6,
+  "dwell": 2.977
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778247737.006,
+  "end": 1778247737.115,
+  "dwell": 0.109
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778247774.693,
+  "end": 1778247774.779,
+  "dwell": 0.086
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778247774.779,
+  "end": 1778247774.828,
+  "dwell": 0.049
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778247797.637,
+  "end": 1778247798.124,
+  "dwell": 0.487
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778247798.124,
+  "end": 1778247798.349,
+  "dwell": 0.225
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778247834.512,
+  "end": 1778247834.993,
+  "dwell": 0.481
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778247834.993,
+  "end": 1778247835.238,
+  "dwell": 0.245
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778247876.995,
+  "end": 1778247877.794,
+  "dwell": 0.799
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778247877.794,
+  "end": 1778247878.41,
+  "dwell": 0.616
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778247897.953,
+  "end": 1778247899.363,
+  "dwell": 1.41
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778247899.363,
+  "end": 1778247900.187,
+  "dwell": 0.824
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778247954.481,
+  "end": 1778247954.635,
+  "dwell": 0.154
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778247954.635,
+  "end": 1778247954.783,
+  "dwell": 0.148
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247990.386,
+  "end": 1778247991.142,
+  "dwell": 0.756
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778248063.823,
+  "end": 1778248064.102,
+  "dwell": 0.279
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778248130.919,
+  "end": 1778248133.72,
+  "dwell": 2.801
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248208.411,
+  "end": 1778248210.367,
+  "dwell": 1.956
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778248227.596,
+  "end": 1778248228.047,
+  "dwell": 0.451
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778248228.047,
+  "end": 1778248228.406,
+  "dwell": 0.359
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778248251.83,
+  "end": 1778248251.916,
+  "dwell": 0.086
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778248251.916,
+  "end": 1778248251.984,
+  "dwell": 0.068
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248295.569,
+  "end": 1778248296.77,
+  "dwell": 1.201
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockCodeSheetA",
+  "lane": "Reference",
+  "start": 1778248346.152,
+  "end": 1778248346.466,
+  "dwell": 0.314
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778248394.184,
+  "end": 1778248394.752,
+  "dwell": 0.568
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778248462.797,
+  "end": 1778248465.52,
+  "dwell": 2.723
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778248465.52,
+  "end": 1778248466.314,
+  "dwell": 0.794
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248485.429,
+  "end": 1778248488.432,
+  "dwell": 3.003
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778248532.52,
+  "end": 1778248534.136,
+  "dwell": 1.616
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778248534.136,
+  "end": 1778248536.307,
+  "dwell": 2.171
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778248569.792,
+  "end": 1778248571.538,
+  "dwell": 1.746
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778248571.538,
+  "end": 1778248573.232,
+  "dwell": 1.694
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778248596.613,
+  "end": 1778248597.997,
+  "dwell": 1.384
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778248597.997,
+  "end": 1778248599.644,
+  "dwell": 1.647
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778248626.448,
+  "end": 1778248627.014,
+  "dwell": 0.566
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778248627.014,
+  "end": 1778248627.686,
+  "dwell": 0.672
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778248675.324,
+  "end": 1778248675.618,
+  "dwell": 0.294
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248696.373,
+  "end": 1778248697.508,
+  "dwell": 1.135
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778248713.125,
+  "end": 1778248716.606,
+  "dwell": 3.481
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778248769.333,
+  "end": 1778248769.844,
+  "dwell": 0.511
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778248769.844,
+  "end": 1778248770.04,
+  "dwell": 0.196
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248800.48,
+  "end": 1778248800.74,
+  "dwell": 0.26
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778248831.334,
+  "end": 1778248833.084,
+  "dwell": 1.75
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778248833.084,
+  "end": 1778248833.873,
+  "dwell": 0.789
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778248880.89,
+  "end": 1778248880.969,
+  "dwell": 0.079
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778248880.969,
+  "end": 1778248881.029,
+  "dwell": 0.06
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248925.034,
+  "end": 1778248925.754,
+  "dwell": 0.72
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778248936.852,
+  "end": 1778248938.94,
+  "dwell": 2.088
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778248938.94,
+  "end": 1778248939.745,
+  "dwell": 0.805
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778248954.481,
+  "end": 1778248955.271,
+  "dwell": 0.79
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778248955.271,
+  "end": 1778248956.298,
+  "dwell": 1.027
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248991.706,
+  "end": 1778248993.828,
+  "dwell": 2.122
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778249046.485,
+  "end": 1778249052.195,
+  "dwell": 5.71
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778249052.195,
+  "end": 1778249053.696,
+  "dwell": 1.501
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778249068.008,
+  "end": 1778249069.496,
+  "dwell": 1.488
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778249095.714,
+  "end": 1778249096.132,
+  "dwell": 0.418
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778249144.321,
+  "end": 1778249146.07,
+  "dwell": 1.749
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778249146.07,
+  "end": 1778249146.622,
+  "dwell": 0.552
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778249211.783,
+  "end": 1778249213.954,
+  "dwell": 2.171
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778249274.436,
+  "end": 1778249274.509,
+  "dwell": 0.073
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778249274.509,
+  "end": 1778249274.546,
+  "dwell": 0.037
+ },
+ {
+  "sessionId": "u1-s2",
+  "userId": 1,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778249287.364,
+  "end": 1778249292.272,
+  "dwell": 4.908
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778246516.699,
+  "end": 1778246517.332,
+  "dwell": 0.633
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778246517.332,
+  "end": 1778246517.592,
+  "dwell": 0.26
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778246533.896,
+  "end": 1778246534.992,
+  "dwell": 1.096
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778246554.002,
+  "end": 1778246554.434,
+  "dwell": 0.432
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778246586.355,
+  "end": 1778246587.177,
+  "dwell": 0.822
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778246587.177,
+  "end": 1778246587.812,
+  "dwell": 0.635
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778246613.102,
+  "end": 1778246617.111,
+  "dwell": 4.009
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778246634.675,
+  "end": 1778246634.936,
+  "dwell": 0.261
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778246634.936,
+  "end": 1778246635.007,
+  "dwell": 0.071
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778246642.471,
+  "end": 1778246642.64,
+  "dwell": 0.169
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778246651.461,
+  "end": 1778246654.025,
+  "dwell": 2.564
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778246662.458,
+  "end": 1778246666.927,
+  "dwell": 4.469
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockCodeSheetA",
+  "lane": "Reference",
+  "start": 1778246715.018,
+  "end": 1778246715.342,
+  "dwell": 0.324
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778246715.342,
+  "end": 1778246715.484,
+  "dwell": 0.142
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778246752.473,
+  "end": 1778246752.721,
+  "dwell": 0.248
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778246752.721,
+  "end": 1778246752.867,
+  "dwell": 0.146
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778246799.475,
+  "end": 1778246804.132,
+  "dwell": 4.657
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778246820.727,
+  "end": 1778246822.216,
+  "dwell": 1.489
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778246822.216,
+  "end": 1778246823.891,
+  "dwell": 1.675
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778246888.236,
+  "end": 1778246888.919,
+  "dwell": 0.683
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778246904.636,
+  "end": 1778246904.9,
+  "dwell": 0.264
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778246904.9,
+  "end": 1778246905.012,
+  "dwell": 0.112
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778246966.5,
+  "end": 1778246967.741,
+  "dwell": 1.241
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778246967.741,
+  "end": 1778246968.155,
+  "dwell": 0.414
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247026.903,
+  "end": 1778247028.526,
+  "dwell": 1.623
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778247094.017,
+  "end": 1778247094.13,
+  "dwell": 0.113
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247153.524,
+  "end": 1778247154.996,
+  "dwell": 1.472
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778247191.605,
+  "end": 1778247192.552,
+  "dwell": 0.947
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778247192.552,
+  "end": 1778247193.788,
+  "dwell": 1.236
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247236.247,
+  "end": 1778247237.72,
+  "dwell": 1.473
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778247269.956,
+  "end": 1778247274.166,
+  "dwell": 4.21
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778247274.166,
+  "end": 1778247275.649,
+  "dwell": 1.483
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247309.377,
+  "end": 1778247310.412,
+  "dwell": 1.035
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778247366.45,
+  "end": 1778247366.871,
+  "dwell": 0.421
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778247366.871,
+  "end": 1778247367.13,
+  "dwell": 0.259
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778247426.716,
+  "end": 1778247426.897,
+  "dwell": 0.181
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778247458.974,
+  "end": 1778247459.248,
+  "dwell": 0.274
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778247459.248,
+  "end": 1778247459.391,
+  "dwell": 0.143
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247579.762,
+  "end": 1778247580.659,
+  "dwell": 0.897
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778247614.522,
+  "end": 1778247615.583,
+  "dwell": 1.061
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778247615.583,
+  "end": 1778247616.232,
+  "dwell": 0.649
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247673.977,
+  "end": 1778247674.51,
+  "dwell": 0.533
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778247706.954,
+  "end": 1778247708.319,
+  "dwell": 1.365
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778247708.319,
+  "end": 1778247708.721,
+  "dwell": 0.402
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247762.75,
+  "end": 1778247763.416,
+  "dwell": 0.666
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778247794.557,
+  "end": 1778247794.96,
+  "dwell": 0.403
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247849.04,
+  "end": 1778247849.449,
+  "dwell": 0.409
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778247905.601,
+  "end": 1778247907.73,
+  "dwell": 2.129
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247967.054,
+  "end": 1778247967.325,
+  "dwell": 0.271
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778247991.073,
+  "end": 1778247991.473,
+  "dwell": 0.4
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778247991.473,
+  "end": 1778247991.895,
+  "dwell": 0.422
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778248028.936,
+  "end": 1778248034.269,
+  "dwell": 5.333
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248071.337,
+  "end": 1778248076.128,
+  "dwell": 4.791
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778248148.23,
+  "end": 1778248148.56,
+  "dwell": 0.33
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778248148.56,
+  "end": 1778248148.838,
+  "dwell": 0.278
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248209.618,
+  "end": 1778248210.593,
+  "dwell": 0.975
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778248264.081,
+  "end": 1778248264.756,
+  "dwell": 0.675
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778248264.756,
+  "end": 1778248265.264,
+  "dwell": 0.508
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248335.845,
+  "end": 1778248335.972,
+  "dwell": 0.127
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778248363.007,
+  "end": 1778248364.177,
+  "dwell": 1.17
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778248364.177,
+  "end": 1778248364.602,
+  "dwell": 0.425
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778248390.28,
+  "end": 1778248391.305,
+  "dwell": 1.025
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778248391.305,
+  "end": 1778248392.379,
+  "dwell": 1.074
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778248449.099,
+  "end": 1778248449.515,
+  "dwell": 0.416
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778248449.515,
+  "end": 1778248449.974,
+  "dwell": 0.459
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248507.019,
+  "end": 1778248507.841,
+  "dwell": 0.822
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778248545.697,
+  "end": 1778248547.814,
+  "dwell": 2.117
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778248547.814,
+  "end": 1778248548.448,
+  "dwell": 0.634
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248560.729,
+  "end": 1778248561.807,
+  "dwell": 1.078
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778248635.455,
+  "end": 1778248636.284,
+  "dwell": 0.829
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778248636.284,
+  "end": 1778248636.695,
+  "dwell": 0.411
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248710.311,
+  "end": 1778248712.683,
+  "dwell": 2.372
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778248774.057,
+  "end": 1778248778.583,
+  "dwell": 4.526
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248791.507,
+  "end": 1778248793.369,
+  "dwell": 1.862
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778248839.337,
+  "end": 1778248842.028,
+  "dwell": 2.691
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248857.365,
+  "end": 1778248859.749,
+  "dwell": 2.384
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778248876.76,
+  "end": 1778248877.595,
+  "dwell": 0.835
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778248877.595,
+  "end": 1778248878.27,
+  "dwell": 0.675
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778248945.165,
+  "end": 1778248945.449,
+  "dwell": 0.284
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778248945.449,
+  "end": 1778248945.524,
+  "dwell": 0.075
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248985.21,
+  "end": 1778248986.953,
+  "dwell": 1.743
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778249009.782,
+  "end": 1778249011.213,
+  "dwell": 1.431
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778249011.213,
+  "end": 1778249012.178,
+  "dwell": 0.965
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778249055.616,
+  "end": 1778249057.707,
+  "dwell": 2.091
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778249057.707,
+  "end": 1778249058.386,
+  "dwell": 0.679
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778249122.787,
+  "end": 1778249123.412,
+  "dwell": 0.625
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778249176.942,
+  "end": 1778249178.329,
+  "dwell": 1.387
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778249232.374,
+  "end": 1778249234.598,
+  "dwell": 2.224
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778249234.598,
+  "end": 1778249235.404,
+  "dwell": 0.806
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778249279.386,
+  "end": 1778249279.474,
+  "dwell": 0.088
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778249279.474,
+  "end": 1778249279.576,
+  "dwell": 0.102
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778249333.182,
+  "end": 1778249335.111,
+  "dwell": 1.929
+ },
+ {
+  "sessionId": "u2-s2",
+  "userId": 2,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778249339.066,
+  "end": 1778249340.247,
+  "dwell": 1.181
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778246476.175,
+  "end": 1778246478.648,
+  "dwell": 2.473
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778246505.39,
+  "end": 1778246506.978,
+  "dwell": 1.588
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778246579.575,
+  "end": 1778246580.956,
+  "dwell": 1.381
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778246593.499,
+  "end": 1778246593.841,
+  "dwell": 0.342
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockCodeSheetA",
+  "lane": "Reference",
+  "start": 1778246593.841,
+  "end": 1778246594.25,
+  "dwell": 0.409
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778246604.037,
+  "end": 1778246604.716,
+  "dwell": 0.679
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778246604.716,
+  "end": 1778246605.528,
+  "dwell": 0.812
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockCodeSheetA",
+  "lane": "Reference",
+  "start": 1778246662.86,
+  "end": 1778246665.019,
+  "dwell": 2.159
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778246665.019,
+  "end": 1778246667.223,
+  "dwell": 2.204
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778246719.216,
+  "end": 1778246720.946,
+  "dwell": 1.73
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778246787.104,
+  "end": 1778246788.521,
+  "dwell": 1.417
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778246856.158,
+  "end": 1778246857.49,
+  "dwell": 1.332
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778246857.49,
+  "end": 1778246858.678,
+  "dwell": 1.188
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778246878.483,
+  "end": 1778246878.994,
+  "dwell": 0.511
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778246878.994,
+  "end": 1778246879.163,
+  "dwell": 0.169
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778246919.435,
+  "end": 1778246920.982,
+  "dwell": 1.547
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778246933.829,
+  "end": 1778246934.055,
+  "dwell": 0.226
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778246934.055,
+  "end": 1778246934.375,
+  "dwell": 0.32
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778247005.752,
+  "end": 1778247005.986,
+  "dwell": 0.234
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778247005.986,
+  "end": 1778247006.153,
+  "dwell": 0.167
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778247032.249,
+  "end": 1778247033.233,
+  "dwell": 0.984
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778247033.233,
+  "end": 1778247034.407,
+  "dwell": 1.174
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778247105.442,
+  "end": 1778247108.409,
+  "dwell": 2.967
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778247108.409,
+  "end": 1778247109.282,
+  "dwell": 0.873
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247155.877,
+  "end": 1778247156.397,
+  "dwell": 0.52
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778247173.173,
+  "end": 1778247173.391,
+  "dwell": 0.218
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778247173.391,
+  "end": 1778247173.478,
+  "dwell": 0.087
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778247200.552,
+  "end": 1778247201.602,
+  "dwell": 1.05
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778247201.602,
+  "end": 1778247202.621,
+  "dwell": 1.019
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778247270.866,
+  "end": 1778247272.154,
+  "dwell": 1.288
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247337.046,
+  "end": 1778247338.457,
+  "dwell": 1.411
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778247342.08,
+  "end": 1778247342.457,
+  "dwell": 0.377
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778247342.457,
+  "end": 1778247342.774,
+  "dwell": 0.317
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247358.133,
+  "end": 1778247358.47,
+  "dwell": 0.337
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778247363.251,
+  "end": 1778247364.099,
+  "dwell": 0.848
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockCodeSheetA",
+  "lane": "Reference",
+  "start": 1778247364.099,
+  "end": 1778247364.345,
+  "dwell": 0.246
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778247375.105,
+  "end": 1778247375.589,
+  "dwell": 0.484
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778247446.491,
+  "end": 1778247447.676,
+  "dwell": 1.185
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778247485.165,
+  "end": 1778247485.286,
+  "dwell": 0.121
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778247502.174,
+  "end": 1778247502.383,
+  "dwell": 0.209
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778247502.383,
+  "end": 1778247502.467,
+  "dwell": 0.084
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247559.821,
+  "end": 1778247560.497,
+  "dwell": 0.676
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778247586.185,
+  "end": 1778247586.771,
+  "dwell": 0.586
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778247600.296,
+  "end": 1778247600.353,
+  "dwell": 0.057
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778247600.353,
+  "end": 1778247600.418,
+  "dwell": 0.065
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778247647.854,
+  "end": 1778247649.384,
+  "dwell": 1.53
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247669.955,
+  "end": 1778247670.697,
+  "dwell": 0.742
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778247732.319,
+  "end": 1778247733.93,
+  "dwell": 1.611
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247796.774,
+  "end": 1778247798.038,
+  "dwell": 1.264
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778247819.379,
+  "end": 1778247820.27,
+  "dwell": 0.891
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778247820.27,
+  "end": 1778247821.483,
+  "dwell": 1.213
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778247892.8,
+  "end": 1778247893.865,
+  "dwell": 1.065
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778247893.865,
+  "end": 1778247894.275,
+  "dwell": 0.41
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778248008.259,
+  "end": 1778248008.56,
+  "dwell": 0.301
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778248008.56,
+  "end": 1778248008.661,
+  "dwell": 0.101
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778248046.288,
+  "end": 1778248047.432,
+  "dwell": 1.144
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248118.605,
+  "end": 1778248119.3,
+  "dwell": 0.695
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778248148.591,
+  "end": 1778248149.272,
+  "dwell": 0.681
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778248204.504,
+  "end": 1778248209.486,
+  "dwell": 4.982
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778248209.486,
+  "end": 1778248211.662,
+  "dwell": 2.176
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778248249.576,
+  "end": 1778248249.723,
+  "dwell": 0.147
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778248249.723,
+  "end": 1778248249.909,
+  "dwell": 0.186
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778248285.407,
+  "end": 1778248285.845,
+  "dwell": 0.438
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778248285.845,
+  "end": 1778248286.065,
+  "dwell": 0.22
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778248331.391,
+  "end": 1778248333.03,
+  "dwell": 1.639
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778248333.03,
+  "end": 1778248333.699,
+  "dwell": 0.669
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778248401.877,
+  "end": 1778248402.37,
+  "dwell": 0.493
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockCodeSheetA",
+  "lane": "Reference",
+  "start": 1778248402.37,
+  "end": 1778248402.799,
+  "dwell": 0.429
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778248422.936,
+  "end": 1778248423.294,
+  "dwell": 0.358
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778248423.294,
+  "end": 1778248423.529,
+  "dwell": 0.235
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778248482.695,
+  "end": 1778248488.36,
+  "dwell": 5.665
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778248524.316,
+  "end": 1778248524.817,
+  "dwell": 0.501
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778248566.182,
+  "end": 1778248566.352,
+  "dwell": 0.17
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778248566.352,
+  "end": 1778248566.541,
+  "dwell": 0.189
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778248631.578,
+  "end": 1778248633.369,
+  "dwell": 1.791
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778248633.369,
+  "end": 1778248635.376,
+  "dwell": 2.007
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778248672.15,
+  "end": 1778248672.255,
+  "dwell": 0.105
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778248672.255,
+  "end": 1778248672.282,
+  "dwell": 0.027
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778248698.1,
+  "end": 1778248699.527,
+  "dwell": 1.427
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778248769.581,
+  "end": 1778248771.742,
+  "dwell": 2.161
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778248815.517,
+  "end": 1778248815.796,
+  "dwell": 0.279
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778248815.796,
+  "end": 1778248816.07,
+  "dwell": 0.274
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248833.864,
+  "end": 1778248834.875,
+  "dwell": 1.011
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778248868.998,
+  "end": 1778248869.668,
+  "dwell": 0.67
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778248869.668,
+  "end": 1778248869.954,
+  "dwell": 0.286
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778248932.103,
+  "end": 1778248932.801,
+  "dwell": 0.698
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778248951.509,
+  "end": 1778248951.996,
+  "dwell": 0.487
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockCodeSheetA",
+  "lane": "Reference",
+  "start": 1778248951.996,
+  "end": 1778248952.438,
+  "dwell": 0.442
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778248976.488,
+  "end": 1778248981.422,
+  "dwell": 4.934
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778249051.339,
+  "end": 1778249052.986,
+  "dwell": 1.647
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778249063.623,
+  "end": 1778249066.024,
+  "dwell": 2.401
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778249073.205,
+  "end": 1778249074.678,
+  "dwell": 1.473
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778249125.938,
+  "end": 1778249126.2,
+  "dwell": 0.262
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778249126.2,
+  "end": 1778249126.476,
+  "dwell": 0.276
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778249135.352,
+  "end": 1778249137.996,
+  "dwell": 2.644
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778249159.907,
+  "end": 1778249163.581,
+  "dwell": 3.674
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockCodeSheetB",
+  "lane": "Reference",
+  "start": 1778249196.688,
+  "end": 1778249198.427,
+  "dwell": 1.739
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778249263.249,
+  "end": 1778249264.668,
+  "dwell": 1.419
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778249264.668,
+  "end": 1778249265.744,
+  "dwell": 1.076
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778249315.213,
+  "end": 1778249315.388,
+  "dwell": 0.175
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778249329.074,
+  "end": 1778249332.767,
+  "dwell": 3.693
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778249332.767,
+  "end": 1778249335.059,
+  "dwell": 2.292
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778249356.334,
+  "end": 1778249358.85,
+  "dwell": 2.516
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778249369.154,
+  "end": 1778249369.357,
+  "dwell": 0.203
+ },
+ {
+  "sessionId": "u3-s2",
+  "userId": 3,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778249389.539,
+  "end": 1778249391.421,
+  "dwell": 1.882
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778246509.997,
+  "end": 1778246510.638,
+  "dwell": 0.641
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778246510.638,
+  "end": 1778246511.074,
+  "dwell": 0.436
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778246515.251,
+  "end": 1778246518.053,
+  "dwell": 2.802
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778246591.701,
+  "end": 1778246592.047,
+  "dwell": 0.346
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778246592.047,
+  "end": 1778246592.28,
+  "dwell": 0.233
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778246665.471,
+  "end": 1778246665.952,
+  "dwell": 0.481
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778246665.952,
+  "end": 1778246666.377,
+  "dwell": 0.425
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778246693.873,
+  "end": 1778246694.765,
+  "dwell": 0.892
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778246760.881,
+  "end": 1778246761.52,
+  "dwell": 0.639
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778246802.681,
+  "end": 1778246803.574,
+  "dwell": 0.893
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778246846.921,
+  "end": 1778246847.575,
+  "dwell": 0.654
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778246847.575,
+  "end": 1778246848.313,
+  "dwell": 0.738
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778246909.378,
+  "end": 1778246910.29,
+  "dwell": 0.912
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778246910.29,
+  "end": 1778246911.647,
+  "dwell": 1.357
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778246947.959,
+  "end": 1778246949.253,
+  "dwell": 1.294
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247000.752,
+  "end": 1778247002.349,
+  "dwell": 1.597
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778247015.915,
+  "end": 1778247016.031,
+  "dwell": 0.116
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778247016.031,
+  "end": 1778247016.071,
+  "dwell": 0.04
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247083.872,
+  "end": 1778247088.914,
+  "dwell": 5.042
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778247094.164,
+  "end": 1778247096.056,
+  "dwell": 1.892
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778247096.056,
+  "end": 1778247096.989,
+  "dwell": 0.933
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247112.868,
+  "end": 1778247113.121,
+  "dwell": 0.253
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778247119.083,
+  "end": 1778247120.381,
+  "dwell": 1.298
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778247120.381,
+  "end": 1778247121.292,
+  "dwell": 0.911
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247158.53,
+  "end": 1778247158.871,
+  "dwell": 0.341
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778247166.38,
+  "end": 1778247167.518,
+  "dwell": 1.138
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778247167.518,
+  "end": 1778247168.3,
+  "dwell": 0.782
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778247185.497,
+  "end": 1778247187.072,
+  "dwell": 1.575
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778247187.072,
+  "end": 1778247188.46,
+  "dwell": 1.388
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778247211.078,
+  "end": 1778247211.295,
+  "dwell": 0.217
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778247211.295,
+  "end": 1778247211.539,
+  "dwell": 0.244
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778247275.296,
+  "end": 1778247275.936,
+  "dwell": 0.64
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247308.644,
+  "end": 1778247311.28,
+  "dwell": 2.636
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778247354.928,
+  "end": 1778247355.833,
+  "dwell": 0.905
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778247355.833,
+  "end": 1778247356.112,
+  "dwell": 0.279
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247379.448,
+  "end": 1778247379.869,
+  "dwell": 0.421
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778247451.267,
+  "end": 1778247452.29,
+  "dwell": 1.023
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778247452.29,
+  "end": 1778247453.531,
+  "dwell": 1.241
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247514.183,
+  "end": 1778247515.481,
+  "dwell": 1.298
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778247565.706,
+  "end": 1778247565.775,
+  "dwell": 0.069
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778247565.775,
+  "end": 1778247565.81,
+  "dwell": 0.035
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247589.724,
+  "end": 1778247589.892,
+  "dwell": 0.168
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778247605.637,
+  "end": 1778247607.676,
+  "dwell": 2.039
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778247607.676,
+  "end": 1778247608.816,
+  "dwell": 1.14
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778247665.816,
+  "end": 1778247667.503,
+  "dwell": 1.687
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778247667.503,
+  "end": 1778247667.993,
+  "dwell": 0.49
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247678.125,
+  "end": 1778247680.239,
+  "dwell": 2.114
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778247893.853,
+  "end": 1778247894.255,
+  "dwell": 0.402
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778247894.255,
+  "end": 1778247894.7,
+  "dwell": 0.445
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778247945.848,
+  "end": 1778247951.103,
+  "dwell": 5.255
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778248003.982,
+  "end": 1778248004.864,
+  "dwell": 0.882
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778248004.864,
+  "end": 1778248005.663,
+  "dwell": 0.799
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778248022.204,
+  "end": 1778248022.694,
+  "dwell": 0.49
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778248022.694,
+  "end": 1778248022.998,
+  "dwell": 0.304
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778248083.203,
+  "end": 1778248084.48,
+  "dwell": 1.277
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778248090.081,
+  "end": 1778248090.646,
+  "dwell": 0.565
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248156.633,
+  "end": 1778248158.414,
+  "dwell": 1.781
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778248213.995,
+  "end": 1778248214.098,
+  "dwell": 0.103
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248238.142,
+  "end": 1778248238.392,
+  "dwell": 0.25
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778248251.149,
+  "end": 1778248252.507,
+  "dwell": 1.358
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778248252.507,
+  "end": 1778248253.663,
+  "dwell": 1.156
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248308.036,
+  "end": 1778248308.384,
+  "dwell": 0.348
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778248341.515,
+  "end": 1778248342.806,
+  "dwell": 1.291
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778248342.806,
+  "end": 1778248343.76,
+  "dwell": 0.954
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778248417.555,
+  "end": 1778248418.111,
+  "dwell": 0.556
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778248418.111,
+  "end": 1778248418.398,
+  "dwell": 0.287
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778248441.233,
+  "end": 1778248444.495,
+  "dwell": 3.262
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778248444.495,
+  "end": 1778248446.745,
+  "dwell": 2.25
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778248457.352,
+  "end": 1778248457.558,
+  "dwell": 0.206
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778248457.558,
+  "end": 1778248457.764,
+  "dwell": 0.206
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248526.537,
+  "end": 1778248527.463,
+  "dwell": 0.926
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778248547.817,
+  "end": 1778248548.873,
+  "dwell": 1.056
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778248548.873,
+  "end": 1778248549.986,
+  "dwell": 1.113
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778248609.871,
+  "end": 1778248610.717,
+  "dwell": 0.846
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778248652.227,
+  "end": 1778248656.345,
+  "dwell": 4.118
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778248695.706,
+  "end": 1778248695.94,
+  "dwell": 0.234
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778248695.94,
+  "end": 1778248696.271,
+  "dwell": 0.331
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248755.48,
+  "end": 1778248756.161,
+  "dwell": 0.681
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778248804.247,
+  "end": 1778248805.523,
+  "dwell": 1.276
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778248823.072,
+  "end": 1778248823.457,
+  "dwell": 0.385
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778248823.457,
+  "end": 1778248823.632,
+  "dwell": 0.175
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248896.809,
+  "end": 1778248899.476,
+  "dwell": 2.667
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778248928.823,
+  "end": 1778248928.952,
+  "dwell": 0.129
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778248928.952,
+  "end": 1778248928.996,
+  "dwell": 0.044
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778248948.206,
+  "end": 1778248949.148,
+  "dwell": 0.942
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778248995.289,
+  "end": 1778248997.819,
+  "dwell": 2.53
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778249018.875,
+  "end": 1778249021.013,
+  "dwell": 2.138
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778249021.013,
+  "end": 1778249023.005,
+  "dwell": 1.992
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778249036.572,
+  "end": 1778249037.944,
+  "dwell": 1.372
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorBar",
+  "lane": "Vital sign monitor",
+  "start": 1778249043.616,
+  "end": 1778249045.165,
+  "dwell": 1.549
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778249072.981,
+  "end": 1778249073.432,
+  "dwell": 0.451
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778249128.694,
+  "end": 1778249131.176,
+  "dwell": 2.482
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockBagMask",
+  "lane": "Equipment & interventions",
+  "start": 1778249131.176,
+  "end": 1778249133.317,
+  "dwell": 2.141
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778249149.826,
+  "end": 1778249150.557,
+  "dwell": 0.731
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockSpO2",
+  "lane": "Vital sign monitor",
+  "start": 1778249150.557,
+  "end": 1778249151.188,
+  "dwell": 0.631
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778249193.959,
+  "end": 1778249194.125,
+  "dwell": 0.166
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientHead",
+  "lane": "Patient assessment",
+  "start": 1778249253.539,
+  "end": 1778249253.717,
+  "dwell": 0.178
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778249253.717,
+  "end": 1778249253.968,
+  "dwell": 0.251
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockMonitorScreen",
+  "lane": "Vital sign monitor",
+  "start": 1778249276.441,
+  "end": 1778249276.836,
+  "dwell": 0.395
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockHeadFollower",
+  "lane": "Communication",
+  "start": 1778249294.944,
+  "end": 1778249297.57,
+  "dwell": 2.626
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockO2Device",
+  "lane": "Equipment & interventions",
+  "start": 1778249309.744,
+  "end": 1778249309.85,
+  "dwell": 0.106
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockIVPole",
+  "lane": "Equipment & interventions",
+  "start": 1778249309.85,
+  "end": 1778249309.995,
+  "dwell": 0.145
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockStethoscope",
+  "lane": "Patient assessment",
+  "start": 1778249362.544,
+  "end": 1778249363.309,
+  "dwell": 0.765
+ },
+ {
+  "sessionId": "u4-s2",
+  "userId": 4,
+  "runId": "run-2026-05-08-1321",
+  "objectId": "MockPatientChest",
+  "lane": "Patient assessment",
+  "start": 1778249363.309,
+  "end": 1778249364.009,
+  "dwell": 0.7
+ }
+]

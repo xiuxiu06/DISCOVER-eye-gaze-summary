@@ -1,0 +1,32 @@
+[
+ {
+  "step": "Raw log (mock)",
+  "rows": 38595,
+  "seconds": 23067,
+  "note": "Mock: every row in the file."
+ },
+ {
+  "step": "Idle removed (mock)",
+  "rows": 38587,
+  "seconds": 22195.648,
+  "note": "Mock: removed 8 idle rows."
+ },
+ {
+  "step": "Sessions kept (mock)",
+  "rows": 38555,
+  "seconds": 19976.083,
+  "note": "Mock: dropped short sessions."
+ },
+ {
+  "step": "Included lanes (mock)",
+  "rows": 3856,
+  "seconds": 905.056,
+  "note": "Mock: dropped walls, hands and other background."
+ },
+ {
+  "step": "Lane visits (mock)",
+  "rows": 551,
+  "seconds": 905.056,
+  "note": "Mock: merged consecutive looks at the same lane."
+ }
+]

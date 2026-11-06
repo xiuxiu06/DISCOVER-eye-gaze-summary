@@ -1,0 +1,138 @@
+{
+ "generatedAt": "mock",
+ "source": "MOCK: synthetic data from scripts/make-mock-data.mjs, not from the gaze log",
+ "params": {
+  "IDLE_MAX_S": 30,
+  "SESSION_GAP_S": 300,
+  "MIN_SESSION_MIN": 5,
+  "MERGE_GAP_S": 1,
+  "EXPORT_MIN_VISIT_S": 0.1,
+  "DEFAULT_MIN_VISIT_S": 0.5,
+  "TEAM_OVERLAP_FRAC": 0.5,
+  "COVERAGE_WINDOW_S": 30
+ },
+ "lanes": [
+  {
+   "id": "Reference",
+   "label": "Reference",
+   "include": true,
+   "color": "#3B8EDB",
+   "band": "#D6E8F8",
+   "order": 0
+  },
+  {
+   "id": "Patient assessment",
+   "label": "Patient assessment",
+   "include": true,
+   "color": "#D6336C",
+   "band": "#F7D4E1",
+   "order": 1
+  },
+  {
+   "id": "Vital sign monitor",
+   "label": "Vital sign monitor",
+   "include": true,
+   "color": "#7CB342",
+   "band": "#E3F0D3",
+   "order": 2
+  },
+  {
+   "id": "Equipment & interventions",
+   "label": "Equipment & interventions",
+   "include": true,
+   "color": "#E0A800",
+   "band": "#FBF0C9",
+   "order": 3
+  },
+  {
+   "id": "Communication",
+   "label": "Communication",
+   "include": true,
+   "color": "#5AA9D6",
+   "band": "#E6F3FA",
+   "order": 4
+  },
+  {
+   "id": "Self",
+   "label": "Self",
+   "include": false,
+   "color": "#9AA0A6",
+   "band": "#F1F3F4",
+   "order": 5
+  },
+  {
+   "id": "Bed",
+   "label": "Bed",
+   "include": false,
+   "color": "#9AA0A6",
+   "band": "#F1F3F4",
+   "order": 6
+  },
+  {
+   "id": "System",
+   "label": "System",
+   "include": false,
+   "color": "#9AA0A6",
+   "band": "#F1F3F4",
+   "order": 7
+  },
+  {
+   "id": "Environment",
+   "label": "Environment",
+   "include": false,
+   "color": "#9AA0A6",
+   "band": "#F1F3F4",
+   "order": 8
+  }
+ ],
+ "objects": {
+  "MockCodeSheetA": {
+   "lane": "Reference",
+   "verify": false
+  },
+  "MockCodeSheetB": {
+   "lane": "Reference",
+   "verify": false
+  },
+  "MockPatientChest": {
+   "lane": "Patient assessment",
+   "verify": false
+  },
+  "MockPatientHead": {
+   "lane": "Patient assessment",
+   "verify": false
+  },
+  "MockStethoscope": {
+   "lane": "Patient assessment",
+   "verify": false
+  },
+  "MockMonitorBar": {
+   "lane": "Vital sign monitor",
+   "verify": false
+  },
+  "MockMonitorScreen": {
+   "lane": "Vital sign monitor",
+   "verify": false
+  },
+  "MockSpO2": {
+   "lane": "Vital sign monitor",
+   "verify": false
+  },
+  "MockBagMask": {
+   "lane": "Equipment & interventions",
+   "verify": false
+  },
+  "MockIVPole": {
+   "lane": "Equipment & interventions",
+   "verify": false
+  },
+  "MockO2Device": {
+   "lane": "Equipment & interventions",
+   "verify": false
+  },
+  "MockHeadFollower": {
+   "lane": "Communication",
+   "verify": true
+  }
+ }
+}
