@@ -1,6 +1,6 @@
 export interface SavedUpload {
-  gaze: { name: string; size: number; text: string }
-  laneMap?: { name: string; size: number; text: string }
+  gaze?: { name: string; size: number; text: string }
+  laneMap?: { name: string; size: number; text: string; source?: 'upload' | 'claude' }
 }
 
 function openStore(): Promise<IDBDatabase> {
@@ -31,7 +31,7 @@ export async function saveUpload(upload?: SavedUpload): Promise<void> {
     await new Promise<void>((resolve, reject) => {
       const transaction = db.transaction('files', 'readwrite')
       const store = transaction.objectStore('files')
-      if (upload) store.put(upload, 'current')
+      if (upload && (upload.gaze || upload.laneMap)) store.put(upload, 'current')
       else store.delete('current')
       transaction.oncomplete = () => resolve()
       transaction.onerror = () => reject(transaction.error)

@@ -10,7 +10,8 @@
     "check:upload": "node scripts/check-upload.mjs",
     "mock": "node scripts/make-mock-data.mjs",
     "preview": "vite preview",
-    "check:summary": "node scripts/check-summary.mjs"
+    "check:summary": "node scripts/check-summary.mjs",
+    "check:claude-lanes": "node scripts/check-claude-lanes.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",

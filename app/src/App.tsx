@@ -9,6 +9,12 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Slider } from '@/components/ui/slider'
+import {
+  applyLaneMapToBuiltInDataset,
+  checkServerClaudeStatus,
+  extractObjectsForClassification,
+  matchLaneMapWithClaude,
+} from './claudeLaneMap'
 import { loadDataset } from './data'
 import { exportChartPng } from './lib/exportPng'
 import { pickDefaultRun, teamRuns, touchpoints } from './metrics'
@@ -63,19 +69,31 @@ export default function App() {
   const [laneMap, setLaneMap] = useState<HeldText>()
   const [result, setResult] = useState<UploadResult>()
   const [reading, setReading] = useState(false)
+  const [matchingLanes, setMatchingLanes] = useState(false)
+  const [hasServerClaudeKey, setHasServerClaudeKey] = useState(false)
+  const [claudeNote, setClaudeNote] = useState<string>()
   const [error, setError] = useState<string>()
-  const [waiting, setWaiting] = useState(false)
 
   useEffect(() => {
+    void checkServerClaudeStatus().then(setHasServerClaudeKey)
     loadDataset()
       .then(async (loaded) => {
         try {
           const saved = await readUpload()
-          if (saved) {
-            const restored = processLog(saved.gaze.text, saved.laneMap?.text ?? laneMapCsv, loaded.meta, saved.gaze.name)
+          if (saved?.gaze) {
+            const restored = processLog(
+              saved.gaze.text,
+              saved.laneMap?.text ?? laneMapCsv,
+              loaded.meta,
+              saved.gaze.name,
+            )
             setGaze(saved.gaze)
             setLaneMap(saved.laneMap)
             setResult(restored)
+          } else if (saved?.laneMap) {
+            const remapped = applyLaneMapToBuiltInDataset(loaded, saved.laneMap.text)
+            setLaneMap(saved.laneMap)
+            setResult({ ...remapped, skippedRows: 0 })
           }
         } catch (reason) {
           setError('Could not restore the uploaded file. Please upload it again. ' + String(reason))
@@ -85,75 +103,183 @@ export default function App() {
       .catch((reason: unknown) => setLoadError(String(reason)))
   }, [])
 
+  const applyFilesState = useCallback(
+    async (nextGaze: HeldText | undefined, nextLaneMap: HeldText | undefined, baseDataset: Dataset) => {
+      if (nextGaze) {
+        const processed = processLog(
+          nextGaze.text,
+          nextLaneMap?.text ?? laneMapCsv,
+          baseDataset.meta,
+          nextGaze.name,
+        )
+        setResult(processed)
+      } else if (nextLaneMap) {
+        const remapped = applyLaneMapToBuiltInDataset(baseDataset, nextLaneMap.text)
+        setResult({ ...remapped, skippedRows: 0 })
+      } else {
+        setResult(undefined)
+      }
+      setGaze(nextGaze)
+      setLaneMap(nextLaneMap)
+      await saveUpload(
+        nextGaze || nextLaneMap ? { gaze: nextGaze, laneMap: nextLaneMap } : undefined,
+      ).catch(() => {
+        setError('File processed, but browser storage is unavailable. Upload it again after reloading.')
+      })
+    },
+    [],
+  )
+
   const addFiles = useCallback(
-    async (files: File[]) => {
+    async (chosenFiles: File[]) => {
       if (!dataset) return
       setReading(true)
       setError(undefined)
+      setClaudeNote(undefined)
       try {
         let nextGaze = gaze
         let nextLaneMap = laneMap
-        for (const file of files) {
+        for (const file of chosenFiles) {
           if (file.size > MAX_FILE_BYTES) throw new Error(`${file.name} is over the 50 MB limit.`)
-          const held = { name: file.name, size: file.size, text: await file.text() }
-          if (fileKind(held.text) === 'laneMap') nextLaneMap = held
-          else nextGaze = held
-        }
-        // A new upload is judged as a whole, so a bad file leaves the current data on screen.
-        if (nextGaze) {
-          const name = nextGaze.name
-          try {
-            const processed = processLog(nextGaze.text, nextLaneMap?.text ?? laneMapCsv, dataset.meta, name)
-            setResult(processed)
-            await saveUpload({ gaze: nextGaze, laneMap: nextLaneMap }).catch(() => {
-              setError('File processed, but browser storage is unavailable. Upload it again after reloading.')
-            })
-          } catch (reason) {
-            throw new Error(`Couldn't use ${name}. ${reason instanceof Error ? reason.message : String(reason)}`)
+          const text = await file.text()
+          if (fileKind(text) === 'laneMap') {
+            nextLaneMap = { name: file.name, size: file.size, text, source: 'upload' }
+          } else {
+            nextGaze = { name: file.name, size: file.size, text }
           }
         }
-        setGaze(nextGaze)
-        setLaneMap(nextLaneMap)
-        setWaiting(!nextGaze && nextLaneMap !== undefined)
+        try {
+          await applyFilesState(nextGaze, nextLaneMap, dataset)
+        } catch (reason) {
+          const targetName = nextGaze?.name ?? nextLaneMap?.name ?? 'file'
+          throw new Error(
+            `Couldn't use ${targetName}. ${reason instanceof Error ? reason.message : String(reason)}`,
+          )
+        }
       } catch (reason) {
         setError(reason instanceof Error ? reason.message : String(reason))
       } finally {
         setReading(false)
       }
     },
-    [dataset, gaze, laneMap],
+    [dataset, gaze, laneMap, applyFilesState],
   )
 
+  const uploadLaneMapFile = useCallback(
+    async (file: File) => {
+      if (!dataset) return
+      setReading(true)
+      setError(undefined)
+      setClaudeNote(undefined)
+      try {
+        if (file.size > MAX_FILE_BYTES) throw new Error(`${file.name} is over the 50 MB limit.`)
+        const text = await file.text()
+        if (fileKind(text) !== 'laneMap') {
+          throw new Error(
+            `${file.name} does not look like a lane map CSV. Expected header columns including "object_id" and "lane".`,
+          )
+        }
+        const nextLaneMap: HeldText = { name: file.name, size: file.size, text, source: 'upload' }
+        await applyFilesState(gaze, nextLaneMap, dataset)
+      } catch (reason) {
+        setError(reason instanceof Error ? reason.message : String(reason))
+      } finally {
+        setReading(false)
+      }
+    },
+    [dataset, gaze, applyFilesState],
+  )
+
+  const matchLanesWithClaude = useCallback(
+    async (apiKey?: string): Promise<boolean> => {
+      if (!dataset) return false
+      setMatchingLanes(true)
+      setError(undefined)
+      setClaudeNote(undefined)
+      try {
+        const candidates = extractObjectsForClassification(gaze?.text, dataset)
+        const matched = await matchLaneMapWithClaude({ candidates, apiKey })
+        const csvBytes = new Blob([matched.csvText], { type: 'text/csv' }).size
+        const nextLaneMap: HeldText = {
+          name: 'claude_lane_map.csv',
+          size: csvBytes,
+          text: matched.csvText,
+          source: 'claude',
+        }
+        await applyFilesState(gaze, nextLaneMap, dataset)
+        setClaudeNote(
+          `Claude (${matched.modelUsed}) matched ${matched.totalObjects} objects into categories: ${matched.clinicalObjects} across the 5 clinical swimlanes, ${matched.backgroundObjects} set aside as background (${matched.verifyObjects} flagged to verify).`,
+        )
+        return true
+      } catch (reason) {
+        setError(reason instanceof Error ? reason.message : String(reason))
+        return false
+      } finally {
+        setMatchingLanes(false)
+      }
+    },
+    [dataset, gaze, applyFilesState],
+  )
+
+  const downloadLaneMap = useCallback(() => {
+    const content = laneMap?.text ?? laneMapCsv
+    const filename = laneMap?.name ?? 'lane_map.csv'
+    const blob = new Blob([content], { type: 'text/csv;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = filename
+    document.body.appendChild(link)
+    link.click()
+    link.remove()
+    URL.revokeObjectURL(url)
+  }, [laneMap])
+
   const files: FileControls | undefined = useMemo(() => {
-    let note = result ? uploadNote(result) : undefined
-    if (waiting) {
-      note = 'Lane map loaded. Upload a gaze log to apply it, because the built-in data is already processed.'
-    }
+    const baseNote = result ? uploadNote(result) : undefined
+    const combinedNote = [claudeNote, baseNote].filter(Boolean).join(' ') || undefined
     return {
       gaze: gaze && { name: gaze.name, size: gaze.size },
-      laneMap: laneMap && { name: laneMap.name, size: laneMap.size },
+      laneMap: laneMap && { name: laneMap.name, size: laneMap.size, source: laneMap.source },
       reading,
+      matchingLanes,
+      hasServerClaudeKey,
       error,
-      note,
+      note: combinedNote,
       addFiles: (chosen) => void addFiles(chosen),
+      uploadLaneMapFile: (file) => void uploadLaneMapFile(file),
+      matchLanesWithClaude,
+      downloadLaneMap,
       removeGaze: () => {
-        void saveUpload().catch(() => setError('Could not clear the saved upload.'))
-        setGaze(undefined)
-        setResult(undefined)
         setError(undefined)
-        setWaiting(laneMap !== undefined)
+        if (dataset) {
+          void applyFilesState(undefined, laneMap, dataset)
+        }
       },
       removeLaneMap: () => {
-        setLaneMap(undefined)
         setError(undefined)
-        setWaiting(false)
-        if (gaze && dataset) {
-          setResult(processLog(gaze.text, laneMapCsv, dataset.meta, gaze.name))
-          void saveUpload({ gaze }).catch(() => setError('Could not save the lane map change.'))
+        setClaudeNote(undefined)
+        if (dataset) {
+          void applyFilesState(gaze, undefined, dataset)
         }
       },
     }
-  }, [gaze, laneMap, reading, error, result, waiting, addFiles, dataset])
+  }, [
+    gaze,
+    laneMap,
+    reading,
+    matchingLanes,
+    hasServerClaudeKey,
+    error,
+    result,
+    claudeNote,
+    addFiles,
+    uploadLaneMapFile,
+    matchLanesWithClaude,
+    downloadLaneMap,
+    applyFilesState,
+    dataset,
+  ])
 
   if (loadError) return <p className="p-6">Couldn't load the data. {loadError}</p>
   if (!dataset || !files) return <p className="p-6 text-muted-foreground">Loading…</p>
@@ -212,7 +338,11 @@ function Shell({ dataset, files }: { dataset: Dataset; files: FileControls }) {
       <div role="status" className="border-b bg-white px-8 py-2 text-sm">
         {dataset.origin === 'uploaded'
           ? `Using uploaded file: ${files.gaze?.name}. Saved in this browser.`
-          : 'Using built-in data. Upload a gaze log to analyze your own file.'}
+          : files.laneMap?.source === 'claude'
+            ? 'Using built-in gaze data with Claude AI swimlane mapping. Saved in this browser.'
+            : files.laneMap
+              ? `Using built-in gaze data with uploaded lane map (${files.laneMap.name}).`
+              : 'Using built-in data. Upload a gaze log to analyze your own file.'}
       </div>
       <header className="border-b bg-white print:hidden">
         <div className="mx-auto flex max-w-[1360px] flex-col gap-3 px-8 pt-4">
