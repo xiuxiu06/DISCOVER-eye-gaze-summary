@@ -123,6 +123,12 @@ python -m pipeline.run   # writes app/public/data/*.json and prints the funnel n
 pytest -q
 ```
 
+### Uploading a log
+
+The **Upload CSV** button in the header runs the same pipeline steps in the browser on another gaze log, using `data/lane_map.csv` as it was when the app was built. The file isn't sent anywhere or saved, so reloading the page goes back to the built-in data. Objects missing from the lane map count as background, and the app says how many there were.
+
+The steps live in both `pipeline/` and `app/src/processLog.ts`. If you change one, change the other, then run `npm run check:upload` in `app/` to compare their results.
+
 ### Mock data
 
 Until the pipeline has run, the app loads synthetic data from `app/public/data-mock/` and shows a red "MOCK DATA" banner. Once `app/public/data/meta.json` exists, the app uses real data and the banner disappears. If any other real file is missing, the app shows an error instead of falling back to mock data.
