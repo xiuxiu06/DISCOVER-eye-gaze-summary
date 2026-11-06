@@ -84,36 +84,6 @@ function StandardSwimLanes({ dataset, run, touchpoints, minVisitS, openLearner }
     return `${formatClockSpan(span.start, span.end)} · ${own.length - communication} clinical + ${communication} communication touchpoints`
   }
 
-  const highlights = useMemo(() => {
-    const items: string[] = []
-    const patient = coverageLanes.find((row) => row.lane.id === PATIENT_LANE)
-    if (patient) {
-      items.push(`No one’s head gaze was on the patient for ${patient.stats.uncoveredPct.toFixed(0)}% of the run.`)
-    }
-    const monitorCounts = run.userIds.map((userId) => {
-      const looks = touchpoints.filter((visit) => visit.userId === userId && visit.lane === MONITOR_LANE)
-      return { userId, looks }
-    })
-    const fewest = [...monitorCounts].sort((a, b) => a.looks.length - b.looks.length)[0]
-    if (fewest && run.userIds.length > 1) {
-      const span = learnerSpan(fewest.userId, run.id, sessions)
-      const total = fewest.looks.reduce((sum, visit) => sum + visit.dwell, 0)
-      const times = fewest.looks.length === 1 ? 'once' : `${fewest.looks.length} times`
-      items.push(
-        fewest.looks.length === 0
-          ? `Learner ${fewest.userId} had no vital sign monitor touchpoints.`
-          : `Learner ${fewest.userId} looked at the vital sign monitor ${times}, for ${formatDuration(total)} in total${span ? `, in a ${formatMinutes(span.end - span.start)} session` : ''}.`,
-      )
-    }
-    const onHeads = touchpoints.filter((visit) => visit.lane === COMMUNICATION_LANE).length
-    if (onHeads > 0) {
-      items.push(
-        `${onHeads} of ${touchpoints.length} touchpoints are on HeadFollower, a proxy for teammates’ heads. Worth confirming what that object is.`,
-      )
-    }
-    return items
-  }, [coverageLanes, run, touchpoints, sessions])
-
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-1.5">
@@ -343,14 +313,6 @@ function StandardSwimLanes({ dataset, run, touchpoints, minVisitS, openLearner }
             )}
           </Panel>
 
-          <Panel>
-            <PanelTitle>What stands out</PanelTitle>
-            <ul data-testid="highlights" className="m-0 flex list-disc flex-col gap-2 pl-4 text-[13px]">
-              {highlights.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </Panel>
         </aside>
       </div>
 
