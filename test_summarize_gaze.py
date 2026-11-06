@@ -9,9 +9,11 @@ import openpyxl
 from summarize_gaze import (
     DEFAULT_IRRELEVANT_OBJECTS,
     build_condense_mapping,
+    get_dataset_users,
     is_irrelevant_object,
     main,
     summarize_excel_to_json,
+    validate_and_normalize_ideal_matches,
 )
 
 
@@ -181,6 +183,104 @@ class TestSummarizeGaze(unittest.TestCase):
         self.assertTrue(is_irrelevant_object("InfantRightArmIK", irrelevant_lower))
         self.assertFalse(is_irrelevant_object("PenLight", irrelevant_lower))
         self.assertFalse(is_irrelevant_object("SPO2", irrelevant_lower))
+
+    def test_multi_ideal_users_strict_one_to_one_matching(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp = Path(tmpdir)
+            main_xlsx = tmp / "learners.xlsx"
+            ideal_xlsx = tmp / "ideal.xlsx"
+            out_raw = tmp / "with_ideal_raw.json"
+            out_cond = tmp / "with_ideal_cond.json"
+
+            t0 = datetime(2026, 5, 5, 13, 0, 0)
+            learner_rows = [
+                [1, 0, "CodeSheet5kg", 0.5, t0],
+                [1, 0, "Floor", 0.9, t0 + timedelta(seconds=1)],
+                [2, 0, "ekg", 0.6, t0],
+                [3, 0, "SPO2", 0.4, t0],
+            ]
+            # Two distinct ideal users in ideal.xlsx (user_id 10 -> idealUser0, user_id 25 -> idealUser1)
+            ideal_rows = [
+                [10, 0, "PenLight", 0.7, t0],
+                [10, 0, "RobotHandL", 0.9, t0 + timedelta(seconds=1)],
+                [25, 0, "CodeSheet37kg", 0.6, t0],
+            ]
+
+            self._create_excel(main_xlsx, learner_rows)
+            self._create_excel(ideal_xlsx, ideal_rows)
+
+            # Verify get_dataset_users helper
+            ideal_catalog = get_dataset_users(ideal_xlsx, is_ideal=True)
+            self.assertEqual(
+                [u["key"] for u in ideal_catalog],
+                ["idealUser0", "idealUser1"],
+            )
+
+            # 1. Explicit cross-matched 1-to-1 via CLI: user1 -> idealUser1, user2 -> idealUser0, user3 -> unmatched
+            rc = main(
+                [
+                    str(main_xlsx),
+                    "--ideal",
+                    str(ideal_xlsx),
+                    "--ideal-match",
+                    "user1=idealUser1",
+                    "user2=0",
+                    "-o",
+                    str(out_raw),
+                    "--no-condense",
+                ]
+            )
+            self.assertEqual(rc, 0)
+            raw_data = json.loads(out_raw.read_text(encoding="utf-8"))
+
+            self.assertEqual(
+                list(raw_data.keys()),
+                ["relevant_objects", "ideal_matches", "user1", "user2", "user3", "idealUser0", "idealUser1"],
+            )
+            self.assertEqual(
+                raw_data["ideal_matches"],
+                {"user1": "idealUser1", "user2": "idealUser0", "user3": None},
+            )
+            self.assertEqual(
+                raw_data["relevant_objects"],
+                ["CodeSheet37kg", "CodeSheet5kg", "ekg", "PenLight", "SPO2"],
+            )
+            self.assertEqual(
+                raw_data["idealUser0"],
+                [
+                    {"second": 0, "object": "PenLight"},
+                    {"second": 1, "object": None},
+                ],
+            )
+            self.assertEqual(
+                raw_data["idealUser1"],
+                [
+                    {"second": 0, "object": "CodeSheet37kg"},
+                ],
+            )
+
+            # 2. Verify condensing unifies CodeSheet5kg (learner) + CodeSheet37kg (idealUser1) -> CodeSheet
+            cond_data = summarize_excel_to_json(
+                main_xlsx,
+                out_cond,
+                ideal_input_path=ideal_xlsx,
+                ideal_matches={"user1": "idealUser1", "user2": "idealUser0"},
+                condense_similar=True,
+            )
+            self.assertEqual(
+                cond_data["relevant_objects"],
+                ["CodeSheet", "ekg", "PenLight", "SPO2"],
+            )
+            self.assertEqual(cond_data["user1"][0]["object"], "CodeSheet")
+            self.assertEqual(cond_data["idealUser1"][0]["object"], "CodeSheet")
+
+            # 3. Verify strict 1-to-1 enforcement rejects duplicate assignments
+            with self.assertRaises(ValueError):
+                validate_and_normalize_ideal_matches(
+                    {"user1": "idealUser0", "user2": "idealUser0"},
+                    orig_user_keys=["user1", "user2", "user3"],
+                    ideal_user_keys=["idealUser0", "idealUser1"],
+                )
 
 
 if __name__ == "__main__":

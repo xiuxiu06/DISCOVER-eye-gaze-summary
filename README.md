@@ -1,6 +1,6 @@
 # DISCOVER-eye-gaze-summary
 
-Python tool for the Cincinnati Children's **DISCOVER** Digital Health Hackathon project that compresses large, high-frequency VR eye-gaze Excel exports into a compact, per-second JSON summary of relevant clinical objects per user.
+Python tool for the Cincinnati Children's **DISCOVER** Digital Health Hackathon project that compresses large, high-frequency VR eye-gaze Excel exports into a compact, per-second JSON summary of relevant clinical objects per user (plus optional multi-user `idealUser0`, `idealUser1`, … benchmark matching).
 
 ## Setup
 
@@ -20,42 +20,78 @@ Pass any DISCOVER eye-gaze `.xlsx` (or `.csv` / `.tsv`) file:
 python summarize_gaze.py "C:\Users\lukew\Downloads\DISCOVER_eye_gaze_focus_per_second.xlsx" -o gaze_summary.json
 ```
 
-When run interactively in the terminal, it will prompt you whether to condense similar object names:
+When run interactively in the terminal, it will ask:
+1. Whether you want to upload an **ideal user** Excel/CSV file (`[y/N, or paste file path]`).
+2. If provided, which **ideal user** (`idealUser0`, `idealUser1`, …) matches each **original user** (`user1`, `user2`, …), enforced strictly **1-to-1**.
+3. Whether you want to **condense** similar object variants (`[y/N]`).
 
-```text
-Condense similar objects into combined groups (e.g., Stryker_bed_* -> Stryker_bed)? [y/N]:
+You can also pass everything directly via CLI flags without interactive prompts:
+
+```powershell
+python summarize_gaze.py "C:\path\to\learners.xlsx" --ideal "C:\path\to\ideal_users.xlsx" --ideal-match user1=idealUser0 user2=idealUser1 --condense -o gaze_summary.json
 ```
 
 #### Optional Flags
 
-- `--condense` / `--no-condense` — Enable or disable dynamic condensing of similar object variants without the interactive prompt.
-- `--sheet <SheetName>` — Read only a specific Excel worksheet (by default, all sheets containing `user_id`, `object_id`, `gaze_time`, and `time_stamp` are processed).
+- `--ideal <FilePath>` / `--no-ideal` — Include an ideal user Excel/CSV dataset (`idealUser0`, `idealUser1`, …), or skip prompting.
+- `--ideal-match user1=idealUser0 user2=idealUser1 ...` — Specify strict 1-to-1 user matches without interactive prompts (also accepts indices like `user1=0`).
+- `--ideal-sheet <SheetName>` — Read a specific worksheet from the ideal user workbook.
+- `--condense` / `--no-condense` — Enable or disable dynamic condensing of similar object variants without prompting.
+- `--sheet <SheetName>` — Read only a specific Excel worksheet from the main workbook.
 - `--ignore <Object1> <Object2> ...` — Exclude additional `object_id` names on top of the built-in irrelevant collider list.
 - `--include-timestamps` — Include the wall-clock `"timestamp"` string in each per-second entry alongside `"second"` and `"object"`.
 
 ### Python / Frontend Integration API
 
 ```python
-from summarize_gaze import summarize_excel_to_json
+from summarize_gaze import get_dataset_users, summarize_excel_to_json
+
+# Optional helper to list original & ideal users for frontend dropdowns:
+orig_users = get_dataset_users("eye_gaze_data.xlsx", is_ideal=False)
+ideal_users = get_dataset_users("ideal_users.xlsx", is_ideal=True)
 
 summary = summarize_excel_to_json(
     "eye_gaze_data.xlsx",
     "gaze_summary.json",
-    condense_similar=True,  # Toggle condensing from a frontend parameter
+    ideal_input_path="ideal_users.xlsx",
+    ideal_matches={"user1": "idealUser0", "user2": "idealUser1"},  # Strict 1-to-1
+    condense_similar=True,
 )
 ```
 
-## Filtered Irrelevant Objects
+## Output JSON Format
 
-Non-clinical background colliders, VR hands/fingers, room fixtures, and Unity animation/physics rig helpers are filtered out automatically (`DEFAULT_IRRELEVANT_OBJECTS` and `DEFAULT_IRRELEVANT_PATTERNS` in `summarize_gaze.py`), including:
-
-- **Player VR hands & finger bones**: `AutoHandPlayer`, `HeadFollower`, `RobotHandL`, `RobotHandR`, `Thumb*`, `Index*`, `Middle*`, `Ring*`, `Pinky*`
-- **Room walls, doors, lighting & fixtures**: `Floor`, `Bckground`, `LoadingScreen`, `RoomCollider*`, `Room_cube_wall`, `Room_frame`, `PassthroughDoor`, `Hinge`, `Knob`, `PushPull`, `glass_panel`, `curved_counter`, `Sink`, `Light`, `LightBulb*`, `boomLight`
-- **Unity primitives, UI chrome & avatar rigging**: `Collider`, `ColliderCube*`, `Cube*`, `SpatialPanelManipulator`, `chestRubBlocker`, `FakeTube`, `*IK` (`LeftArmIK`, `TeenLeftHandIK`, etc.), `*Grab*` (`LeftArmGrabWrist`, `RightLegGrabAnkle`, etc.), `TriggerChestL`, `TriggerChestR`
-
-## Dynamic Object Condensing
-
-When condensing is enabled (`y` at the prompt, `--condense`, or `condense_similar=True`), object identifiers are tokenized across snake_case and CamelCase boundaries, stripped of numeric/weight suffixes, and dynamically clustered by shared stems without hardcoding specific clinical names (for example: `Stryker_bed_*` -> `Stryker_bed`, `CodeSheet37kg`/`CodeSheet5kg` -> `CodeSheet`, `T3_monitor_screen_*` -> `T3_monitor_screen`, `Nasal_Canula_*`/`NasalCanula_Snap` -> `Nasal_Canula`, `LeftEye`/`RightEye` -> `Eye`).
+```json
+{
+  "relevant_objects": [
+    "CodeSheet",
+    "PenLight",
+    "SPO2",
+    "Stryker_bed"
+  ],
+  "ideal_matches": {
+    "user1": "idealUser1",
+    "user2": "idealUser0",
+    "user3": null
+  },
+  "user1": [
+    { "second": 0, "object": "SPO2" },
+    { "second": 1, "object": null }
+  ],
+  "user2": [
+    { "second": 0, "object": "Stryker_bed" }
+  ],
+  "user3": [
+    { "second": 0, "object": "SPO2" }
+  ],
+  "idealUser0": [
+    { "second": 0, "object": "PenLight" }
+  ],
+  "idealUser1": [
+    { "second": 0, "object": "CodeSheet" }
+  ]
+}
+```
 
 ## Running Tests
 

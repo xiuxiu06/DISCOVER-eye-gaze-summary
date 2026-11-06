@@ -805,6 +805,107 @@ def build_user_timeline(
     return full_timeline
 
 
+def _group_original_users(
+    rows: Iterable[GazeRow],
+) -> list[tuple[str, str, list[GazeRow]]]:
+    """
+    Group rows by formatted original user key (`user1`, `user2`, ...) in numeric order.
+    Returns list of `(user_key, raw_user_id_example, user_rows)`.
+    """
+    users_rows: dict[str, list[GazeRow]] = defaultdict(list)
+    user_sort_keys: dict[str, tuple[int, int | str]] = {}
+    raw_labels: dict[str, str] = {}
+
+    for r in rows:
+        sort_key, user_key = format_user_key(r.user_id)
+        user_sort_keys[user_key] = sort_key
+        if user_key not in raw_labels:
+            raw_labels[user_key] = r.user_id
+        users_rows[user_key].append(r)
+
+    ordered_keys = sorted(users_rows.keys(), key=lambda k: user_sort_keys[k])
+    return [(uk, raw_labels[uk], users_rows[uk]) for uk in ordered_keys]
+
+
+def _group_ideal_users(
+    ideal_rows: Iterable[GazeRow],
+) -> list[tuple[str, str, list[GazeRow]]]:
+    """
+    Group ideal dataset rows by distinct user into sequential keys `idealUser0`, `idealUser1`, ...
+    Returns list of `(ideal_key, raw_user_id_example, ideal_user_rows)`.
+    """
+    grouped = _group_original_users(ideal_rows)
+    return [
+        (f"idealUser{idx}", raw_label, u_rows)
+        for idx, (_orig_style_key, raw_label, u_rows) in enumerate(grouped)
+    ]
+
+
+def validate_and_normalize_ideal_matches(
+    ideal_matches: dict[str, str | int | None] | None,
+    orig_user_keys: list[str],
+    ideal_user_keys: list[str],
+) -> dict[str, str | None]:
+    """
+    Validate and normalize a mapping from original user keys (`user1`, ...) to ideal user keys
+    (`idealUser0`, ...), enforcing strict 1-to-1 matching (each ideal user may match at most
+    one original user). If `ideal_matches` is None, defaults to sequential 1-to-1 pairing.
+    """
+    orig_set = set(orig_user_keys)
+    ideal_set = set(ideal_user_keys)
+
+    if ideal_matches is None:
+        normalized: dict[str, str | None] = {uk: None for uk in orig_user_keys}
+        for uk, ik in zip(orig_user_keys, ideal_user_keys):
+            normalized[uk] = ik
+        return normalized
+
+    normalized = {uk: None for uk in orig_user_keys}
+    assigned_ideal_to_orig: dict[str, str] = {}
+
+    for raw_orig, raw_target in ideal_matches.items():
+        orig_key = str(raw_orig).strip()
+        if orig_key not in orig_set:
+            _, candidate_orig = format_user_key(orig_key)
+            if candidate_orig in orig_set:
+                orig_key = candidate_orig
+            else:
+                raise ValueError(
+                    f"Unknown original user '{raw_orig}' in ideal_matches. Available users: {orig_user_keys}"
+                )
+
+        if raw_target is None or str(raw_target).strip().lower() in {"", "none", "null", "skip"}:
+            normalized[orig_key] = None
+            continue
+
+        target_str = str(raw_target).strip()
+        if target_str.isdigit():
+            target_key = f"idealUser{int(target_str)}"
+        else:
+            # Case-insensitive normalization for `idealuser0` -> `idealUser0`
+            match = re.fullmatch(r"idealuser[\s_\-]*(\d+)", target_str, flags=re.IGNORECASE)
+            target_key = f"idealUser{int(match.group(1))}" if match else target_str
+
+        if target_key not in ideal_set:
+            raise ValueError(
+                f"Unknown ideal user '{raw_target}' (normalized to '{target_key}'). "
+                f"Available ideal users: {ideal_user_keys}"
+            )
+
+        if target_key in assigned_ideal_to_orig:
+            prev_orig = assigned_ideal_to_orig[target_key]
+            if prev_orig != orig_key:
+                raise ValueError(
+                    f"Strict 1-to-1 matching violated: '{target_key}' cannot be matched to both "
+                    f"'{prev_orig}' and '{orig_key}'."
+                )
+
+        assigned_ideal_to_orig[target_key] = orig_key
+        normalized[orig_key] = target_key
+
+    return normalized
+
+
 def summarize_gaze_rows(
     rows: Iterable[GazeRow],
     irrelevant_objects: Iterable[str] = DEFAULT_IRRELEVANT_OBJECTS,
@@ -812,82 +913,140 @@ def summarize_gaze_rows(
     condense_similar: bool = False,
     max_gap_seconds: float = 300.0,
     include_timestamps: bool = False,
+    ideal_rows: Iterable[GazeRow] | None = None,
+    ideal_matches: dict[str, str | int | None] | None = None,
 ) -> dict[str, Any]:
     """
     Produce the final JSON-serializable summary dictionary:
       {
         "relevant_objects": [...],
+        "ideal_matches": {"user1": "idealUser0", ...},  # Included when `ideal_rows` is provided
         "user1": [{"second": 0, "object": "..."}, {"second": 1, "object": null}, ...],
-        "user2": [...]
+        "user2": [...],
+        "idealUser0": [...],
+        "idealUser1": [...]
       }
     """
     row_list = list(rows)
+    ideal_row_list = list(ideal_rows) if ideal_rows is not None else None
     irrelevant_lower = {obj.strip().lower() for obj in irrelevant_objects if obj.strip()}
 
-    # Collect unique raw relevant object names first
+    # Collect unique raw relevant object names across BOTH main and ideal datasets
     raw_relevant_map: dict[str, str] = {}
-    for r in row_list:
+    all_source_rows = row_list + (ideal_row_list if ideal_row_list is not None else [])
+    for r in all_source_rows:
         if not is_irrelevant_object(r.object_id, irrelevant_lower, use_default_patterns):
             obj_lower = r.object_id.lower()
             if obj_lower not in raw_relevant_map:
                 raw_relevant_map[obj_lower] = r.object_id
 
-    # Optionally build a dynamic condensing map and remap relevant object IDs prior to per-second aggregation
+    # Optionally build a unified dynamic condensing map across both datasets
     if condense_similar and raw_relevant_map:
         canonical_by_raw = build_condense_mapping(raw_relevant_map.values())
         canonical_by_lower = {
             low: canonical_by_raw[orig] for low, orig in raw_relevant_map.items()
         }
-        processed_rows: list[GazeRow] = []
-        for r in row_list:
-            mapped = canonical_by_lower.get(r.object_id.lower())
-            if mapped is not None and mapped != r.object_id:
-                processed_rows.append(replace(r, object_id=mapped))
-            else:
-                processed_rows.append(r)
+
+        def _remap_rows(src: list[GazeRow]) -> list[GazeRow]:
+            out: list[GazeRow] = []
+            for r in src:
+                mapped = canonical_by_lower.get(r.object_id.lower())
+                if mapped is not None and mapped != r.object_id:
+                    out.append(replace(r, object_id=mapped))
+                else:
+                    out.append(r)
+            return out
+
+        processed_rows = _remap_rows(row_list)
+        processed_ideal_rows = _remap_rows(ideal_row_list) if ideal_row_list is not None else None
         unique_relevant = set(canonical_by_raw.values())
     else:
         processed_rows = row_list
+        processed_ideal_rows = ideal_row_list
         unique_relevant = set(raw_relevant_map.values())
 
     relevant_objects_list = sorted(unique_relevant, key=lambda s: s.lower())
 
-    users_rows: dict[str, list[GazeRow]] = defaultdict(list)
-    user_sort_keys: dict[str, tuple[int, int | str]] = {}
-    for r in processed_rows:
-        sort_key, user_key = format_user_key(r.user_id)
-        user_sort_keys[user_key] = sort_key
-        users_rows[user_key].append(r)
+    orig_groups = _group_original_users(processed_rows)
+    orig_user_keys = [uk for uk, _, _ in orig_groups]
+
+    ideal_groups = (
+        _group_ideal_users(processed_ideal_rows) if processed_ideal_rows is not None else None
+    )
 
     result: dict[str, Any] = {
         "relevant_objects": relevant_objects_list,
     }
 
-    for user_key in sorted(users_rows.keys(), key=lambda k: user_sort_keys[k]):
+    if ideal_groups is not None:
+        ideal_user_keys = [ik for ik, _, _ in ideal_groups]
+        result["ideal_matches"] = validate_and_normalize_ideal_matches(
+            ideal_matches,
+            orig_user_keys=orig_user_keys,
+            ideal_user_keys=ideal_user_keys,
+        )
+
+    for user_key, _raw_label, u_rows in orig_groups:
         result[user_key] = build_user_timeline(
-            users_rows[user_key],
+            u_rows,
             irrelevant_lower=irrelevant_lower,
             use_default_patterns=use_default_patterns,
             max_gap_seconds=max_gap_seconds,
             include_timestamps=include_timestamps,
         )
 
+    if ideal_groups is not None:
+        for ideal_key, _raw_label, i_rows in ideal_groups:
+            result[ideal_key] = build_user_timeline(
+                i_rows,
+                irrelevant_lower=irrelevant_lower,
+                use_default_patterns=use_default_patterns,
+                max_gap_seconds=max_gap_seconds,
+                include_timestamps=include_timestamps,
+            )
+
     return result
+
+
+def get_dataset_users(
+    input_path: str | Path,
+    is_ideal: bool = False,
+    sheet_name: str | None = None,
+) -> list[dict[str, Any]]:
+    """
+    Helper for frontend/UI integration: inspect an Excel/CSV file and return its ordered user list:
+      `[{"key": "user1", "raw_user_id": "1", "row_count": 649}, ...]`
+    (or `"idealUser0"`, `"idealUser1"`, ... when `is_ideal=True`).
+    """
+    rows = read_gaze_file(input_path, sheet_name=sheet_name)
+    groups = _group_ideal_users(rows) if is_ideal else _group_original_users(rows)
+    return [
+        {"key": key, "raw_user_id": raw_label, "row_count": len(u_rows)}
+        for key, raw_label, u_rows in groups
+    ]
 
 
 def summarize_excel_to_json(
     input_path: str | Path,
     output_path: str | Path,
+    ideal_input_path: str | Path | None = None,
+    ideal_matches: dict[str, str | int | None] | None = None,
     irrelevant_objects: Iterable[str] = DEFAULT_IRRELEVANT_OBJECTS,
     use_default_patterns: bool = True,
     condense_similar: bool = False,
     sheet_name: str | None = None,
+    ideal_sheet_name: str | None = None,
     max_gap_seconds: float = 300.0,
     include_timestamps: bool = False,
     indent: int = 2,
 ) -> dict[str, Any]:
-    """Read an Excel/CSV eye-gaze file, summarize per-second relevant gaze, and write JSON."""
+    """Read main (and optional ideal user) Excel/CSV eye-gaze files, summarize per-second gaze, and write JSON."""
     rows = read_gaze_file(input_path, sheet_name=sheet_name)
+    ideal_rows = (
+        read_gaze_file(ideal_input_path, sheet_name=ideal_sheet_name)
+        if ideal_input_path is not None
+        else None
+    )
     summary = summarize_gaze_rows(
         rows,
         irrelevant_objects=irrelevant_objects,
@@ -895,6 +1054,8 @@ def summarize_excel_to_json(
         condense_similar=condense_similar,
         max_gap_seconds=max_gap_seconds,
         include_timestamps=include_timestamps,
+        ideal_rows=ideal_rows,
+        ideal_matches=ideal_matches,
     )
     out = Path(output_path)
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -916,6 +1077,152 @@ def _discover_default_input_file(directory: Path) -> Path | None:
     if len(candidates) == 1:
         return candidates[0]
     return None
+
+
+def _clean_user_path_input(raw: str) -> str:
+    """Strip surrounding quotes and PowerShell `& ` prefixes from dragged/pasted terminal paths."""
+    cleaned = re.sub(r"^&\s*", "", raw.strip())
+    return cleaned.strip().strip("\"'").strip()
+
+
+def _prompt_ideal_file_path() -> Path | None:
+    """Prompt the user in an interactive terminal for an optional ideal user Excel/CSV file."""
+    if not sys.stdin or not sys.stdin.isatty():
+        return None
+
+    while True:
+        try:
+            ans = input(
+                'Upload/include an "ideal user" dataset? [y/N, or paste file path]: '
+            ).strip()
+        except EOFError:
+            return None
+
+        low = ans.lower()
+        if low in {"", "n", "no", "0", "false"}:
+            return None
+
+        if low in {"y", "yes", "1", "true"}:
+            while True:
+                try:
+                    raw_path = input(
+                        "Enter path to ideal user Excel/CSV file (or press Enter to skip): "
+                    )
+                except EOFError:
+                    return None
+                cleaned = _clean_user_path_input(raw_path)
+                if not cleaned:
+                    return None
+                candidate = Path(cleaned).expanduser()
+                if candidate.is_file():
+                    return candidate
+                print(f"File not found: '{candidate}'. Please check the path or press Enter to skip.")
+        else:
+            # User pasted or dragged a file path directly into the first prompt
+            cleaned = _clean_user_path_input(ans)
+            candidate = Path(cleaned).expanduser()
+            if candidate.is_file():
+                return candidate
+            print(
+                f"File not found: '{candidate}'. Enter 'y' to specify a path, 'n' to skip, or paste a valid path."
+            )
+
+
+def _prompt_ideal_user_matches(
+    orig_groups: list[tuple[str, str, list[GazeRow]]],
+    ideal_groups: list[tuple[str, str, list[GazeRow]]],
+) -> dict[str, str | None] | None:
+    """
+    Interactively prompt the user to match each original user (`user1`, ...) to an
+    ideal user (`idealUser0`, ...) with strict 1-to-1 enforcement.
+    """
+    if not sys.stdin or not sys.stdin.isatty():
+        return None
+    if not orig_groups or not ideal_groups:
+        return {uk: None for uk, _, _ in orig_groups}
+
+    print(f"\nFound {len(orig_groups)} original user(s) and {len(ideal_groups)} ideal user(s):")
+    for idx, (ik, raw_id, i_rows) in enumerate(ideal_groups):
+        print(f"  [{idx}] {ik} (from Excel user_id={raw_id}, {len(i_rows):,} rows)")
+    print("Match each original user to an ideal user (strictly 1-to-1; press Enter to skip):")
+
+    ideal_by_index = {idx: ik for idx, (ik, _, _) in enumerate(ideal_groups)}
+    ideal_raw_label = {ik: raw_id for ik, raw_id, _ in ideal_groups}
+    ideal_lower_to_key = {ik.lower(): ik for ik, _, _ in ideal_groups}
+
+    taken_by: dict[str, str] = {}
+    matches: dict[str, str | None] = {uk: None for uk, _, _ in orig_groups}
+
+    for orig_key, orig_raw_id, _ in orig_groups:
+        available = [
+            f"[{idx}] {ik} (id={ideal_raw_label[ik]})"
+            for idx, ik in ideal_by_index.items()
+            if ik not in taken_by
+        ]
+        if not available:
+            print(f"  All ideal users have been matched; leaving {orig_key} unmatched.")
+            break
+
+        print(f"  Available ideal users: {', '.join(available)}")
+        while True:
+            try:
+                ans = input(
+                    f"  Match '{orig_key}' (Excel user_id={orig_raw_id}) to [index / idealUser# / Enter=none]: "
+                ).strip()
+            except EOFError:
+                return matches
+
+            low = ans.lower()
+            if low in {"", "n", "no", "none", "null", "skip"}:
+                matches[orig_key] = None
+                break
+
+            chosen_key: str | None = None
+            if ans.isdigit():
+                idx_val = int(ans)
+                if idx_val in ideal_by_index:
+                    chosen_key = ideal_by_index[idx_val]
+            else:
+                m = re.fullmatch(r"idealuser[\s_\-]*(\d+)", low)
+                if m and int(m.group(1)) in ideal_by_index:
+                    chosen_key = ideal_by_index[int(m.group(1))]
+                elif low in ideal_lower_to_key:
+                    chosen_key = ideal_lower_to_key[low]
+
+            if chosen_key is None:
+                print("    Invalid selection. Enter an available [index], e.g. 0, 'idealUser0', or press Enter to skip.")
+                continue
+
+            if chosen_key in taken_by:
+                print(
+                    f"    '{chosen_key}' is already matched to '{taken_by[chosen_key]}' (strict 1-to-1). "
+                    "Please pick another available ideal user or press Enter to skip."
+                )
+                continue
+
+            taken_by[chosen_key] = orig_key
+            matches[orig_key] = chosen_key
+            break
+
+    print()
+    return matches
+
+
+def _parse_cli_ideal_matches(pairs: list[str]) -> dict[str, str | None]:
+    """Parse CLI `--ideal-match user1=idealUser0 user2=1` pairs into a raw mapping dict."""
+    parsed: dict[str, str | None] = {}
+    for item in pairs:
+        if "=" not in item:
+            raise ValueError(
+                f"Invalid --ideal-match entry '{item}'. Expected format: user1=idealUser0 (or user1=0)."
+            )
+        left, right = item.split("=", 1)
+        left_clean = left.strip()
+        right_clean = right.strip()
+        if not left_clean:
+            raise ValueError(f"Invalid --ideal-match entry '{item}': missing original user key.")
+        parsed[left_clean] = None if right_clean.lower() in {"", "none", "null", "skip"} else right_clean
+    return parsed
 
 
 def _prompt_condense_choice() -> bool:
@@ -957,8 +1264,34 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--sheet",
         default=None,
-        help="Specific Excel worksheet name to read (default: reads all sheets matching expected columns).",
+        help="Specific Excel worksheet name to read for the main dataset (default: all matching sheets).",
     )
+
+    ideal_group = parser.add_mutually_exclusive_group()
+    ideal_group.add_argument(
+        "--ideal",
+        default=None,
+        metavar="IDEAL_FILE",
+        help="Path to an optional 'ideal user' Excel (.xlsx) or CSV/TSV dataset (outputs idealUser0, idealUser1, ...).",
+    )
+    ideal_group.add_argument(
+        "--no-ideal",
+        action="store_true",
+        help="Skip prompting for an ideal user dataset.",
+    )
+    parser.add_argument(
+        "--ideal-sheet",
+        default=None,
+        help="Specific Excel worksheet name to read for the ideal user dataset.",
+    )
+    parser.add_argument(
+        "--ideal-match",
+        nargs="*",
+        default=None,
+        metavar="USER=IDEAL",
+        help="Explicit 1-to-1 matches without prompting, e.g. --ideal-match user1=idealUser0 user2=idealUser1",
+    )
+
     parser.add_argument(
         "--ignore",
         nargs="*",
@@ -1012,18 +1345,10 @@ def main(argv: list[str] | None = None) -> int:
             return 1
         print(f"Auto-detected Excel file: {input_path.name}")
 
-    condense_similar = args.condense if args.condense is not None else _prompt_condense_choice()
+    if not input_path.exists():
+        print(f"Error: Input file not found: '{input_path}'", file=sys.stderr)
+        return 1
 
-    output_path = (
-        Path(args.output)
-        if args.output
-        else input_path.with_name(f"{input_path.stem}_summary.json")
-    )
-
-    irrelevant = set(DEFAULT_IRRELEVANT_OBJECTS)
-    irrelevant.update(args.ignore)
-
-    t0 = time.perf_counter()
     try:
         rows = read_gaze_file(input_path, sheet_name=args.sheet)
     except Exception as exc:
@@ -1037,13 +1362,67 @@ def main(argv: list[str] | None = None) -> int:
             file=sys.stderr,
         )
 
-    summary = summarize_gaze_rows(
-        rows,
-        irrelevant_objects=irrelevant,
-        condense_similar=condense_similar,
-        max_gap_seconds=args.max_gap,
-        include_timestamps=args.include_timestamps,
+    ideal_path: Path | None
+    if args.ideal is not None:
+        ideal_path = Path(args.ideal)
+        if not ideal_path.exists():
+            print(f"Error: Ideal user file not found: '{ideal_path}'", file=sys.stderr)
+            return 1
+    elif args.no_ideal:
+        ideal_path = None
+    else:
+        ideal_path = _prompt_ideal_file_path()
+
+    ideal_rows: list[GazeRow] | None = None
+    ideal_matches: dict[str, str | int | None] | None = None
+    if ideal_path is not None:
+        try:
+            ideal_rows = read_gaze_file(ideal_path, sheet_name=args.ideal_sheet)
+        except Exception as exc:
+            print(f"Error reading ideal user file '{ideal_path}': {exc}", file=sys.stderr)
+            return 1
+        if not ideal_rows:
+            print(
+                f"Warning: No valid gaze rows found in ideal user file '{ideal_path}'.",
+                file=sys.stderr,
+            )
+
+        if args.ideal_match is not None:
+            try:
+                ideal_matches = _parse_cli_ideal_matches(args.ideal_match)
+            except ValueError as exc:
+                print(f"Error: {exc}", file=sys.stderr)
+                return 1
+        else:
+            orig_groups_preview = _group_original_users(rows)
+            ideal_groups_preview = _group_ideal_users(ideal_rows)
+            ideal_matches = _prompt_ideal_user_matches(orig_groups_preview, ideal_groups_preview)
+
+    condense_similar = args.condense if args.condense is not None else _prompt_condense_choice()
+
+    output_path = (
+        Path(args.output)
+        if args.output
+        else input_path.with_name(f"{input_path.stem}_summary.json")
     )
+
+    irrelevant = set(DEFAULT_IRRELEVANT_OBJECTS)
+    irrelevant.update(args.ignore)
+
+    t0 = time.perf_counter()
+    try:
+        summary = summarize_gaze_rows(
+            rows,
+            irrelevant_objects=irrelevant,
+            condense_similar=condense_similar,
+            max_gap_seconds=args.max_gap,
+            include_timestamps=args.include_timestamps,
+            ideal_rows=ideal_rows,
+            ideal_matches=ideal_matches,
+        )
+    except ValueError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 1
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("w", encoding="utf-8") as f:
@@ -1051,12 +1430,17 @@ def main(argv: list[str] | None = None) -> int:
         f.write("\n")
 
     elapsed = time.perf_counter() - t0
-    user_keys = [k for k in summary.keys() if k != "relevant_objects"]
+    timeline_keys = [k for k in summary.keys() if k not in {"relevant_objects", "ideal_matches"}]
     mode_label = "enabled" if condense_similar else "disabled"
-    print(f"Processed {len(rows):,} raw gaze rows in {elapsed:.2f}s (condensing {mode_label})")
+    total_raw_rows = len(rows) + (len(ideal_rows) if ideal_rows is not None else 0)
+    print(f"Processed {total_raw_rows:,} raw gaze rows in {elapsed:.2f}s (condensing {mode_label})")
     print(f"Relevant unique objects in output: {len(summary['relevant_objects'])}")
-    print(f"Users summarized ({len(user_keys)}):")
-    for uk in user_keys:
+    if "ideal_matches" in summary:
+        print("Ideal user 1-to-1 matches:")
+        for orig_u, matched_ideal in summary["ideal_matches"].items():
+            print(f"  - {orig_u} -> {matched_ideal}")
+    print(f"Timelines summarized ({len(timeline_keys)}):")
+    for uk in timeline_keys:
         timeline = summary[uk]
         active_secs = sum(1 for item in timeline if item["object"] is not None)
         print(f"  - {uk}: {len(timeline):,}s total ({active_secs:,}s looking at relevant objects)")
