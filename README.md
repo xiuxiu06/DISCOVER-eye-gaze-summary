@@ -6,7 +6,7 @@ It answers one question:
 
 > Where does each clinician's attention actually go during a VR simulation, and can we show it automatically from raw gaze logs instead of a person watching and taking notes?
 
-**Status: in progress.** All four app screens run on real data from the pipeline, using a draft lane map that still needs review. See [Current status](#current-status).
+**Status: in progress.** The three MVP tabs run on real data from the pipeline, using a draft lane map that still needs review. See [Current status](#current-status).
 
 ## Why this exists
 
@@ -34,13 +34,15 @@ raw gaze CSV + lane map  ->  Python pipeline  ->  static JSON  ->  React + D3 ap
 
 The pipeline cleans the log and groups it into sessions, team runs and lane visits. The app reads the resulting JSON and computes its metrics in the browser, so the "Min touchpoint" slider updates every screen live.
 
-| Screen | Question it answers |
+The MVP has three tabs:
+
+| Tab | Question it answers |
 |---|---|
-| 1. Raw → Signal | How do we turn the raw firehose into a clean signal? |
+| 1. Upload & clean | How do we turn the raw firehose into a clean signal? |
 | 2. Team swim lanes (the centerpiece) | How did each person's attention move over time, and was anyone on the team watching the patient or monitor? |
-| 3. Attention profiles | How do learners differ in where they look and how they scan? |
-| 4. Display under test | Did people look at a specific display, how soon, and how often? |
-| 5. Simulated events (stretch goal) | How long after a simulated event did each learner look at the monitor? |
+| 3. Report card | What did one learner look at, how soon and how often, as a starting point for their debrief? |
+
+Attention profiles, Display under test and Expected vs actual are parked until after the MVP.
 
 ## Rules everyone must follow
 
@@ -92,7 +94,7 @@ The log covers 2026-05-05 (user 1 only, about 9 minutes), then 2026-05-06 and 20
 | Gaze log | Not in the repo yet. Goes in `data/raw/` |
 | Lane map (`data/lane_map.csv`) | **Draft: needs review, so numbers per lane are provisional** |
 | Pipeline and tests | Built. Two visit-count tests are expected failures until the merge rule is confirmed |
-| App | Screens 1–4 built and running on pipeline output |
+| App | The three MVP tabs are built and run on pipeline output |
 
 ### Milestones
 
@@ -101,9 +103,9 @@ Commit after each one. If time runs short, cut from the bottom of this list, but
 | Milestone | Scope | Done when |
 |---|---|---|
 | M1 | Pipeline and tests | `pytest` passes, expected numbers are within tolerance, JSON is written |
-| M2 | App shell and Screen 2 | The default run renders, and the slider changes the dots live |
-| M3 | Screen 1 | The funnel shows real numbers from `funnel.json` |
-| M4 | Screens 3 and 4 | All metrics are computed from visits, with no hard-coded numbers |
+| M2 | App shell and Team swim lanes | The default run renders, and the slider changes the dots live |
+| M3 | Upload & clean | The funnel shows real numbers from `funnel.json` |
+| M4 | Report card | All metrics are computed from visits, with no hard-coded numbers |
 | M5 | Demo polish | Tabs and arrow keys work, the footnote is present, it loads in under 2 s |
 | Stretch | Screen 5, overlay mode, PNG export of a swim panel | |
 
@@ -125,7 +127,7 @@ pytest -q
 
 ### Uploading a log
 
-The **Upload CSV** button in the header runs the same pipeline steps in the browser on another gaze log, using `data/lane_map.csv` as it was when the app was built. The file isn't sent anywhere or saved, so reloading the page goes back to the built-in data. Objects missing from the lane map count as background, and the app says how many there were.
+The **Upload & clean** tab takes a gaze log by drag and drop or file picker, and runs the same pipeline steps in the browser. It uses `data/lane_map.csv` as it was when the app was built, unless you also upload a lane map. Files aren't sent anywhere or saved, so reloading the page goes back to the built-in data. Objects missing from the lane map count as background, and the app says how many there were. Debrief notes stay in that browser's local storage.
 
 The steps live in both `pipeline/` and `app/src/processLog.ts`. If you change one, change the other, then run `npm run check:upload` in `app/` to compare their results.
 
@@ -163,7 +165,8 @@ app/
     App.tsx             # header, tabs, arrow keys
     data.ts  types.ts   # loading and JSON formats
     metrics.ts  time.ts # calculations and time formatting
-    screens/            # one file per screen
+    processLog.ts       # the pipeline's steps, for uploads in the browser
+    screens/            # one file per tab
     components/ui/      # shadcn/ui components (add more with: npx shadcn@latest add <name>)
 summarize_gaze.py       # separate per-second summary tool, with its tests in test_summarize_gaze.py
 ```
