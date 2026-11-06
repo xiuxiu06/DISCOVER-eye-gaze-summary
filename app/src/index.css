@@ -2,26 +2,27 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/inter";
+@import "@fontsource-variable/space-grotesk";
 
 @custom-variant dark (&:is(.dark *));
 :root {
-  --muted: oklch(0.97 0 0);
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --muted: #f5f6f8;
+  --background: #f5f6f8;
+  --foreground: #15181e;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary: #15181e;
+  --primary-foreground: #ffffff;
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground: #565d6b;
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
+  --border: #e2e5ea;
+  --input: #cdd2da;
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
@@ -40,7 +41,7 @@
 }
 
 @theme inline {
-  --font-heading: var(--font-sans);
+  --font-heading: 'Space Grotesk Variable', var(--font-sans);
   --font-sans: 'Inter Variable', sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -126,14 +127,7 @@
   html {
     @apply font-sans;
   }
-  /* Screens get the height left by the header and footer, so the swim lanes
-     can fit all four learners without scrolling. */
-  html,
-  body,
-  #root {
-    height: 100%;
-  }
 }
 .idle-swatch {
-  background: repeating-linear-gradient(45deg, #6b7280 0 1.5px, #fff 1.5px 5px);
+  background: repeating-linear-gradient(45deg, #c3c8d1 0 2px, #fff 2px 5px);
 }

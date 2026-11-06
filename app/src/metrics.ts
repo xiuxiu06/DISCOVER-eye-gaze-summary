@@ -2,11 +2,13 @@
 // the slider stays live.
 
 import { isoToEpoch } from './time'
-import type { IdleInterval, Lane, Meta, ObjectVisit, Run, Session, Visit } from './types'
+import type { IdleInterval, Lane, Meta, Run, Session, Visit } from './types'
 
 /** Lanes the team coverage strip and monitor ↔ patient switches are about. */
 export const PATIENT_LANE = 'Patient assessment'
 export const MONITOR_LANE = 'Vital sign monitor'
+/** Looks at teammates' heads. Every other lane counts as clinical. */
+export const COMMUNICATION_LANE = 'Communication'
 
 /** Runs shorter than this are fragments and can't be the default view. */
 const MIN_DEFAULT_RUN_S = 45 * 60
@@ -46,11 +48,10 @@ export function touchpoints(visits: Visit[], runId: string, minVisitS: number): 
     .sort((a, b) => a.start - b.start)
 }
 
-export function median(values: number[]): number | undefined {
-  if (values.length === 0) return undefined
-  const sorted = [...values].sort((a, b) => a - b)
-  const middle = Math.floor(sorted.length / 2)
-  return sorted.length % 2 === 1 ? sorted[middle] : (sorted[middle - 1] + sorted[middle]) / 2
+/** Runs a person would pick between. Falls back to all runs if none has a team. */
+export function teamRuns(runs: Run[]): Run[] {
+  const teams = runs.filter((run) => run.userIds.length > 1)
+  return teams.length > 0 ? teams : runs
 }
 
 // Team coverage -------------------------------------------------------------
@@ -92,10 +93,41 @@ export function laneCoverage(
   }
 }
 
+/** Total time covered by intervals, counting any overlap once. */
+export function unionSeconds(intervals: Interval[]): number {
+  let total = 0
+  let reached = -Infinity
+  for (const { start, end } of [...intervals].sort((a, b) => a.start - b.start)) {
+    if (end > reached) {
+      total += end - Math.max(start, reached)
+      reached = end
+    }
+  }
+  return total
+}
+
+/** When someone on the team had looked at a lane in the previous windowS seconds. */
+export function coveredIntervals(
+  items: Visit[],
+  laneId: string,
+  window: Interval,
+  windowS: number,
+): Interval[] {
+  const covered: Interval[] = []
+  const visits = items.filter((visit) => visit.lane === laneId).sort((a, b) => a.start - b.start)
+  for (const visit of visits) {
+    const end = Math.min(visit.end + windowS, window.end)
+    const last = covered.at(-1)
+    if (last && visit.start <= last.end) last.end = Math.max(last.end, end)
+    else covered.push({ start: Math.max(visit.start, window.start), end })
+  }
+  return covered
+}
+
 // What a learner was doing at one moment --------------------------------------
 
 export type LearnerState =
-  | { kind: 'visit'; lane: string; objectId?: string }
+  | { kind: 'visit'; lane: string; objectId?: string; dwell: number }
   | { kind: 'idle' }
   | { kind: 'background' }
 
@@ -108,7 +140,9 @@ export function stateAt(
   const visit = runVisits.find(
     (item) => item.userId === userId && item.start <= time && time <= item.end,
   )
-  if (visit) return { kind: 'visit', lane: visit.lane, objectId: topObjects(visit, 1)[0]?.[0] }
+  if (visit) {
+    return { kind: 'visit', lane: visit.lane, objectId: topObjects(visit, 1)[0]?.[0], dwell: visit.dwell }
+  }
   if (idle.some((item) => item.userId === userId && item.start <= time && time <= item.end)) {
     return { kind: 'idle' }
   }
@@ -217,51 +251,4 @@ export function learnerProfile(
     transitions,
     inferredHints: [...new Set(ownSessions.flatMap((item) => item.inferredHints))],
   }
-}
-
-// Display under test ----------------------------------------------------------
-
-export type DisplayTarget = { kind: 'lane'; id: string } | { kind: 'object'; id: string }
-
-export interface Glance {
-  start: number
-  end: number
-  dwell: number
-}
-
-export interface LearnerGlances {
-  userId: number
-  glances: Glance[]
-  firstLookS: number | undefined
-  totalDwellS: number
-  meanS: number
-}
-
-export function displayGlances(
-  target: DisplayTarget,
-  run: Run,
-  minVisitS: number,
-  visits: Visit[],
-  objectVisits: ObjectVisit[],
-  sessions: Session[],
-): LearnerGlances[] {
-  const source: (Glance & { userId: number })[] =
-    target.kind === 'lane'
-      ? visits.filter((visit) => visit.runId === run.id && visit.lane === target.id)
-      : objectVisits.filter((visit) => visit.runId === run.id && visit.objectId === target.id)
-
-  return run.userIds.map((userId) => {
-    const glances = source
-      .filter((glance) => glance.userId === userId && glance.dwell >= minVisitS)
-      .sort((a, b) => a.start - b.start)
-    const span = learnerSpan(userId, run.id, sessions) ?? runWindow(run)
-    const totalDwellS = glances.reduce((sum, glance) => sum + glance.dwell, 0)
-    return {
-      userId,
-      glances,
-      firstLookS: glances.length > 0 ? glances[0].start - span.start : undefined,
-      totalDwellS,
-      meanS: glances.length > 0 ? totalDwellS / glances.length : 0,
-    }
-  })
 }
