@@ -6,7 +6,7 @@ It answers one question:
 
 > Where does each clinician's attention actually go during a VR simulation, and can we show it automatically from raw gaze logs instead of a person watching and taking notes?
 
-**Status: planning.** The spec and raw data are ready, but the pipeline and app haven't been built. See [Current status](#current-status).
+**Status: in progress.** All four app screens work on mock data, but the pipeline that feeds them real data hasn't been built. See [Current status](#current-status).
 
 ## Why this exists
 
@@ -92,7 +92,7 @@ The log covers 2026-05-05 (user 1 only, about 9 minutes), then 2026-05-06 and 20
 | Gaze log | Not in the repo yet. Goes in `data/raw/` |
 | Lane map (`data/lane_map.csv`) | **Missing: this blocks the pipeline** |
 | Pipeline and tests | Not started |
-| App | Base built on mock data: header, tabs, data loading and placeholder screens |
+| App | Screens 1–4 built and running on mock data |
 
 ### Milestones
 
