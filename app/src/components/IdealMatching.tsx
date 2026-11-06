@@ -6,10 +6,10 @@ export function IdealMatching({ files }: { files: FileControls }) {
   const used = new Set(Object.values(files.matching).filter(Boolean))
   return <Panel>
     <PanelTitle>Expert benchmark and learner matching</PanelTitle>
-    <p className="m-0 text-sm text-muted-foreground">Upload an ideal-user CSV and choose one benchmark for each learner. Each ideal user can be assigned once. Unmatched learners are not graded.</p>
+    <p className="m-0 text-sm text-muted-foreground">Upload an ideal-user CSV or Excel (.xlsx) file and choose one benchmark for each learner. Each ideal user can be assigned once. Unmatched learners are not graded.</p>
     <div className="flex flex-wrap items-center gap-3 text-sm">
       <label className="font-medium">Ideal gaze log
-        <input className="ml-3 max-w-full" type="file" accept=".csv,.tsv,text/csv" disabled={files.reading || files.generating}
+        <input className="ml-3 max-w-full" type="file" accept=".csv,.tsv,.xlsx,.xlsm,text/csv" disabled={files.reading || files.generating}
           onChange={(event) => { const file = event.target.files?.[0]; event.target.value = ''; if (file) files.addIdeal(file) }} />
       </label>
       {files.ideal && <><span>{files.ideal.name}</span><Button variant="outline" disabled={files.reading || files.generating} onClick={files.removeIdeal}>Remove ideal log</Button></>}

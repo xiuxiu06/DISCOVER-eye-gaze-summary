@@ -19,6 +19,7 @@ try {
     matchLaneMapWithClaude,
   } = await vite.ssrLoadModule('/src/claudeLaneMap.ts')
   const { fileKind, processLog } = await vite.ssrLoadModule('/src/processLog.ts')
+  const { isSpreadsheetExcelFile, parseXlsxBufferToCsv } = await vite.ssrLoadModule('/src/xlsxGaze.ts')
   const { UploadClean } = await vite.ssrLoadModule('/src/screens/UploadClean.tsx')
 
   const rawCsv = readFileSync(
@@ -120,7 +121,10 @@ try {
   const remapped = applyLaneMapToBuiltInDataset(mockDataset, mockCsv)
   assert.ok(Object.values(remapped.dataset.meta.objects).every((o) => o.lane === 'Reference'))
 
-  // 5. Verify UploadClean renders Upload CSV + Match with Claude options
+  // 5. Verify UploadClean + IdealMatching render Upload CSV, Match with Claude, and 1-to-1 learner matching
+  assert.equal(isSpreadsheetExcelFile('ideal_users.xlsx'), true)
+  assert.equal(isSpreadsheetExcelFile('ideal_users.csv'), false)
+
   const html = renderToStaticMarkup(
     createElement(UploadClean, {
       dataset: mockDataset,
@@ -128,19 +132,41 @@ try {
       minVisitS: 0.5,
       touchpoints: mockDataset.visits,
       files: {
-        gaze: undefined,
+        gaze: { name: 'learners.xlsx', size: 1024 },
         laneMap: { name: 'claude_lane_map.csv', size: 512, source: 'claude' },
+        ideal: { name: 'ideal_users.xlsx', size: 768 },
         reading: false,
         matchingLanes: false,
         hasServerClaudeKey: true,
         error: undefined,
-        note: undefined,
+        note: 'Processed by Python.',
+        analysis: {
+          recordingId: 'rec-1',
+          reportVersion: 'v1',
+          dataset: mockDataset,
+          learners: [
+            { key: 'user1', userId: 1 },
+            { key: 'user2', userId: 2 },
+          ],
+          ideals: [{ key: 'idealUser0' }, { key: 'idealUser1' }],
+          skippedRows: 0,
+          unmappedObjects: [],
+        },
+        matching: { user1: 'idealUser0', user2: null },
+        report: undefined,
+        generating: false,
+        reportError: undefined,
         addFiles: () => {},
         uploadLaneMapFile: () => {},
         matchLanesWithClaude: async () => true,
         downloadLaneMap: () => {},
+        addIdeal: () => {},
+        removeIdeal: () => {},
         removeGaze: () => {},
         removeLaneMap: () => {},
+        reprocess: () => {},
+        setMatch: () => {},
+        generateReport: () => {},
       },
       openLanes: () => {},
       openLearner: () => {},
@@ -152,6 +178,70 @@ try {
   assert.ok(html.includes('Match with Claude'))
   assert.ok(html.includes('Download CSV'))
   assert.ok(html.includes('Claude AI'))
+  assert.ok(html.includes('Expert benchmark and learner matching'))
+  assert.ok(html.includes('idealUser0'))
+  assert.ok(html.includes('Learner 1'))
+
+  // 6. Verify minimal .xlsx (stored ZIP) parses cleanly via parseXlsxBufferToCsv
+  function makeStoredZip(entries) {
+    const encoder = new TextEncoder()
+    const localParts = []
+    const centralParts = []
+    let offset = 0
+    for (const [name, content] of entries) {
+      const nameBytes = encoder.encode(name)
+      const dataBytes = encoder.encode(content)
+      const local = new Uint8Array(30 + nameBytes.length + dataBytes.length)
+      const lv = new DataView(local.buffer)
+      lv.setUint32(0, 0x04034b50, true)
+      lv.setUint16(4, 20, true)
+      lv.setUint16(8, 0, true)
+      lv.setUint32(18, dataBytes.length, true)
+      lv.setUint32(22, dataBytes.length, true)
+      lv.setUint16(26, nameBytes.length, true)
+      local.set(nameBytes, 30)
+      local.set(dataBytes, 30 + nameBytes.length)
+      localParts.push(local)
+
+      const central = new Uint8Array(46 + nameBytes.length)
+      const cv = new DataView(central.buffer)
+      cv.setUint32(0, 0x02014b50, true)
+      cv.setUint16(4, 20, true)
+      cv.setUint16(6, 20, true)
+      cv.setUint16(10, 0, true)
+      cv.setUint32(20, dataBytes.length, true)
+      cv.setUint32(24, dataBytes.length, true)
+      cv.setUint16(28, nameBytes.length, true)
+      cv.setUint32(42, offset, true)
+      central.set(nameBytes, 46)
+      centralParts.push(central)
+      offset += local.length
+    }
+    const cdSize = centralParts.reduce((s, p) => s + p.length, 0)
+    const eocd = new Uint8Array(22)
+    const ev = new DataView(eocd.buffer)
+    ev.setUint32(0, 0x06054b50, true)
+    ev.setUint16(8, entries.length, true)
+    ev.setUint16(10, entries.length, true)
+    ev.setUint32(12, cdSize, true)
+    ev.setUint32(16, offset, true)
+    const total = offset + cdSize + 22
+    const out = new Uint8Array(total)
+    let pos = 0
+    for (const part of [...localParts, ...centralParts, eocd]) {
+      out.set(part, pos)
+      pos += part.length
+    }
+    return out.buffer
+  }
+
+  const xlsxBuf = makeStoredZip([
+    ['xl/sharedStrings.xml', '<sst><si><t>user_id</t></si><si><t>object_id</t></si><si><t>gaze_time</t></si><si><t>time_stamp</t></si><si><t>SPO2</t></si><si><t>2026-06-01 10:00:00</t></si></sst>'],
+    ['xl/worksheets/sheet1.xml', '<worksheet><sheetData><row r="1"><c r="A1" t="s"><v>0</v></c><c r="B1" t="s"><v>1</v></c><c r="C1" t="s"><v>2</v></c><c r="D1" t="s"><v>3</v></c></row><row r="2"><c r="A2"><v>1</v></c><c r="B2" t="s"><v>4</v></c><c r="C2"><v>2.5</v></c><c r="D2" t="s"><v>5</v></c></row></sheetData></worksheet>'],
+  ])
+  const parsedCsv = await parseXlsxBufferToCsv(xlsxBuf)
+  assert.ok(parsedCsv.includes('user_id,session_id,object_id,gaze_time,time_stamp'))
+  assert.ok(parsedCsv.includes('1,0,SPO2,2.5,2026-06-01 10:00:00'))
 
   console.log('Claude swimlane matching checks passed: 159 raw objects, 5 clinical lanes + background, API request, built-in remapping, and UI controls verified.')
 } finally {

@@ -164,55 +164,64 @@ function parseLine(line: string, delimiter: string): string[] {
   return fields
 }
 
-/** Extract unique object IDs (plus basic event/dwell stats) from a raw gaze CSV, or fall back to dataset meta. */
+function accumulateCsvObjects(
+  csvText: string,
+  idleMaxS: number,
+  stats: Map<string, { events: number; dwell: number; users: Set<string> }>,
+): void {
+  const lines = csvText.replace(/^\uFEFF/, '').split(/\r?\n/)
+  const first = lines[0] ?? ''
+  const delimiter = first.includes('\t') ? '\t' : ','
+  const header = parseLine(first, delimiter).map((h) =>
+    h.trim().toLowerCase().replace(/[\s_-]/g, ''),
+  )
+  const objIdx = header.findIndex((h) => h === 'objectid' || h === 'object')
+  const gazeIdx = header.findIndex((h) => h === 'gazetime' || h === 'duration')
+  const userIdx = header.findIndex((h) => h === 'userid' || h === 'user')
+  if (objIdx === -1) return
+
+  for (let i = 1; i < lines.length; i++) {
+    const rawLine = lines[i]
+    if (!rawLine || rawLine.trim() === '') continue
+    const cols = parseLine(rawLine, delimiter)
+    const obj = (cols[objIdx] ?? '').trim()
+    if (!obj || ['null', 'none', 'nan'].includes(obj.toLowerCase())) continue
+    const user = userIdx !== -1 ? (cols[userIdx] ?? '').trim() : ''
+    if (user === '0') continue
+    const dur = gazeIdx !== -1 ? Number((cols[gazeIdx] ?? '').trim()) : 0
+    let entry = stats.get(obj)
+    if (!entry) {
+      entry = { events: 0, dwell: 0, users: new Set<string>() }
+      stats.set(obj, entry)
+    }
+    if (Number.isFinite(dur) && dur >= 0 && dur <= idleMaxS) {
+      entry.events += 1
+      entry.dwell += dur
+      if (user) entry.users.add(user)
+    }
+  }
+}
+
+/** Extract unique object IDs (plus basic event/dwell stats) from raw gaze CSVs, or fall back to dataset meta. */
 export function extractObjectsForClassification(
   gazeText: string | undefined,
   dataset: Dataset,
+  idealText?: string,
 ): ObjectCandidate[] {
-  if (gazeText) {
-    const lines = gazeText.replace(/^\uFEFF/, '').split(/\r?\n/)
-    const first = lines[0] ?? ''
-    const delimiter = first.includes('\t') ? '\t' : ','
-    const header = parseLine(first, delimiter).map((h) =>
-      h.trim().toLowerCase().replace(/[\s_-]/g, ''),
-    )
-    const objIdx = header.findIndex((h) => h === 'objectid' || h === 'object')
-    const gazeIdx = header.findIndex((h) => h === 'gazetime' || h === 'duration')
-    const userIdx = header.findIndex((h) => h === 'userid' || h === 'user')
+  if (gazeText || idealText) {
     const idleMaxS = dataset.meta.params.IDLE_MAX_S ?? 30
-
-    if (objIdx !== -1) {
-      const stats = new Map<string, { events: number; dwell: number; users: Set<string> }>()
-      for (let i = 1; i < lines.length; i++) {
-        const rawLine = lines[i]
-        if (!rawLine || rawLine.trim() === '') continue
-        const cols = parseLine(rawLine, delimiter)
-        const obj = (cols[objIdx] ?? '').trim()
-        if (!obj || ['null', 'none', 'nan'].includes(obj.toLowerCase())) continue
-        const user = userIdx !== -1 ? (cols[userIdx] ?? '').trim() : ''
-        if (user === '0') continue
-        const dur = gazeIdx !== -1 ? Number((cols[gazeIdx] ?? '').trim()) : 0
-        let entry = stats.get(obj)
-        if (!entry) {
-          entry = { events: 0, dwell: 0, users: new Set<string>() }
-          stats.set(obj, entry)
-        }
-        if (Number.isFinite(dur) && dur >= 0 && dur <= idleMaxS) {
-          entry.events += 1
-          entry.dwell += dur
-          if (user) entry.users.add(user)
-        }
-      }
-      if (stats.size > 0) {
-        return [...stats.entries()]
-          .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
-          .map(([objectId, info]) => ({
-            objectId,
-            events: info.events,
-            dwellS: Math.round(info.dwell * 1000) / 1000,
-            learners: info.users.size,
-          }))
-      }
+    const stats = new Map<string, { events: number; dwell: number; users: Set<string> }>()
+    if (gazeText) accumulateCsvObjects(gazeText, idleMaxS, stats)
+    if (idealText) accumulateCsvObjects(idealText, idleMaxS, stats)
+    if (stats.size > 0) {
+      return [...stats.entries()]
+        .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
+        .map(([objectId, info]) => ({
+          objectId,
+          events: info.events,
+          dwellS: Math.round(info.dwell * 1000) / 1000,
+          learners: info.users.size,
+        }))
     }
   }
 

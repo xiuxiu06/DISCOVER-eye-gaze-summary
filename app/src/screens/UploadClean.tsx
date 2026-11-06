@@ -312,13 +312,13 @@ function UploadPanel({
           Browse files
         </span>
         <span className="text-xs text-muted-foreground">
-          .csv gaze export or lane map · up to 50 MB each
+          .csv, .tsv, or .xlsx gaze export, or lane map CSV · up to 50 MB each
         </span>
         <input
           ref={input}
           data-testid="upload-input"
           type="file"
-          accept=".csv,.tsv,text/csv"
+          accept=".csv,.tsv,.xlsx,.xlsm,text/csv"
           multiple
           className="absolute size-px opacity-0"
           disabled={busy}

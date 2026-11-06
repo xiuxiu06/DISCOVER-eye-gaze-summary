@@ -80,9 +80,10 @@ def prune() -> None:
                 del collection[key]
 
 
-def read_upload(upload: UploadFile) -> bytes:
-    if Path(upload.filename or "").suffix.lower() not in {".csv", ".tsv"}:
-        raise ValueError("Please upload a CSV or TSV file.")
+def read_upload(upload: UploadFile, *, allow_excel: bool = True) -> bytes:
+    allowed = {".csv", ".tsv", ".xlsx", ".xlsm"} if allow_excel else {".csv", ".tsv"}
+    if Path(upload.filename or "").suffix.lower() not in allowed:
+        raise ValueError("Please upload a CSV, TSV, or Excel (.xlsx) file." if allow_excel else "Please upload a CSV or TSV file.")
     content = upload.file.read(MAX_FILE_BYTES + 1)
     if len(content) > MAX_FILE_BYTES:
         raise HTTPException(413, "Each file must be at most 50 MB.")
@@ -125,7 +126,7 @@ def analyze(gaze: UploadFile = File(...), ideal: UploadFile | None = File(None),
     try:
         gaze_bytes = read_upload(gaze)
         ideal_bytes = read_upload(ideal) if ideal else b""
-        map_bytes = read_upload(laneMap) if laneMap else config.LANE_MAP.read_bytes()
+        map_bytes = read_upload(laneMap, allow_excel=False) if laneMap else config.LANE_MAP.read_bytes()
         lane_map = pd.read_csv(io.BytesIO(map_bytes))
         required = {"object_id", "lane", "include"}
         if not required.issubset(lane_map.columns) or lane_map.object_id.duplicated().any():
@@ -172,8 +173,12 @@ def analyze(gaze: UploadFile = File(...), ideal: UploadFile | None = File(None),
             if len(records) >= 32 and recording_id not in records:
                 raise HTTPException(503, "Analysis capacity reached. Restart the local backend to clear old recordings.")
             records[recording_id] = {"created": time.time(), "summary": combined, "learners": learners, "ideals": [item["key"] for item in ideal_catalog]}
-        delimiter = "\t" if Path(gaze.filename or "").suffix.lower() == ".tsv" else ","
-        raw_count = max(0, sum(bool(any(cell.strip() for cell in row)) for row in csv.reader(io.StringIO(gaze_bytes.decode("utf-8-sig")), delimiter=delimiter)) - 1)
+        gaze_suffix = Path(gaze.filename or "gaze.csv").suffix.lower()
+        if gaze_suffix in {".xlsx", ".xlsm"} or gaze_bytes[:4] == b"PK\x03\x04":
+            raw_count = len(gaze_rows)
+        else:
+            delimiter = "\t" if gaze_suffix == ".tsv" else ","
+            raw_count = max(0, sum(bool(any(cell.strip() for cell in row)) for row in csv.reader(io.StringIO(gaze_bytes.decode("utf-8-sig")), delimiter=delimiter)) - 1)
         unmapped = sorted({row.object_id for row in gaze_rows} - set(lane_map.object_id))
         report_version = hashlib.sha256((report_card.REPORT_CARD_SYSTEM_PROMPT + os.environ.get("ANTHROPIC_MODEL", "auto")).encode()).hexdigest()
         return {"recordingId": recording_id, "reportVersion": report_version, "dataset": dataset, "learners": user_catalog, "ideals": ideal_catalog,

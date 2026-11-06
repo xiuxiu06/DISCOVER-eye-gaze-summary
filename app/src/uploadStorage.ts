@@ -4,6 +4,10 @@ import type { ClaudeReport } from './reportTypes'
 export interface SavedUpload {
   gaze?: { name: string; size: number; text: string }
   laneMap?: { name: string; size: number; text: string; source?: 'upload' | 'claude' }
+  ideal?: { name: string; size: number; text: string }
+  matching?: Matching
+  reportCache?: { key: string; report: ClaudeReport }
+  pendingJob?: { key: string; jobId: string }
 }
 
 function openStore(): Promise<IDBDatabase> {
@@ -34,7 +38,7 @@ export async function saveUpload(upload?: SavedUpload): Promise<void> {
     await new Promise<void>((resolve, reject) => {
       const transaction = db.transaction('files', 'readwrite')
       const store = transaction.objectStore('files')
-      if (upload && (upload.gaze || upload.laneMap)) store.put(upload, 'current')
+      if (upload && (upload.gaze || upload.laneMap || upload.ideal)) store.put(upload, 'current')
       else store.delete('current')
       transaction.oncomplete = () => resolve()
       transaction.onerror = () => reject(transaction.error)

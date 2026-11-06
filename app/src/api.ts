@@ -27,7 +27,10 @@ async function request(path: string, init?: RequestInit) {
 export async function analyzeFiles(gaze: TextFile, ideal?: TextFile, laneMap?: TextFile): Promise<Analysis> {
   const form = new FormData()
   for (const [key, file] of [['gaze', gaze], ['ideal', ideal], ['laneMap', laneMap]] as const) {
-    if (file) form.append(key, new Blob([file.text], { type: 'text/csv' }), file.name)
+    if (file) {
+      const uploadName = file.name.replace(/\.(xlsx|xlsm)$/i, '.csv')
+      form.append(key, new Blob([file.text], { type: 'text/csv' }), uploadName)
+    }
   }
   return request('/analyze', { method: 'POST', body: form })
 }
