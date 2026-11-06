@@ -1327,6 +1327,11 @@ def main(argv: list[str] | None = None) -> int:
         default=300.0,
         help="Max wall-clock gap in seconds within a session before splitting segments (default: 300).",
     )
+    parser.add_argument(
+        "--report-card",
+        action="store_true",
+        help="Immediately upload the generated summary JSON to the Claude API to generate a learner report card.",
+    )
 
     args = parser.parse_args(argv)
 
@@ -1445,6 +1450,13 @@ def main(argv: list[str] | None = None) -> int:
         active_secs = sum(1 for item in timeline if item["object"] is not None)
         print(f"  - {uk}: {len(timeline):,}s total ({active_secs:,}s looking at relevant objects)")
     print(f"Saved JSON summary to: {output_path}")
+
+    if args.report_card:
+        from report_card import main as report_card_main
+
+        print()
+        return report_card_main([str(output_path)])
+
     return 0
 
 
