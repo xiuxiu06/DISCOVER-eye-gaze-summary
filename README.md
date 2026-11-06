@@ -133,11 +133,11 @@ The steps live in both `pipeline/` and `app/src/processLog.ts`. If you change on
 
 ### Swim lane views
 
-Tab 2 offers three views. **Standard** keeps the five clinical lanes and team coverage. **Advanced** shows individual included object visits for the selected team run, with learner, clinical lane and object-name filters plus a visit table. It starts with the first learner and the vital sign monitor lane.
+Tab 2 offers three views. **Standard** keeps the five clinical lanes and team coverage. **Simplified** and **Advanced** share the same summary chart, learner picker, object search and summary download. Simplified condenses similar object variants; Advanced preserves each filtered original object name. Uploading a gaze log automatically generates both summaries.
 
 **Simplified** automatically generates a condensed gaze summary from the raw gaze log uploaded in tab 1. No separate JSON upload is required. The browser implementation mirrors the filtering, dynamic object condensing, per-second dominant-object selection, minute-resolution fallback and session gap handling in `summarize_gaze.py`. `npm run check:summary` compares the complete output with the Python-generated reference. The summary is regenerated when a saved upload is restored; Download summary JSON exports it in the script's format. The built-in recording uses its pre-generated summary.
 
-Summary files cover the full recording with session pauses omitted, so Simplified uses summary elapsed time and does not follow the Team run picker. Standard and Advanced use the selected run and its clock times. Adjacent seconds with the same object form a chart segment; null seconds and gaps break segments. User 0 is excluded from the display and download. The threshold filters summary segment duration in Simplified, rather than raw measured dwell.
+Summary files cover the full recording with session pauses omitted, so Simplified and Advanced use summary elapsed time and do not follow the Team run picker. Standard uses the selected run and its clock times. Adjacent seconds with the same object form a chart segment; null seconds and gaps break segments. User 0 is excluded from the display and download. The threshold filters summary segment duration in both summary views, rather than raw measured dwell.
 
 ### Mock data
 

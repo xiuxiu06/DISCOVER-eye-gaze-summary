@@ -34,6 +34,12 @@ try {
     readFileSync(new URL('../../data/lane_map.csv', import.meta.url), 'utf8'), meta, 'uploaded.csv',
   ).dataset
   assert.deepEqual(uploaded.summary, summary, 'Generated upload summary must exactly match Python output')
+  assert.equal(uploaded.advancedSummary.relevant_objects.length, 91)
+  assert.ok(uploaded.advancedSummary.relevant_objects.includes('CodeSheet5kg'))
+  assert.ok(!uploaded.advancedSummary.relevant_objects.includes('CodeSheet'))
+  for (const user of uploaded.summary.users) {
+    assert.equal(uploaded.advancedSummary.users.find((candidate) => candidate.userId === user.userId).entries.length, user.entries.length)
+  }
   const { createSummary, condenseMapping } = await vite.ssrLoadModule('/src/createSummary.ts')
   const minuteRows = Array.from({ length: 11 }, (_, order) => ({ userId: 17, logSession: 0, objectId: 'SPO2', gazeTime: 1, epoch: 0, order }))
   const minutes = createSummary(minuteRows)
@@ -43,6 +49,13 @@ try {
   const groups = condenseMapping(['CodeSheet5kg', 'CodeSheet8kg', 'LeftEye', 'RightEye'])
   assert.equal(groups.get('CodeSheet8kg'), 'CodeSheet')
   assert.equal(groups.get('LeftEye'), 'Eye')
+  const compete = [
+    { ...minuteRows[0], epoch: 1, objectId: 'Stryker_bed_front', gazeTime: 0.12 },
+    { ...minuteRows[0], epoch: 1, order: 1, objectId: 'Stryker_bed_back', gazeTime: 0.12 },
+    { ...minuteRows[0], epoch: 1, order: 2, objectId: 'Liver', gazeTime: 0.15 },
+  ]
+  assert.equal(createSummary(compete, true).users[0].entries[0].object, 'Stryker_bed')
+  assert.equal(createSummary(compete, false).users[0].entries[0].object, 'Liver')
   const blocked = createSummary(minuteRows.map((row) => ({ ...row, objectId: 'RoomCollider999' })))
   assert.equal(blocked.relevant_objects.length, 0)
   assert.ok(blocked.users[0].entries.every((entry) => entry.object === null))
@@ -56,6 +69,13 @@ try {
   assert.ok(html.includes('Summary generated automatically from uploaded.csv'))
   assert.ok(html.includes('Download summary JSON'))
   assert.ok(!html.includes('type="file"'))
+  const advancedHtml = renderToStaticMarkup(createElement(ObjectSwimLanes, { dataset: { ...uploaded, objectVisits: [] }, run: uploaded.runs[0], minVisitS: 0.5, view: 'advanced' }))
+  assert.ok(advancedHtml.includes('individual object names preserved'))
+  assert.ok(advancedHtml.includes('summary segments'))
+  assert.ok(!advancedHtml.includes('Clinical lane'))
+  assert.ok(!advancedHtml.includes('Object visit details'))
+  assert.ok(!advancedHtml.includes('type="file"'))
+  console.log('Advanced: 91 original objects, same timeline length, no object-visit dependency; condensing changes dominant-object selection correctly.')
   const python = readFileSync(new URL('../../summarize_gaze.py', import.meta.url), 'utf8')
   const rules = JSON.parse(readFileSync(new URL('../src/summaryFilter.json', import.meta.url), 'utf8'))
   const expectedObjects = [...python.slice(python.indexOf('DEFAULT_IRRELEVANT_OBJECTS:'), python.indexOf('# Scalable regex')).matchAll(/"([^"\n]+)"/g)].map((match) => match[1])

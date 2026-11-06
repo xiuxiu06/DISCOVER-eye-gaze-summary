@@ -102,10 +102,10 @@ export function condenseMapping(names: string[]): Map<string, string> {
   return result
 }
 
-export function createSummary(rows: SummaryRow[]): GazeSummary {
+export function createSummary(rows: SummaryRow[], condense = true): GazeSummary {
   const rawNames = new Map<string, string>()
   for (const row of rows) if (!irrelevant(row.objectId) && !rawNames.has(row.objectId.toLowerCase())) rawNames.set(row.objectId.toLowerCase(), row.objectId)
-  const mapping = condenseMapping([...rawNames.values()])
+  const mapping = condense ? condenseMapping([...rawNames.values()]) : new Map([...rawNames.values()].sort(compare).map((name) => [name, name]))
   const canonical = new Map([...rawNames].map(([low, name]) => [low, mapping.get(name)!]))
   const processed = rows.map((row) => ({ ...row, objectId: canonical.get(row.objectId.toLowerCase()) ?? row.objectId }))
   const users: GazeSummary['users'] = []

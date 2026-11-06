@@ -103,6 +103,7 @@ export interface Dataset {
   /** Where the data came from. "mock" must show a visible banner. */
   origin: 'real' | 'mock' | 'uploaded'
   summary?: GazeSummary
+  advancedSummary?: GazeSummary
   meta: Meta
   funnel: FunnelStep[]
   sessions: Session[]
