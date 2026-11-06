@@ -157,6 +157,7 @@ app/
     data.ts  types.ts   # loading and JSON formats
     metrics.ts  time.ts # calculations and time formatting
     screens/            # one file per screen
+    components/ui/      # shadcn/ui components (add more with: npx shadcn@latest add <name>)
 ```
 
 ## Open questions for the DISCOVER dev team
