@@ -265,9 +265,3 @@ export function displayGlances(
     }
   })
 }
-
-export function countByLearner(items: Visit[]): Map<number, number> {
-  const counts = new Map<number, number>()
-  for (const item of items) counts.set(item.userId, (counts.get(item.userId) ?? 0) + 1)
-  return counts
-}
