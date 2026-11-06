@@ -1,4 +1,13 @@
 import { useEffect, useMemo, useState } from 'react'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+import { Slider } from '@/components/ui/slider'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { loadDataset } from './data'
 import { pickDefaultRun, touchpoints } from './metrics'
 import { DisplayTest } from './screens/DisplayTest'
@@ -17,6 +26,15 @@ const TABS = [
   { label: 'Display under test', Screen: DisplayTest },
 ] satisfies { label: string; Screen: (props: ScreenProps) => React.JSX.Element }[]
 
+/** True while a control is using the arrow keys itself: the slider or an open run list. */
+function controlUsesArrows(target: EventTarget | null): boolean {
+  if (!(target instanceof Element)) return false
+  return (
+    target instanceof HTMLInputElement ||
+    target.closest('[role="listbox"], [aria-expanded="true"]') !== null
+  )
+}
+
 export default function App() {
   const [dataset, setDataset] = useState<Dataset>()
   const [error, setError] = useState<string>()
@@ -27,9 +45,9 @@ export default function App() {
       .catch((reason: unknown) => setError(String(reason)))
   }, [])
 
-  if (error) return <p className="status">Couldn't load the data. {error}</p>
-  if (!dataset) return <p className="status">Loading…</p>
-  if (dataset.runs.length === 0) return <p className="status">The data has no team runs.</p>
+  if (error) return <p className="p-6">Couldn't load the data. {error}</p>
+  if (!dataset) return <p className="p-6 text-muted-foreground">Loading…</p>
+  if (dataset.runs.length === 0) return <p className="p-6">The data has no team runs.</p>
   return <Shell dataset={dataset} />
 }
 
@@ -43,13 +61,19 @@ function Shell({ dataset }: { dataset: Dataset }) {
     () => touchpoints(dataset.visits, runId, minVisitS),
     [dataset.visits, runId, minVisitS],
   )
+  const runItems = useMemo(
+    () =>
+      dataset.runs.map((option) => ({
+        value: option.id,
+        label: `${formatRunWindow(option.start, option.end)} · ${option.userIds.length} learners`,
+      })),
+    [dataset.runs],
+  )
 
-  // Arrow keys move between tabs, except while a control needs them.
+  // Arrow keys move between tabs (demo mode), except while a control needs them.
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
-      if (event.target instanceof HTMLInputElement || event.target instanceof HTMLSelectElement) {
-        return
-      }
+      if (controlUsesArrows(event.target)) return
       if (event.key === 'ArrowRight') setTab((current) => Math.min(current + 1, TABS.length - 1))
       if (event.key === 'ArrowLeft') setTab((current) => Math.max(current - 1, 0))
     }
@@ -60,65 +84,91 @@ function Shell({ dataset }: { dataset: Dataset }) {
   const { Screen } = TABS[tab]
 
   return (
-    <div className="app">
+    <div className="flex h-full flex-col">
       {dataset.origin === 'mock' && (
-        <div className="mock-banner" role="alert">
+        <div role="alert" className="bg-red-700 px-6 py-1.5 text-sm font-medium text-white">
           MOCK DATA: synthetic values for development, not from the gaze log. Not for the demo.
         </div>
       )}
 
-      <header className="header">
-        <h1>DISCOVER Gaze Insights</h1>
-        <label className="control">
-          Run
-          <select
+      <header className="flex flex-wrap items-center gap-x-8 gap-y-3 px-6 pt-4 pb-3">
+        <h1 className="mr-auto text-lg font-semibold tracking-tight">DISCOVER Gaze Insights</h1>
+
+        <div className="flex items-center gap-2 text-sm">
+          <span id="run-label" className="text-muted-foreground">
+            Run
+          </span>
+          <Select
+            items={runItems}
             value={runId}
-            onChange={(event) => {
-              setRunId(event.target.value)
-              event.target.blur() // hand the arrow keys back to the tabs
+            onValueChange={(value) => {
+              if (value) setRunId(value)
             }}
           >
-            {dataset.runs.map((option) => (
-              <option key={option.id} value={option.id}>
-                {formatRunWindow(option.start, option.end)} · {option.userIds.length} learners
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="control">
-          Min touchpoint
-          <input
-            type="range"
+            <SelectTrigger aria-labelledby="run-label" className="tabular-nums">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {runItems.map((item) => (
+                <SelectItem key={item.value} value={item.value} className="tabular-nums">
+                  {item.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="flex items-center gap-3 text-sm">
+          <span id="touchpoint-label" className="whitespace-nowrap text-muted-foreground">
+            Min touchpoint
+          </span>
+          <Slider
+            aria-labelledby="touchpoint-label"
+            className="shrink-0 data-horizontal:w-36"
             min={0.3}
             max={2}
             step={0.1}
-            value={minVisitS}
-            onChange={(event) => setMinVisitS(Number(event.target.value))}
-            onPointerUp={(event) => event.currentTarget.blur()}
+            value={[minVisitS]}
+            onValueChange={(value) => {
+              const next = Array.isArray(value) ? value[0] : value
+              setMinVisitS(Math.round(next * 10) / 10)
+            }}
+            onValueCommitted={(_value, details) => {
+              // After a drag, hand the arrow keys back to the tabs. Keyboard users keep focus.
+              if (details.event.type !== 'keydown' && document.activeElement instanceof HTMLElement) {
+                document.activeElement.blur()
+              }
+            }}
           />
-          <output>{minVisitS.toFixed(1)} s</output>
-        </label>
+          <output className="w-12 text-right font-medium whitespace-nowrap tabular-nums">
+            {minVisitS.toFixed(1)} s
+          </output>
+        </div>
       </header>
 
-      <nav className="tabs" role="tablist">
-        {TABS.map(({ label }, index) => (
-          <button
-            key={label}
-            type="button"
-            role="tab"
-            aria-selected={index === tab}
-            onClick={() => setTab(index)}
-          >
-            {index + 1}. {label}
-          </button>
-        ))}
-      </nav>
+      <Tabs
+        value={tab}
+        onValueChange={(value) => setTab(value as number)}
+        className="min-h-0 flex-1 gap-0"
+      >
+        <div className="border-b px-6">
+          {/* The tabs handle arrow keys while focused, so make those keys switch screens too. */}
+          <TabsList variant="line" loopFocus={false} activateOnFocus>
+            {TABS.map(({ label }, index) => (
+              <TabsTrigger key={label} value={index} className="px-2.5">
+                {index + 1}. {label}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </div>
+        <TabsContent value={tab} className="min-h-0 overflow-auto p-6">
+          <Screen dataset={dataset} run={run} minVisitS={minVisitS} touchpoints={runTouchpoints} />
+        </TabsContent>
+      </Tabs>
 
-      <main className="main">
-        <Screen dataset={dataset} run={run} minVisitS={minVisitS} touchpoints={runTouchpoints} />
-      </main>
-
-      <footer className="footer">Head gaze (headset-forward ray), not eye tracking</footer>
+      <footer className="border-t px-6 py-1.5 text-xs text-muted-foreground">
+        Head gaze (headset-forward ray), not eye tracking
+      </footer>
     </div>
   )
 }
