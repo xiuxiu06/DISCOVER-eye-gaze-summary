@@ -1,4 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
+import laneMapCsv from '../../data/lane_map.csv?raw'
+import { Button } from '@/components/ui/button'
 import {
   Select,
   SelectContent,
@@ -8,8 +10,10 @@ import {
 } from '@/components/ui/select'
 import { Slider } from '@/components/ui/slider'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { UploadLog } from './components/UploadLog'
 import { loadDataset } from './data'
 import { pickDefaultRun, touchpoints } from './metrics'
+import { processLog, type UploadResult } from './processLog'
 import { DisplayTest } from './screens/DisplayTest'
 import { Profiles } from './screens/Profiles'
 import { RawToSignal } from './screens/RawToSignal'
@@ -35,9 +39,16 @@ function controlUsesArrows(target: EventTarget | null): boolean {
   )
 }
 
+interface Upload extends UploadResult {
+  fileName: string
+}
+
 export default function App() {
   const [dataset, setDataset] = useState<Dataset>()
   const [error, setError] = useState<string>()
+  const [upload, setUpload] = useState<Upload>()
+  const [uploadError, setUploadError] = useState<string>()
+  const [reading, setReading] = useState(false)
 
   useEffect(() => {
     loadDataset()
@@ -48,10 +59,77 @@ export default function App() {
   if (error) return <p className="p-6">Couldn't load the data. {error}</p>
   if (!dataset) return <p className="p-6 text-muted-foreground">Loading…</p>
   if (dataset.runs.length === 0) return <p className="p-6">The data has no team runs.</p>
-  return <Shell dataset={dataset} />
+
+  async function readFile(file: File) {
+    if (!dataset) return
+    setReading(true)
+    setUploadError(undefined)
+    try {
+      const result = processLog(await file.text(), laneMapCsv, dataset.meta, file.name)
+      setUpload({ ...result, fileName: file.name })
+    } catch (reason) {
+      // Keep showing the current data, so a wrong file loses nothing.
+      setUploadError(`Couldn't use ${file.name}. ${reason instanceof Error ? reason.message : String(reason)}`)
+    } finally {
+      setReading(false)
+    }
+  }
+
+  const shown = upload?.dataset ?? dataset
+  return (
+    <Shell
+      // A new dataset has different runs, so start again from its default run.
+      key={shown.meta.generatedAt}
+      dataset={shown}
+      notice={
+        <>
+          {uploadError && (
+            <div role="alert" data-testid="upload-error" className="bg-red-50 px-6 py-1.5 text-sm text-red-900">
+              {uploadError}
+            </div>
+          )}
+          {upload && (
+            <div
+              data-testid="upload-notice"
+              className="flex flex-wrap items-center gap-x-3 border-b bg-muted px-6 py-1.5 text-sm"
+            >
+              <span className="font-medium">Showing {upload.fileName}.</span>
+              <span className="text-muted-foreground">
+                Processed in this browser and not saved.
+                {upload.skippedRows > 0 &&
+                  ` Skipped unreadable rows: ${upload.skippedRows}.`}
+                {upload.unmappedObjects.length > 0 &&
+                  ` Objects not in the lane map, counted as background: ${upload.unmappedObjects.length}.`}
+              </span>
+              <Button
+                variant="outline"
+                size="xs"
+                className="ml-auto"
+                onClick={() => {
+                  setUpload(undefined)
+                  setUploadError(undefined)
+                }}
+              >
+                Back to built-in data
+              </Button>
+            </div>
+          )}
+        </>
+      }
+      uploadControl={<UploadLog busy={reading} onFile={readFile} />}
+    />
+  )
 }
 
-function Shell({ dataset }: { dataset: Dataset }) {
+function Shell({
+  dataset,
+  notice,
+  uploadControl,
+}: {
+  dataset: Dataset
+  notice: React.ReactNode
+  uploadControl: React.ReactNode
+}) {
   const [tab, setTab] = useState(0)
   const [runId, setRunId] = useState(() => pickDefaultRun(dataset.runs)!.id)
   const [minVisitS, setMinVisitS] = useState(dataset.meta.params.DEFAULT_MIN_VISIT_S ?? 0.5)
@@ -90,6 +168,7 @@ function Shell({ dataset }: { dataset: Dataset }) {
           MOCK DATA: synthetic values for development, not from the gaze log. Not for the demo.
         </div>
       )}
+      {notice}
 
       <header className="flex flex-wrap items-center gap-x-8 gap-y-3 px-6 pt-4 pb-3">
         <h1 className="mr-auto text-lg font-semibold tracking-tight">DISCOVER Gaze Insights</h1>
@@ -144,6 +223,7 @@ function Shell({ dataset }: { dataset: Dataset }) {
             {minVisitS.toFixed(1)} s
           </output>
         </div>
+        {uploadControl}
       </header>
 
       <Tabs
