@@ -15,8 +15,12 @@ type Folder = 'data' | 'data-mock'
 async function fetchJson<T>(folder: Folder, name: string): Promise<T> {
   const response = await fetch(`${import.meta.env.BASE_URL}${folder}/${name}.json`)
   if (!response.ok) throw new Error(`${folder}/${name}.json: HTTP ${response.status}`)
-  // The dev server answers missing files with index.html, so this can also throw.
-  return (await response.json()) as T
+  try {
+    return (await response.json()) as T
+  } catch {
+    // The dev server answers missing files with index.html, so this also means "missing".
+    throw new Error(`${folder}/${name}.json is missing or isn't valid JSON`)
+  }
 }
 
 async function loadFolder(folder: Folder, meta: Meta): Promise<Dataset> {
