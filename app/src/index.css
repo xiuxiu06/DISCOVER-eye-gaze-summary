@@ -134,3 +134,6 @@
     height: 100%;
   }
 }
+.idle-swatch {
+  background: repeating-linear-gradient(45deg, #6b7280 0 1.5px, #fff 1.5px 5px);
+}
