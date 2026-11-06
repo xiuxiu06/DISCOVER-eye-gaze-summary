@@ -6,7 +6,7 @@ It answers one question:
 
 > Where does each clinician's attention actually go during a VR simulation, and can we show it automatically from raw gaze logs instead of a person watching and taking notes?
 
-**Status: in progress.** All four app screens work on mock data, but the pipeline that feeds them real data hasn't been built. See [Current status](#current-status).
+**Status: in progress.** All four app screens run on real data from the pipeline, using a draft lane map that still needs review. See [Current status](#current-status).
 
 ## Why this exists
 
@@ -82,7 +82,7 @@ The log covers 2026-05-05 (user 1 only, about 9 minutes), then 2026-05-06 and 20
 
 **Default view:** the team run on 2026-05-06, about 13:04–13:55, with all four learners in sessions of about 46–50 minutes.
 
-**Lane map:** `data/lane_map.csv` assigns each object to a lane. It's needed to run the pipeline.
+**Lane map:** `data/lane_map.csv` assigns each object to a lane. It's a draft, so [`data/README.md`](data/README.md) explains how to review it.
 
 ## Current status
 
@@ -90,9 +90,9 @@ The log covers 2026-05-05 (user 1 only, about 9 minutes), then 2026-05-06 and 20
 |---|---|
 | Build spec | Done, kept outside this repo |
 | Gaze log | Not in the repo yet. Goes in `data/raw/` |
-| Lane map (`data/lane_map.csv`) | **Missing: this blocks the pipeline** |
-| Pipeline and tests | Not started |
-| App | Screens 1–4 built and running on mock data |
+| Lane map (`data/lane_map.csv`) | **Draft: needs review, so numbers per lane are provisional** |
+| Pipeline and tests | Built. Two visit-count tests are expected failures until the merge rule is confirmed |
+| App | Screens 1–4 built and running on pipeline output |
 
 ### Milestones
 
@@ -109,7 +109,7 @@ Commit after each one. If time runs short, cut from the bottom of this list, but
 
 ## Getting started
 
-You'll need Node to run the app, and Python 3.11+ for the pipeline once it exists.
+You'll need Node to run the app, and Python 3.11+ for the pipeline.
 
 ```bash
 # App: works today
@@ -117,7 +117,8 @@ cd app
 npm install
 npm run dev
 
-# Pipeline and tests: not built yet
+# Pipeline and tests: run these first to see real data
+python -m pip install -r requirements.txt
 python -m pipeline.run   # writes app/public/data/*.json and prints the funnel numbers
 pytest -q
 ```
@@ -139,7 +140,7 @@ The app expects the formats in [`app/src/types.ts`](app/src/types.ts), including
 
 ### Layout
 
-`pipeline/`, `tests/` and `data/lane_map.csv` are planned and don't exist yet.
+The JSON in `app/public/data/` isn't committed, so run the pipeline to create it. It needs the gaze log in `data/raw/`.
 
 ```
 data/
@@ -163,7 +164,7 @@ summarize_gaze.py       # separate per-second summary tool, with its tests in te
 
 ## Gaze summary tool
 
-`summarize_gaze.py` compresses a DISCOVER gaze export (`.xlsx`, `.csv` or `.tsv`) into a per-second JSON summary of relevant objects for each user. It's a separate tool: the app doesn't read its output, because each second holds one object and the app needs merged visits with start times and dwell.
+`summarize_gaze.py` compresses a DISCOVER gaze export (`.xlsx`, `.csv` or `.tsv`) into a per-second JSON summary of relevant objects for each user. The app doesn't read its output, because each second holds one object and the app needs merged visits with start times and dwell. The pipeline does reuse its code: `read_gaze_file` loads the log, and its object filter is the starting point for the draft lane map.
 
 It needs Python 3.10+ and `openpyxl`:
 
@@ -198,7 +199,7 @@ The built-in filter (`DEFAULT_IRRELEVANT_OBJECTS` and `DEFAULT_IRRELEVANT_PATTER
 - **Room walls, doors, lighting and fixtures:** `Floor`, `Bckground`, `LoadingScreen`, `RoomCollider*`, `Room_cube_wall`, `Room_frame`, `PassthroughDoor`, `Hinge`, `Knob`, `PushPull`, `glass_panel`, `curved_counter`, `Sink`, `Light`, `LightBulb*`, `boomLight`
 - **Unity primitives, UI and avatar rigging:** `Collider`, `ColliderCube*`, `Cube*`, `SpatialPanelManipulator`, `chestRubBlocker`, `FakeTube`, `*IK`, `*Grab*`, `TriggerChestL`, `TriggerChestR`
 
-The Communication lane in the app uses `HeadFollower`, which this filter removes. See the first open question below.
+The draft lane map overrides this filter for `HeadFollower`, which feeds the Communication lane, and for the rig objects on the patient's body. See [`data/README.md`](data/README.md).
 
 ## Open questions for the DISCOVER dev team
 
